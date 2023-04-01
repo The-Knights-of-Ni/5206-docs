@@ -33,7 +33,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: page
-        path: _build
+        path: _build/html
         if-no-files-found: error
 
   deploy:
