@@ -28,7 +28,10 @@ Vision
 ^^^^^^^^^
 The vision subsystem controls all things vision. This includes the vision challenge for the season. OpenCV is usually used.
 
-**Vision
+**Vision Strategies**
+
+* Contour detection
+* Thresholds
 
 Robot.java
 ___________
