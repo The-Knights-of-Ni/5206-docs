@@ -1,0 +1,17 @@
+--- venv/Lib/site-packages/furo/theme/furo/page.html	2023-04-01 17:41:40.216745300 -0700
++++ venv/Lib/site-packages/furo/theme/furo/page_updated.html	2023-04-01 17:51:45.890210400 -0700
+@@ -136,14 +136,6 @@
+               {%- endif %}
+             </div>
+             {%- endif %}
+-            {% trans %}Made with {% endtrans -%}
+-            {%- if show_sphinx -%}
+-            {% trans %}<a href="https://www.sphinx-doc.org/">Sphinx</a> and {% endtrans -%}
+-            <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+-            {% endif -%}
+-            {% trans %}
+-            <a href="https://github.com/pradyunsg/furo">Furo</a>
+-            {% endtrans %}
+             {%- if last_updated -%}
+             <div class="last-updated">
+               {% trans last_updated=last_updated|e -%}
