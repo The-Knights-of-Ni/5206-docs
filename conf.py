@@ -18,11 +18,11 @@
 # -- Project information -----------------------------------------------------
 
 project = '5206 Docs'
-copyright = '2023, Ashwin Naren'
+copyright = '2023, The Knights of Ni'
 author = 'Ashwin Naren'
 
 # The full version, including alpha/beta/rc tags
-release = '2023'
+release = 'PowerPlay'
 
 
 # -- General configuration ---------------------------------------------------
