@@ -5,6 +5,12 @@ The code we write is in
 `/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ <https://github.com/The-Knights-of-Ni/FreightFrenzy/tree/master/TeamCode/src/main/java/org/firstinspires/ftc/teamcode>`_
 and it is divided in to multiple parts for readability.
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+
+   javadoc
+
 Op Modes
 ______________
 
