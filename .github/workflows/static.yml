@@ -31,7 +31,6 @@ jobs:
           python3 -m venv venv
           source venv/bin/activate
           pip install sphinx furo
-          cp furo_page_patch.html venv/Lib/site-packages/furo/theme/furo/page.html
           make html
     - uses: actions/upload-artifact@v3
       with:
