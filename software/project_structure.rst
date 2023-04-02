@@ -50,4 +50,12 @@ desired end position of the motor. These are measured in ticks.
 
 Calculations are done separately for each motor, find the calculation class in ``Subsystems/Drive/PID.java``.
 
+Move Vector
+____________
 
+The distance and angle are calculated (atan2 is used for angle calculation).
+4 separate tick counts are calculated to be passed into ``allMotorPIDControl``.
+
+The front left and rear right motors are calculated by the distance multiplied by
+:math:`cos(angle)`. The rear left and front right motors have their tick counts calculated by the distance multiplied by
+:math:`sin(angle)`.
