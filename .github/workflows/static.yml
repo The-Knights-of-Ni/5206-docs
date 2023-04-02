@@ -29,6 +29,8 @@ jobs:
     - name: Build
       run: |
           python -m venv venv
+          ls venv
+          ls venv/scripts
           ./venv/scripts/activate
           pip install sphinx furo
           cp furo_page_patch.html venv/Lib/site-packages/furo/theme/furo/page.html
