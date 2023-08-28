@@ -38,10 +38,12 @@ ___________
 
 Contains all hardware setup and most subsystem configuration. Generally you won’t have to touch this file unless you’re adding an extra subsystem.
 
-PID
-_____
-PID stands for Proportional Integral Derivative and is used by our drive subsystem.
+Drive Systems
+_______________
 
+PID
+^^^^^^
+PID stands for Proportional Integral Derivative and is used by our drive subsystem.
 :math:`p(t)=K_p e(t) + K_i \int_{0}^{t} e(t) \,dt + K_d \frac{de(t)}{dt}`
 
 Where
@@ -52,6 +54,19 @@ The actual simply means the current position of the motor, this is unlikely to b
 desired end position of the motor. These are measured in ticks.
 
 Calculations are done separately for each motor, find the calculation class in ``Subsystems/Drive/PID.java``.
+
+Feed Forward
+^^^^^^^^^^^^^^^^^^^^^
+:math:`p(x, y)=K_a a(x, y) + K_v v(x, y)`
+
+Where
+:math:`p(x, y)` is the motor power at location (x, y)
+:math:`K_a` is a calibrated constant.
+:math:`K_v` is a calibrated constant.
+:math:`v(x, y)` is the velocity at location (x, y).
+:math:`a(x, y)` is the acceleration at location (x, y).
+
+Feedforward gives a faster response than PID when correcting for errors because it doesn't require two iterations to make a desicion. However it does require predefined paths to follow for velocity and acceleration. A common implementation splines (roadrunner uses quintic splines) applied on vector field, which turn the spline into numerical values for velocity and acceleration, while also providing error correction.
 
 Move Vector
 ____________
