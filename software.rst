@@ -41,6 +41,8 @@ Contains all hardware setup and most subsystem configuration. Generally you wonâ
 Drive Systems
 _______________
 
+Drive Systems usually apply to a single motor.
+
 PID
 ^^^^^^
 PID stands for Proportional Integral Derivative and is used by our drive subsystem.
