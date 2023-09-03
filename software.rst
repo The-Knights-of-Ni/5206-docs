@@ -53,8 +53,13 @@ Contains all hardware setup and most subsystem configuration. Generally you wonâ
 
 .. _pid_section:
 
+Drive Systems
+_______________
+
+Drive Systems usually apply to a single motor.
+
 PID
-_____
+^^^^^^
 `PID <https://medium.com/autonomous-robotics/pid-control-85596db59f35>`_ stands for
 `Proportional Integral Derivative <https://en.wikipedia.org/wiki/PID_controller>`_
 and is used by our drive subsystem to maintain consistent speed
@@ -71,7 +76,22 @@ desired end position of the motor. These are measured in ticks.
 
 Calculations are done separately for each motor, find the calculation class in ``Subsystems/Drive/PID.java``.
 
+<<<<<<< HEAD
 .. _move_vector:
+=======
+Feed Forward
+^^^^^^^^^^^^^^^^^^^^^
+:math:`p(x, y)=K_a a(x, y) + K_v v(x, y)`
+
+Where
+:math:`p(x, y)` is the motor power at location (x, y)
+:math:`K_a` is a calibrated constant.
+:math:`K_v` is a calibrated constant.
+:math:`v(x, y)` is the velocity at location (x, y).
+:math:`a(x, y)` is the acceleration at location (x, y).
+
+Feedforward gives a faster response than PID when correcting for errors because it doesn't require two iterations to make a desicion. However it does require predefined paths to follow for velocity and acceleration. A common implementation splines (roadrunner uses quintic splines) applied on vector field, which turn the spline into numerical values for velocity and acceleration, while also providing error correction.
+>>>>>>> 7442107d15e227dba0b3663118243c894ec66d82
 
 Move Vector
 ____________

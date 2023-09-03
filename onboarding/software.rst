@@ -16,7 +16,7 @@ During the software onboarding process, we will help you install two tools.
 The first is an Integrated Development Environment (IDE), which is a program that is used to write, debug, and deploy code. The IDE we’ll be using is called Android Studio, although you are free to choose another IDE if you’re already comfortable using one. The second tool is a program called Git, which is a Version Control Software (VCS) that we use to keep track of each member’s changes to the code.
 Throughout the instructions, we’ll provide several links to outside articles explaining how each of the tools we install work. We highly recommend that you carefully read each article, as the concepts explained there are fundamental to the operation of our team.
 
-If you have any questions at all during the onboarding process, don’t hesitate to contact Rohan Satapathy, Ashwin Naren, Ethan Yun, or Ryan Lin on Slack.
+If you have any questions at all during the onboarding process, don’t hesitate to contact Ashwin, Alessandro, or Ethan on Slack.
 
 GitHub
 ___________
@@ -25,8 +25,15 @@ Sign-up link:
 
 https://github.com/signup
 
+
+.. important::
+
+    Be sure to send either Alessandro or Ethan your GitHub username on slack so that they can add you to the organization.
+
+
 GitHub is an internet hosting service that allows programmers to store, manage, track and control their code using Git.
 Effectively, it lets you store code online in an easier way that allows many people to collaborate.
+We host all our code in an "orginization" called "The-Knights-of-Ni" (https://github.com/The-Knights-of-Ni/).
 
 Optionally, you can install GitHub Desktop to simplify using git `from the website <https://desktop.github.com/>`_.
 Or ``brew install --cask github`` on macs, or ``winget install -e --id GitHub.GitHubDesktop`` on windows.
@@ -129,6 +136,8 @@ ___________________________
 - Click “Do not import settings”
 - Use standard setup
 - Wait for the download to finish
+- For the purposes of developing for this club an emulator is not needed.
+
 
 Project Setup
 ___________________
