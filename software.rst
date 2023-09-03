@@ -57,7 +57,10 @@ Contains all hardware setup and most subsystem configuration. Generally you wonâ
 Drive Systems
 _______________
 
-Drive Systems usually apply to a single motor.
+
+.. note::
+
+    We currently rely on a PID system.
 
 PID
 ^^^^^^
