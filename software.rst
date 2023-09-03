@@ -85,11 +85,11 @@ Feed Forward
 :math:`p(x, y)=K_a a(x, y) + K_v v(x, y)`
 
 Where
-:math:`p(x, y)` is the motor power at location (x, y)
-:math:`K_a` is a calibrated constant.
-:math:`K_v` is a calibrated constant.
-:math:`v(x, y)` is the velocity at location (x, y).
-:math:`a(x, y)` is the acceleration at location (x, y).
+* :math:`p(x, y)` is the motor power at location (x, y)
+* :math:`K_a` is a calibrated constant.
+* :math:`K_v` is a calibrated constant.
+* :math:`v(x, y)` is the velocity at location (x, y).
+* :math:`a(x, y)` is the acceleration at location (x, y).
 
 Feedforward gives a faster response than PID when correcting for errors because it doesn't require two iterations to make a desicion. However it does require predefined paths to follow for velocity and acceleration. A common implementation splines (roadrunner uses quintic splines) applied on vector field, which turn the spline into numerical values for velocity and acceleration, while also providing error correction.
 
