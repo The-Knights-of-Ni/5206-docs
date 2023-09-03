@@ -33,7 +33,8 @@ See :ref:`pid_section` and :ref:`move_vector` for more info.
 
 Vision
 ^^^^^^^^^
-The vision subsystem controls all things vision. This includes the vision challenge for the season. OpenCV is usually used.
+The vision subsystem controls all things vision. This includes the vision challenge for the season.
+OpenCV is usually used.
 
 **Vision Strategies**
 
@@ -76,9 +77,6 @@ desired end position of the motor. These are measured in ticks.
 
 Calculations are done separately for each motor, find the calculation class in ``Subsystems/Drive/PID.java``.
 
-<<<<<<< HEAD
-.. _move_vector:
-=======
 Feed Forward
 ^^^^^^^^^^^^^^^^^^^^^
 :math:`p(x, y)=K_a a(x, y) + K_v v(x, y)`
@@ -91,7 +89,6 @@ Where
 :math:`a(x, y)` is the acceleration at location (x, y).
 
 Feedforward gives a faster response than PID when correcting for errors because it doesn't require two iterations to make a desicion. However it does require predefined paths to follow for velocity and acceleration. A common implementation splines (roadrunner uses quintic splines) applied on vector field, which turn the spline into numerical values for velocity and acceleration, while also providing error correction.
->>>>>>> 7442107d15e227dba0b3663118243c894ec66d82
 
 Move Vector
 ____________
