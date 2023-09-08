@@ -2,21 +2,37 @@ Software Onboarding
 =========================
 Welcome to the software team! We’re glad to have you here.
 
-This tutorial will help you download, install, and set up the software tools needed to the help contribute to the FTC 5206 codebase.
+This tutorial will help you download, install, and set up the software tools needed to the help contribute to the 5206 codebase.
 One of our core values is inclusivity, so we want to make sure that anyone regardless of experience feels ready to participate.
 Therefore, we’ve split this guide into two sections.
 
 The first section describes how to install graphical versions of all the apps needed.
-Most new members will find this process easiest to follow and most convenient because it avoids the use of a terminal, which is a way to issue text-based commands to control a computer. Although the terminal is a widely useful tool that is used by programmers around the world, it is not necessary to use to participate in our team.
+Most new members will find this process easiest to follow and most convenient because it avoids the use of a terminal,
+which is a way to issue text-based commands to control a computer.
+Although the terminal is a widely useful tool that is used by programmers around the world, it is not necessary to use to participate in our team.
 
-If you are already comfortable with the terminal, the second section describes how to install all necessary programs, centering around terminal-based applications when possible.
-Make sure to follow the instructions for your specific operating system, as the methods used might change depending on that.
+If you are already comfortable with the terminal,
+the second section describes how to install all necessary programs,
+centering around terminal-based applications when possible.
+Make sure to follow the instructions for your specific operating system,
+as the methods used might change depending on that.
 
 During the software onboarding process, we will help you install two tools.
-The first is an Integrated Development Environment (IDE), which is a program that is used to write, debug, and deploy code. The IDE we’ll be using is called Android Studio, although you are free to choose another IDE if you’re already comfortable using one. The second tool is a program called Git, which is a Version Control Software (VCS) that we use to keep track of each member’s changes to the code.
-Throughout the instructions, we’ll provide several links to outside articles explaining how each of the tools we install work. We highly recommend that you carefully read each article, as the concepts explained there are fundamental to the operation of our team.
+The first is an Integrated Development Environment (IDE),
+which is a program that is used to write, debug, and deploy code.
+The IDE we’ll be using is called Android Studio, although you are free to choose another IDE if you’re already comfortable using one.
+The second tool is a program called Git, which is a Version Control Software (VCS) that we use to keep track of each member’s changes to the code.
+Throughout the instructions, we’ll provide several links to outside articles explaining how each of the tools we install work.
+We highly recommend that you carefully read each article, as the concepts explained there are fundamental to the operation of our team.
 
 If you have any questions at all during the onboarding process, don’t hesitate to contact Ashwin, Alessandro, or Ethan on Slack.
+
+.. admonition:: TL;DR
+
+    Install Android Studio and Git.
+    Create a GitHub account (or use your existing one) and send your username to either the Captain or the Software Lead.
+
+
 
 GitHub
 ___________
@@ -49,15 +65,44 @@ To install git visit https://git-scm.com/downloads.
 Git is a Version Control System (VCS) that is used keep everyone’s version of the code up to date.
 `Here <https://rogerdudler.github.io/git-guide/>`_ is a basic Git tutorial that should help get you started.
 https://www.vogella.com/tutorials/Git/article.html is a more in-depth tutorial.
+For those more technically inclined, Git has official `documentation <https://git-scm.com/doc>`_.
 
 IDE
 ^^^^^
 
-Link to download Android Studio, our main IDE: https://developer.android.com/studio/
+Android Studio, our main IDE: https://developer.android.com/studio/
+
+Extra Setup Instructions: https://developer.android.com/studio/install
+
+If you prefer a different IDE, IntelliJ IDEA is a good alternative: https://www.jetbrains.com/idea/
+
+
+Extra Setup Instructions: https://www.jetbrains.com/help/idea/installation-guide.html
+
+.. important::
+
+    To use IntellJ IDEA for android development, you will need an educational license,
+    you can get one here: https://www.jetbrains.com/community/education/
+    You should use your school email to apply for the license.
+
+.. warning::
+
+    If you are using IntelliJ IDEA, be sure to use the "Ultimate" version, not the "Community" version,
+    as only the "Ultimate" version has support for Android development.
+
 
 An IDE, or Integrated Development Environment, is an app that lets programmers code on a single interface.
 Basically, IDEs let you do all your coding in one space with features to streamline the process as much as possible.
 We use Android Studio because it is a base Java IDE that comes with all of the necessary additions to deploy code onto the robot.
+
+IntellJ Ultimate is a turbo charged version of Android studio with more features,
+but it requires you to complete the application process, which may have to be manually validated by JetBrains.
+
+.. note::
+
+    It may be useful to have Android Studio installed, even if you prefer to use IntelliJ IDEA.
+    Sometimes building and sdk management breaks on IntelliJ, so it is useful to have a backup IDE.
+
 
 Installation Instructions (Terminal)
 _______________________________________
@@ -66,7 +111,8 @@ Please follow the following instructions to install Android Studio and Git using
 We’ve provided separate instructions for Windows and Mac users, so make sure to follow the instructions for your specific operating system.
 Before we begin, make sure to read this warning.
 
-.. danger::
+.. admonition:: Careful!
+    :class: danger
 
     NEVER copy and paste scripts from the internet into your terminal. Doing so runs the risk of compromising your computer
     because it is possible for websites to inject malicious code that runs as soon as you paste it in.
@@ -84,29 +130,93 @@ and is generally safer and easier to use than ``.exe`` files because each progra
 Most modern Windows 10/11 systems should come with ``winget`` already installed. To check whether this is the case,
 open the Command Prompt by hitting ``Win+R`` and typing ``cmd`` at the prompt. Once you’re there, type the following command and hit ``Enter``:
 
-.. code::
+.. code:: none
 
     winget
 
-If you see an output with help text, ``winget`` is ready to go. If you see something else, install ``winget`` by installing the
+
+The entire thing should look like this:
+.. code:: none
+
+    Microsoft Windows [Version 10.0.22631.2265]
+    (c) Microsoft Corporation. All rights reserved.
+
+    C:\Users\[your username]>winget
+    Windows Package Manager v1.x.xxxx
+    Copyright (c) Microsoft Corporation. All rights reserved.
+
+    The winget command line utility enables installing applications and other packages from the command line.
+
+    usage: winget  [<command>] [<options>]
+
+    The following commands are available:
+      install    Installs the given package
+      show       Shows information about a package
+      source     Manage sources of packages
+      search     Find and show basic info of packages
+      list       Display installed packages
+      upgrade    Shows and performs available upgrades
+      uninstall  Uninstalls the given package
+      hash       Helper to hash installer files
+      validate   Validates a manifest file
+      settings   Open settings or set administrator settings
+      features   Shows the status of experimental features
+      export     Exports a list of the installed packages
+      import     Installs all the packages in a file
+      pin        Manage package pins
+
+    For more details on a specific command, pass it the help argument. [-?]
+
+    The following options are available:
+      -v,--version              Display the version of the tool
+      --info                    Display general info of the tool
+      -?,--help                 Shows help about the selected command
+      --wait                    Prompts the user to press any key before exiting
+      --logs,--open-logs        Open the default logs location
+      --verbose,--verbose-logs  Enables verbose logging for winget
+      --disable-interactivity   Disable interactive prompts
+
+    More help can be found at: https://aka.ms/winget-command-help
+
+    C:\Users\[your username here]>
+
+If you see an output that is similar to this, ``winget`` is ready to go. If you see something that looks like this:
+
+.. code:: none
+
+    C:\Users\[your username here]>winget
+    'winget' is not recognized as an internal or external command,
+    operable program or batch file.
+
+    C:\Users\[your username here]>
+
+
+Then install ``winget`` by installing the
 `App Installer <https://apps.microsoft.com/store/detail/app-installer/9NBLGGH4NNS1?hl=en-us&gl=us>`_ program, then close and reopen Command Prompt and try the above command again.
 
 Next, issue the following commands using ``winget`` in the command prompt (hit ``Enter`` after each line):
 
-.. code::
+.. code:: shell
 
     winget install -e --id Google.AndroidStudio
     winget install -e --id Git.Git
 
 
-If you would like to install IntelliJ IDEA, Visual Studio Code, or another IDE instead of Android Studio, use `this website <https://winget.run/>`_ to search for the relevant command, or download them from the official website directly.
+Alternative command for IntelliJ IDEA
+
+.. code:: shell
+
+    winget install -e --id JetBrains.IntelliJIDEA.Ultimate
+
+If you would like to install IntelliJ IDEA, Visual Studio Code, or another IDE instead of Android Studio,
+use `this website <https://winget.run/>`_ to search for the relevant command, or download them from the official website directly.
 
 Once you are done, setup Android Studio.
 
 Mac
 ^^^^^^^^^
 
-Open the app called “terminal”
+Open the app called “Terminal”
 
 Next type (or paste) the following into the terminal:
 
@@ -127,16 +237,23 @@ Next paste this text:
     brew install git
     brew install --cask android-studio
 
-Next setup Android Studio.
+Now setup Android Studio.
 
 Setting up Android Studio
 ___________________________
 
 - Open Android Studio
 - Click “Do not import settings”
-- Use standard setup
-- Wait for the download to finish
-- For the purposes of developing for this club an emulator is not needed.
+- Use standard setup (click next and accept licenses as needed)
+- Wait for the downloads to finish
+
+.. note::
+
+    For the purposes of developing for this club an android emulator is not needed.
+
+.. seealso::
+
+    Check out https://developer.android.com/studio/install for more detailed instructions.
 
 
 Project Setup
@@ -144,7 +261,12 @@ ___________________
 
 1. Open Android Studio
 2. Click “Get from VCS”
-3. Use https://github.com/The-Knights-of-Ni/PowerPlay/ for the url.
+3. Use https://github.com/The-Knights-of-Ni/CenterStage.git for the url.
+
+.. admonition:: Git URL
+    :class: important
+
+    The above url changes from year to year, so make sure to use the correct one.
 
 .. image:: ../images/AndroidStudioStartPage.png
 
@@ -167,7 +289,7 @@ ___________________
 Working with the Code
 ___________________________
 
-Make the appropriate changes to the code and then click the green check mark on the top right hand side of your screen to commit the changes
+Make the appropriate changes to the code and then click the green check mark on the top right hand side of your screen to commit the changes.
 
 .. image:: ../images/AndroidStudioCommit.png
 
