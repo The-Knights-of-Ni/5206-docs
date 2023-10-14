@@ -49,7 +49,7 @@ https://github.com/signup
 
 GitHub is an internet hosting service that allows programmers to store, manage, track and control their code using Git.
 Effectively, it lets you store code online in an easier way that allows many people to collaborate.
-We host all our code in an "orginization" called "The-Knights-of-Ni" (https://github.com/The-Knights-of-Ni/).
+We host all our code in an "organization" called "The-Knights-of-Ni" (https://github.com/The-Knights-of-Ni/).
 
 Optionally, you can install GitHub Desktop to simplify using git `from the website <https://desktop.github.com/>`_.
 Or ``brew install --cask github`` on macs, or ``winget install -e --id GitHub.GitHubDesktop`` on windows.
