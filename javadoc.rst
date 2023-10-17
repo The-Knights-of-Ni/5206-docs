@@ -1153,8 +1153,16 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.Controller.HolonomicVAController
   
 org.firstinspires.ftc.teamcode.Subsystems.Drive.Controller.PositionController
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. class:: PositionController
+  
+  
 org.firstinspires.ftc.teamcode.Subsystems.Drive.Controller.VAController
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. class:: VAController
+  
+  
 QuinticSpline1D.java
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1299,8 +1307,16 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.Localizer.MecanumLocalizer
   
 org.firstinspires.ftc.teamcode.Subsystems.Drive.MotionProfile.MotionProfile
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. class:: MotionProfile
+  
+  
 org.firstinspires.ftc.teamcode.Subsystems.Drive.MotionProfile.MotionProfile1D
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. class:: MotionProfile1D
+  
+  
 org.firstinspires.ftc.teamcode.Subsystems.Drive.MotionProfile.MotionProfileOutput
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1512,6 +1528,10 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.Targeter.StaticTargeter
   
 org.firstinspires.ftc.teamcode.Subsystems.Drive.Targeter.Targeter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. class:: Targeter
+  
+  
 org.firstinspires.ftc.teamcode.Subsystems.Vision.AprilTagDetectionThread
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2001,6 +2021,10 @@ org.firstinspires.ftc.teamcode.Subsystems.Web.Canvas.CanvasLayer
   
 org.firstinspires.ftc.teamcode.Subsystems.Web.Canvas.CanvasObject
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. class:: CanvasObject
+  
+  
 org.firstinspires.ftc.teamcode.Subsystems.Web.Canvas.CanvasPixel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
