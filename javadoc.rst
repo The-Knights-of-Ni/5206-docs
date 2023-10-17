@@ -211,6 +211,7 @@ org.firstinspires.ftc.teamcode.Auto.AutoBlueLeft
   .. function:: runOpMode()
     
     
+    :throws: InterruptedException
   
 org.firstinspires.ftc.teamcode.Auto.AutoBlueRight
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -222,6 +223,7 @@ org.firstinspires.ftc.teamcode.Auto.AutoBlueRight
   .. function:: runOpMode()
     
     
+    :throws: InterruptedException
   
 org.firstinspires.ftc.teamcode.Auto.AutoRedLeft
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -233,6 +235,7 @@ org.firstinspires.ftc.teamcode.Auto.AutoRedLeft
   .. function:: runOpMode()
     
     
+    :throws: InterruptedException
   
 org.firstinspires.ftc.teamcode.Auto.AutoRedRight
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -244,6 +247,7 @@ org.firstinspires.ftc.teamcode.Auto.AutoRedRight
   .. function:: runOpMode()
     
     
+    :throws: InterruptedException
   
 org.firstinspires.ftc.teamcode.Geometry.Circle
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1970,11 +1974,13 @@ org.firstinspires.ftc.teamcode.Subsystems.Web.WebThread
   .. function:: WebThread()
     
     
+    :throws: IOException
   
 
   .. function:: WebThread(int port)
     
     
+    :throws: IOException
     :param port: No Description
     
     :type port: int
@@ -2035,6 +2041,7 @@ org.firstinspires.ftc.teamcode.Subsystems.Web.WebThread
   .. function:: readHeaders(InputStreamReader reader)
     
     
+    :throws: IOException
     :param reader: No Description
     
     :type reader: InputStreamReader
@@ -2055,6 +2062,7 @@ org.firstinspires.ftc.teamcode.Subsystems.Web.WebThread
   .. function:: invalidMethod(String method)
     
     
+    :throws: WebError
     :param method: No Description
     
     :type method: String
@@ -2073,6 +2081,7 @@ org.firstinspires.ftc.teamcode.Subsystems.Web.WebThread
   .. function:: handleRequest(Request req)
     
     
+    :throws: WebError
     :param req: No Description
     
     :type req: Request
@@ -2374,6 +2383,7 @@ org.firstinspires.ftc.teamcode.Subsystems.Web.Server.Request
   .. function:: Request(String text)
     
     
+    :throws: WebError
     :param text: No Description
     
     :type text: String
@@ -2502,7 +2512,8 @@ org.firstinspires.ftc.teamcode.Teleop.Teleop
 
   .. function:: runOpMode()
     
-    Override of runOpMode()
+    
+    :throws: InterruptedExceptionOverride of runOpMode()
     Please do not swallow the InterruptedException, as it is used in cases where the op mode
     needs to be terminated early.
     
@@ -2611,7 +2622,8 @@ org.firstinspires.ftc.teamcode.Testop.IMUDirectionalTest
 
   .. function:: runOpMode()
     
-    Override of runOpMode()
+    
+    :throws: InterruptedExceptionOverride of runOpMode()
     Please do not swallow the InterruptedException, as it is used in cases where the op mode
     needs to be terminated early.
     
@@ -2626,7 +2638,8 @@ org.firstinspires.ftc.teamcode.Testop.Drive.BackwardDriveTest
 
   .. function:: runOpMode()
     
-    Override of runOpMode()
+    
+    :throws: InterruptedExceptionOverride of runOpMode()
     Please do not swallow the InterruptedException, as it is used in cases where the op mode
     needs to be terminated early.
     
@@ -2641,7 +2654,8 @@ org.firstinspires.ftc.teamcode.Testop.Drive.CurvedStrafeDriveTest
 
   .. function:: runOpMode()
     
-    Override of runOpMode()
+    
+    :throws: InterruptedExceptionOverride of runOpMode()
     Please do not swallow the InterruptedException, as it is used in cases where the op mode
     needs to be terminated early.
     
@@ -2656,7 +2670,8 @@ org.firstinspires.ftc.teamcode.Testop.Drive.ForwardDriveTest
 
   .. function:: runOpMode()
     
-    Override of runOpMode()
+    
+    :throws: InterruptedExceptionOverride of runOpMode()
     Please do not swallow the InterruptedException, as it is used in cases where the op mode
     needs to be terminated early.
     
@@ -2671,7 +2686,8 @@ org.firstinspires.ftc.teamcode.Testop.Drive.PurePursuit
 
   .. function:: runOpMode()
     
-    Override of runOpMode()
+    
+    :throws: InterruptedExceptionOverride of runOpMode()
     Please do not swallow the InterruptedException, as it is used in cases where the op mode
     needs to be terminated early.
     
@@ -2686,7 +2702,8 @@ org.firstinspires.ftc.teamcode.Testop.Drive.StrafeDriveTest
 
   .. function:: runOpMode()
     
-    Override of runOpMode()
+    
+    :throws: InterruptedExceptionOverride of runOpMode()
     Please do not swallow the InterruptedException, as it is used in cases where the op mode
     needs to be terminated early.
     
@@ -2701,7 +2718,8 @@ org.firstinspires.ftc.teamcode.Testop.Drive.TurnDriveTest
 
   .. function:: runOpMode()
     
-    Override of runOpMode()
+    
+    :throws: InterruptedExceptionOverride of runOpMode()
     Please do not swallow the InterruptedException, as it is used in cases where the op mode
     needs to be terminated early.
     
@@ -2716,7 +2734,8 @@ org.firstinspires.ftc.teamcode.Testop.Drive.VectorDriveTest
 
   .. function:: runOpMode()
     
-    Override of runOpMode()
+    
+    :throws: InterruptedExceptionOverride of runOpMode()
     Please do not swallow the InterruptedException, as it is used in cases where the op mode
     needs to be terminated early.
     
@@ -2731,7 +2750,8 @@ org.firstinspires.ftc.teamcode.Testop.Drive.VectorDriveTest2
 
   .. function:: runOpMode()
     
-    Override of runOpMode()
+    
+    :throws: InterruptedExceptionOverride of runOpMode()
     Please do not swallow the InterruptedException, as it is used in cases where the op mode
     needs to be terminated early.
     
@@ -3224,7 +3244,8 @@ org.firstinspires.ftc.teamcode.Util.Vector
 
   .. function:: Vector(double v)
     
-    Simple constructor.
+    
+    :throws: DimensionMismatchExceptionSimple constructor.
     Build a vector from its coordinates
     
     :param v: coordinates array
