@@ -1157,11 +1157,44 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.Controller.PositionController
 .. class:: PositionController
   
   
+
+  .. function:: calculate(Pose current, Pose target)
+    
+    
+    :param current: No Description
+    
+    :param target: No Description
+    
+    :type current: Pose
+    
+    :type target: Pose
+    
+    :rtype: ControllerOutput
+  
+
+  .. function:: resetHeadingPID()
+    
+    
+  
 org.firstinspires.ftc.teamcode.Subsystems.Drive.Controller.VAController
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. class:: VAController
   
+  
+
+  .. function:: calculate(double heading, MotionProfileOutput targetPose)
+    
+    
+    :param heading: No Description
+    
+    :param targetPose: No Description
+    
+    :type heading: double
+    
+    :type targetPose: MotionProfileOutput
+    
+    :rtype: ControllerOutput
   
 QuinticSpline1D.java
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1311,11 +1344,51 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.MotionProfile.MotionProfile
 .. class:: MotionProfile
   
   
+
+  .. function:: calculate(double time)
+    
+    
+    :param time: No Description
+    
+    :type time: double
+    
+    :rtype: MotionProfileOutput
+  
+
+  .. function:: isFinished(double time)
+    
+    
+    :param time: No Description
+    
+    :type time: double
+    
+    :rtype: boolean
+  
 org.firstinspires.ftc.teamcode.Subsystems.Drive.MotionProfile.MotionProfile1D
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. class:: MotionProfile1D
   
+  
+
+  .. function:: calculate(double time)
+    
+    
+    :param time: No Description
+    
+    :type time: double
+    
+    :rtype: MotionProfileOutput1D
+  
+
+  .. function:: isFinished(double time)
+    
+    
+    :param time: No Description
+    
+    :type time: double
+    
+    :rtype: boolean
   
 org.firstinspires.ftc.teamcode.Subsystems.Drive.MotionProfile.MotionProfileOutput
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1531,6 +1604,26 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.Targeter.Targeter
 
 .. class:: Targeter
   
+  
+
+  .. function:: getTarget(Pose currentPosition)
+    
+    
+    :param currentPosition: No Description
+    
+    :type currentPosition: Pose
+    
+    :rtype: Pose
+  
+
+  .. function:: reachedTarget(Pose currentPosition)
+    
+    
+    :param currentPosition: No Description
+    
+    :type currentPosition: Pose
+    
+    :rtype: boolean
   
 org.firstinspires.ftc.teamcode.Subsystems.Vision.AprilTagDetectionThread
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2024,6 +2117,12 @@ org.firstinspires.ftc.teamcode.Subsystems.Web.Canvas.CanvasObject
 
 .. class:: CanvasObject
   
+  
+
+  .. function:: getPixels()
+    
+    
+    :rtype: List
   
 org.firstinspires.ftc.teamcode.Subsystems.Web.Canvas.CanvasPixel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
