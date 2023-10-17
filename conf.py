@@ -70,4 +70,10 @@ html_theme_options = {
             "class": "",
         },
     ],
+    "light_css_variables": {
+        "color-brand-primary": "#8C1515",
+        "color-brand-content": "#820000",
+    },
+    "source_repository": "https://github.com/The-Knights-of-Ni/5206-docs/",
+    "source_branch": "main"
 }
