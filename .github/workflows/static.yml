@@ -30,7 +30,7 @@ jobs:
       run: |
           python3 -m venv venv
           source venv/bin/activate
-          pip install sphinx furo
+          pip install sphinx furo javaparser
           make html
     - uses: actions/upload-artifact@v3
       with:
