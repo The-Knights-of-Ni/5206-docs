@@ -136,6 +136,7 @@ open the Command Prompt by hitting ``Win+R`` and typing ``cmd`` at the prompt. O
 
 
 The entire thing should look like this:
+
 .. code:: none
 
     Microsoft Windows [Version 10.0.22631.2265]
@@ -282,7 +283,9 @@ ___________________
     Program: $ModuleSdkPath$/platform-tools/adb
     Arguments: connect 192.168.43.1:5555
     Working Directory: $ProjectFileDir$
-    Then click done.
+
+
+Then click done.
 
 .. image:: ../images/AndroidStudioADBExternalTool.png
 
