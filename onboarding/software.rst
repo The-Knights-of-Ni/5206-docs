@@ -287,12 +287,12 @@ ___________________
 
 Then click done.
 
-.. image:: ../images/AndroidStudioADBExternalTool.png
-
 .. note::
 
         This last part is only needed for onsite members.
 
+
+.. image:: ../images/AndroidStudioADBExternalTool.png
 
 Working with the Code
 ___________________________

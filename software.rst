@@ -73,20 +73,32 @@ Vision
 The vision subsystem controls all things vision. This includes the vision challenge for the season.
 OpenCV is used, as there is no viable alternative (Vuforia is no longer supported and see below for tensorflow-lite).
 
-**Vision Strategies**
+Vision Strategies
+~~~~~~~~~~~~~~~~~~~~~~
 
-*Contour detection* is a vision detection strategy.
-It checks the image for edges (with an Open-CV algorithm) and returns a list of edges that can be summed up.
-To eliminate noise, thresholds are used as a preprocessing strategy.
+Single Object, Multiple Locations
+***********************************
 
-*Thresholds* simply check a Mat (the matrix representation of an image) for the amount of a certain color they have.
-Usually they are paired with contour detection, but occasionally they can be used effectively by themselves.
+Use a threshold to isolate the object.
+Then find the largest contour area and use that to determine the location of the object.
 
-*Object Detection* uses ML to detect objects on the field.
-It hasn't been implemented successfully by this team and should be reserved for auxiliary vision tasks
-due to high resources requirements and low performance as well as unreliable outputs.
+**Technical Details**
+1. Use Gaussian Blur to remove noise (optional)
+2. Convert to HSV
+3. Core.inRange() to isolate the object
+4. Use Imgproc.findContours() to find the contours of the object
+5. See PowerPlay code if you're using color summing
 
-*April Tags* are used for robot position correction, and target detection, as FIRST uses them.
+Single Object, Single Location
+***********************************
+
+... Why would you need vision for this?
+*April Tags* have known locations and unique ids, and you could determine the robot's location from one.
+
+Multiple Objects, Multiple Locations
+***************************************
+Use a threshold to isolate the objects.
+Then use the list of contour areas to get the locations of the objects; use April Tags to find absolute position if necessary.
 
 Robot.java
 ___________
@@ -160,6 +172,11 @@ Motion Profiling
 Motion Profiles define a target velocity and acceleration.
 The advantage of doing this is a reduction of slippage, as acceleration can be limited.
 The simplest type of motion profile is a trapezoidal motion profile, which has a constant acceleration and deceleration.
-More complex motion profiles, such as quintic splines, can be used to follow a curved path.
 
 See also: https://www.ctrlaltftc.com/advanced/motion-profiling
+
+Quintic Splines
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Road Runner uses quintic splines to generate motion profiles. The quintic splines represent the location of the robot.
+Road Runner takes the first and second derivatives of the quintic splines to generate the motion profile.
