@@ -6,7 +6,7 @@ This tutorial will help you download, install, and set up the software tools nee
 One of our core values is inclusivity, so we want to make sure that anyone regardless of experience feels ready to participate.
 Therefore, we’ve split this guide into two sections.
 
-The first section describes how to install graphical versions of all the apps needed.
+The first section describes how to install graphical (GUI) versions of all the apps needed.
 Most new members will find this process easiest to follow and most convenient because it avoids the use of a terminal,
 which is a way to issue text-based commands to control a computer.
 Although the terminal is a widely useful tool that is used by programmers around the world, it is not necessary to use to participate in our team.
@@ -52,7 +52,7 @@ Effectively, it lets you store code online in an easier way that allows many peo
 We host all our code in an "organization" called "The-Knights-of-Ni" (https://github.com/The-Knights-of-Ni/).
 
 Optionally, you can install GitHub Desktop to simplify using git `from the website <https://desktop.github.com/>`_.
-Or ``brew install --cask github`` on macs, or ``winget install -e --id GitHub.GitHubDesktop`` on windows.
+Terminal users can use ``brew install --cask github`` on macs, or ``winget install -e --id GitHub.GitHubDesktop`` on windows.
 
 Installation Instructions (No Terminal)
 _________________________________________
@@ -288,6 +288,11 @@ ___________________
 Then click done.
 
 .. image:: ../images/AndroidStudioADBExternalTool.png
+
+.. note::
+
+        This last part is only needed for onsite members.
+
 
 Working with the Code
 ___________________________
