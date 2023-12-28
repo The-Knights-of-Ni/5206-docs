@@ -65,7 +65,7 @@ To install git visit https://git-scm.com/downloads.
 Git is a Version Control System (VCS) that is used keep everyone’s version of the code up to date.
 `Here <https://rogerdudler.github.io/git-guide/>`_ is a basic Git tutorial that should help get you started.
 https://www.vogella.com/tutorials/Git/article.html is a more in-depth tutorial.
-For those more technically inclined, Git has official `documentation <https://git-scm.com/doc>`_.
+For those more technically inclined, Git has `official documentation <https://git-scm.com/doc>`_.
 
 IDE
 ^^^^^
@@ -304,3 +304,7 @@ Make the appropriate changes to the code and then click the green check mark on 
 Next write a message accurately summarizing the changes you have made to the code so that others can check at a glance what you did.
 
 Finally click “Commit and Push” and use the default options.
+
+.. note::
+
+        This last step might require you to login with your GitHub credentials.
