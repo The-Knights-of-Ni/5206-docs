@@ -9,20 +9,10 @@ and it is divided into multiple files for readability and usability.
    :maxdepth: 1
    :caption: Contents:
 
+   software/debugging
+   software/build_systems
    javadoc
 
-Boring Build and Java System Info
-_____________________________________
-
-We the highest SDK version we can use is Android SDK version 25 (because the control hub runs that)
-so the minimum sdk version is limited to that.
-The compile SDK version can be as high as you'd like it to, as can gradle, java and, AGP.
-
-.. note::
-
-    If you want to add dependencies, use ``TeamCode/build.gradle``, it is rare that you have to touch another
-    gradle or build file
-    (unless you are upgrading FIRST dependencies, which sometimes have mid-season updates, or upgrading sdk versions/gradle/AGP).
 
 
 SDK and Dependency Information
