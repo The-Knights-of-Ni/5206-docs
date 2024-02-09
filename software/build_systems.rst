@@ -10,7 +10,7 @@ The real app (i.e. the android activity) is stored in `FtcRobotController`. This
 
 .. danger::
 
-    Do not modify the `FtcRobotController` project. This is legal, but the benefits of doing this are dubious.
+    Do not modify the `FtcRobotController` project. This is permitted by FIRST, but the benefits of doing this are dubious.
 
 Concepts
 ^^^^^^^^^^^^^
@@ -26,7 +26,7 @@ The web logs should output the SDK version of the control hub on initialization.
 
 .. note::
 
-    The SDK location is stored in `local.properties`.
+    The SDK installation location is stored in `local.properties`.
 
 Files
 ^^^^^^^^^^^^^^^
@@ -38,7 +38,7 @@ Files
 - `TeamCode/build.gradle`: The build file for the `TeamCode` project. This file is used to configure the `TeamCode` project. Any project specific modifications should be put here.
 
 Dependencies
-_____________________
+------------------
 
 SDK
 ^^^^^^^
