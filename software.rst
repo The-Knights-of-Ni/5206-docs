@@ -14,27 +14,6 @@ and it is divided into multiple files for readability and usability.
    javadoc
 
 
-
-SDK and Dependency Information
-____________________________________
-
-We use the FTC SDK, which is used for controlling the robot and talking to the driver station.
-
-`FTC SDK Documentation <https://javadoc.io/doc/org.firstinspires.ftc>`_
-
-`FTC SDK Examples <ttps://github.com/FIRST-Tech-Challenge/FtcRobotController/tree/master/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples>`_
-
-Some FTC SDK APIs, such as the Servo API, are underdeveloped, therefore we use the FTCLib API as a replacement.
-
-`FTCLib Documentation <https://docs.ftclib.org/ftclib/v/v2.0.0/>`_
-
-`FTCLib Examples <https://github.com/FTCLib/FTCLib/tree/master/examples>`_
-
-.. note::
-
-        We use ftclib mainly for the servo API, so we copied the class out and it is now located in the util folder as ``ServoEx``.
-
-
 Op Modes
 ______________
 
@@ -170,3 +149,8 @@ Quintic Splines
 
 Road Runner uses quintic splines to generate motion profiles. The quintic splines represent the location of the robot.
 Road Runner takes the first and second derivatives of the quintic splines to generate the motion profile.
+
+Useful Tools
+___________________
+
+`scrcpy <https://github.com/Genymobile/scrcpy>`_
