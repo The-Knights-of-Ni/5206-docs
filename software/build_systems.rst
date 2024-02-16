@@ -73,6 +73,6 @@ We use OpenCV for the vision challenge via EasyOpenCV.
 `EasyOpenCV Javadoc <https://javadoc.io/doc/org.openftc/easyopencv/1.5.1/index.html>`_
 
 Apache Commons Math & Geometry
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mainly used for vector math.

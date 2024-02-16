@@ -510,8 +510,8 @@ class JavaDomain(Domain):
         type_context = node.get('java:outertype')
 
         # Partial function to make building the response easier
-        make_ref = lambda fullname: make_refnode(builder, fromdocname, objects[fullname][0], fullname, contnode,
-                                                 fullname)
+        make_ref = lambda full_name: make_refnode(builder, fromdocname, objects[full_name][0], full_name, contnode,
+                                                  full_name)
 
         # Check for fully qualified references
         if target in objects:
@@ -569,9 +569,9 @@ class JavaDomain(Domain):
 def _create_indexnode(indextext, fullname):
     # See https://github.com/sphinx-doc/sphinx/issues/2673
     if version_info < (1, 4):
-        return ('single', indextext, fullname, '')
+        return 'single', indextext, fullname, ''
     else:
-        return ('single', indextext, fullname, '', None)
+        return 'single', indextext, fullname, '', None
 
 
 def setup(app):
