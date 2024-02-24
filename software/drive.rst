@@ -27,10 +27,6 @@ Localizer
 
 The localizer gets a velocity and heading vector and updates the motor powers.
 
-Legacy
-^^^^^^^^^^^^^^^^^^^^
-`OldDrive.java` will have the legacy, single-file, drive system.
-
 Terminology
 ___________________
 

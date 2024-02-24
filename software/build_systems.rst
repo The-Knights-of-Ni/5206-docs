@@ -10,7 +10,7 @@ The real app (i.e. the android activity) is stored in `FtcRobotController`. This
 
 .. danger::
 
-    Do not modify the `FtcRobotController` project. This is permitted by FIRST, but the benefits of doing this are dubious.
+    Do not modify the `FtcRobotController` project. This is permitted by FIRST, but the benefits of doing this are practically nonexistent.
 
 Concepts
 ^^^^^^^^^^^^^
@@ -60,7 +60,7 @@ Some FTC SDK APIs, such as the Servo API, are underdeveloped, therefore we use t
 
 .. note::
 
-        We use ftclib mainly for the servo API, so we copied the class out and it is now located in the util folder as ``ServoEx``.
+        We used ftclib mainly for the servo API, so we copied the class out and it is now located in the util folder as ``ServoEx``. Thus, we do not add it as a Gradle dependency anymore.
 
 
 OpenCV

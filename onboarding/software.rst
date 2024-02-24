@@ -88,7 +88,8 @@ Extra Setup Instructions: https://www.jetbrains.com/help/idea/installation-guide
 .. warning::
 
     If you are using IntelliJ IDEA, be sure to use the "Ultimate" version, not the "Community" version,
-    as only the "Ultimate" version has support for Android development.
+    as only the "Ultimate" version has support for Android development. The only way to obtain said "Ultimate"
+    edition is to apply for the aformentioned license.
 
 
 An IDE, or Integrated Development Environment, is an app that lets programmers code on a single interface.
@@ -275,6 +276,20 @@ ___________________
 5. The repo will open and load the Read Me.
 6. Go to your Android Studio settings (File>Settings), go to Tools>External Tools click the plus button, then fill it out with this:
 
+Windows:
+
+.. code:: none
+
+    Name: HUB connect over Wifi Direct
+    Group: External tools
+    Description: N/A
+    Program: $ModuleSdkPath$/platform-tools/.\adb
+    Arguments: connect 192.168.43.1:5555
+    Working Directory: $ProjectFileDir$
+
+
+Other (Mac, Linux):
+
 .. code:: none
 
     Name: HUB connect over Wifi Direct
@@ -289,10 +304,16 @@ Then click done.
 
 .. note::
 
-        This last part is only needed for onsite members.
-
-
 .. image:: ../images/AndroidStudioADBExternalTool.png
+
+7. New UI setup: Again, go to your Android Studio or IntelliJ IDEA settings (File>Settings), go to Appearance and Behavior>New UI, then check the box next to ``New UI``. Restart the IDE when prompted.
+
+.. note::
+
+        This part is an optional quality-of-life improvement.
+
+.. image:: ../images/EnablingNewUI.png
+
 
 Working with the Code
 ___________________________
