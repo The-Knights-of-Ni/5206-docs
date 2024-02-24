@@ -14,9 +14,9 @@ two types: wheel and surgical tubing
 Claw
 ________
 
-hihi
+claw
 
 Rotating Wheel
 ________________
 
-hh
+wheel
