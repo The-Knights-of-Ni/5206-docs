@@ -7,17 +7,17 @@ Tank Drive
 _________
 
 A tank drive utilizes wheels driven by motors, with varying motor speeds to turn. Usually, we utilize 4 motors for drive, so there are different ways to implement wheels. 
-1. Pusher: uses 2 wheels at the back to drive the front two wheels (kinda like a 2wd car)
-2. 4WD: Uses 4 wheels, each with their own motor. 
-3. More wheel drive: Basically the same but with more wheels linked by chains or belts or gears idk
+    1. Pusher: uses 2 wheels at the back to drive the front two wheels (kinda like a 2wd car)
+    2. 4WD: Uses 4 wheels, each with their own motor. 
+    3. More wheel drive: Basically the same but with more wheels linked by chains or belts or gears idk
 
 ***Pros:***
-1. Good Traction
-2. Simplest to build
+    1. Good Traction
+    2. Simplest to build
 
 ***Cons:***
-1. Can only move forward and backwards quickly
-2. Needs more time and space to turn
+    1. Can only move forward and backwards quickly
+    2. Needs more time and space to turn
 
 Mecanum / Holonomic Drive
 _________
@@ -26,28 +26,28 @@ A mecanum drive system utilizes the same chassis as the tank drive, but instead 
 This allows the motors to turn at different speeds to move in any direction. Unfortunately, becuase it is wheel on wheel, it loses traction and acceleration. 
 
 ***Pros:***
-1. Relatively simple to build
-2. More degrees of movement
+    1. Relatively simple to build
+    2. More degrees of movement
 
 ***Cons:***
-1. Loses Traction
-2. Harder to code (maybe)
+    1. Loses Traction
+    2. Harder to code (maybe)
 
 Swerve Drive (very experimental)
 _________
 
 Swerve Drive is a self-designed mechanism to allow most complicated maneuvering (such as turning and moving in a parabolic pattern), because each wheel is individually turnable. This is mainly utilized in FRC, because they do not have an 8 motor limit. 
 There are two types of swerve drive: 
-1. Coaxial (Uses one motor to turn and one motor to drive)
-2. Differential (Uses both motors to turn and drive, using different combinations of gears.)
+    1. Coaxial (Uses one motor to turn and one motor to drive)
+    2. Differential (Uses both motors to turn and drive, using different combinations of gears.)
 
 ***Pros:***
-1. Good maneuvering
-2. Good traction
+    1. Good maneuvering
+    2. Good traction
 
 ***Cons:***
-1. Hard to make and you have to make it urself
-2. Hard to code 
+    1. Hard to make and you have to make it urself
+    2. Hard to code 
 
 Update on current situation: 
 _________
