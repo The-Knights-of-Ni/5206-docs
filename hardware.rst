@@ -7,3 +7,4 @@ Hardware
 
    hardware/mechanisms
    hardware/parts_we_use
+   hardware/drive
