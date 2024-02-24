@@ -27,3 +27,4 @@ The secondary scoring mechanism encompasses anything that is not the primary sco
     - Parking: Parking at different locations to score points. 
     - Hanging: Suspending by the trusses or another place to get more points :d 
     - Misc.: Mechanisms such as a paper airplane launcher scores more points, but are usually unrelated to the main scoring mechanism. 
+
