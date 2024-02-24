@@ -276,6 +276,20 @@ ___________________
 5. The repo will open and load the Read Me.
 6. Go to your Android Studio settings (File>Settings), go to Tools>External Tools click the plus button, then fill it out with this:
 
+Windows:
+
+.. code:: none
+
+    Name: HUB connect over Wifi Direct
+    Group: External tools
+    Description: N/A
+    Program: $ModuleSdkPath$/platform-tools/.\adb
+    Arguments: connect 192.168.43.1:5555
+    Working Directory: $ProjectFileDir$
+
+
+Other (Mac, Linux):
+
 .. code:: none
 
     Name: HUB connect over Wifi Direct
@@ -289,9 +303,6 @@ ___________________
 Then click done.
 
 .. note::
-
-        This part is only needed for onsite members.
-
 
 .. image:: ../images/AndroidStudioADBExternalTool.png
 
