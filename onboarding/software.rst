@@ -335,7 +335,7 @@ Finally click “Commit and Push” and use the default options.
 
 Terminal
 ^^^^^^^^^
-Make the appropriate changes to the code and then open your terminal in Android Studio.
+Make the appropriate changes to the code and then open your terminal in Android Studio/IntelliJ IDEA.
 
 .. image:: ../images/OpenTerminalIntelliJ.png
 
