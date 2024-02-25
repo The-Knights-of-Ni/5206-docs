@@ -318,6 +318,9 @@ Then click done.
 Working with the Code
 ___________________________
 
+No Terminal (Recommended for Beginners)
+^^^^^^^^^
+
 Make the appropriate changes to the code and then click the green check mark on the top right hand side of your screen to commit the changes.
 
 .. image:: ../images/AndroidStudioCommit.png
@@ -329,3 +332,21 @@ Finally click “Commit and Push” and use the default options.
 .. note::
 
         This last step might require you to login with your GitHub credentials.
+
+Terminal
+^^^^^^^^^
+Make the appropriate changes to the code and then open your terminal in Android Studio.
+
+.. image:: ../images/OpenTerminalIntelliJ.png
+
+Next, with ``YOUR_COMMIT_MESSAGE`` being an accurate description of the changes you made to the code, type the commands
+
+.. code:: none
+
+    git commit -a -m "YOUR_COMMIT_MESSAGE"
+    git push
+
+.. note::
+
+        This last step might require you to login with your GitHub credentials. If so, please
+        contact either Alessandro or Ashwin for help.
