@@ -60,9 +60,9 @@ When using Create, you can choose from the following:
     11. Project
 
 For 1-6, they basically just create different shapes, each taking different parameters and integers. For patterns, it takes a sketch and creates a pattern either in a circular form or a rectangular one (dual axis). For mirrors, it reflects a sketch object (created in 1-7) across an axis or another line. For dimensions, this is useful for changing the distance between sketch lines or sketch objects. For 3D sketches, please do not use these. They are very imprecise and are typically only used for single lines to connect objects. 
-|
+
 | The next step for sketches is constraints. I will not list the constraints (see documentation `here <https://help.autodesk.com/view/fusion360/ENU/?guid=SKT-CONSTRAINTS>`_.) They are mainly used for making sketches behave as you would like when changing parameters. When a sketch line turns black, it means it is fully constrained. Additionally, sometimes constraints are automatically generated (such as parallel constraints when creating a rectangle), which could be useful. 
-|
+
 | My favorite feature is project. As the name implies, it projects a sketch from another surface onto the current sketch plane. This is useful for referencing things such as holes on COTS or need to align something to another feature. 
 
 Finally, the modify feature is similar to modifying a body, except it does it to the sketch. 
