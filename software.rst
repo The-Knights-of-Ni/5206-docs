@@ -11,7 +11,7 @@ and it is divided into multiple files for readability and usability.
 
    software/debugging
    software/build_systems
-   javadoc
+   software/javadoc
    software/op_modes
    software/subsystems
    software/drive
