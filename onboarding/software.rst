@@ -319,7 +319,7 @@ Working with the Code
 ___________________________
 
 No Terminal (Recommended for Beginners)
-^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Make the appropriate changes to the code and then click the green check mark on the top right hand side of your screen to commit the changes.
 
@@ -349,4 +349,10 @@ Next, with ``YOUR_COMMIT_MESSAGE`` being an accurate description of the changes 
 .. note::
 
         This last step might require you to login with your GitHub credentials. If so, please
-        contact either Alessandro or Ashwin for help.
+        contact either Alessandro or Ashwin for help. GitHub does **not** allow you to login via the terminal git interface.
+
+
+.. note::
+
+        I (Ashwin) would recommend looking at a git tutorial and using the terminal.
+        However, I find that using the GUI is easier when writing commit messages
