@@ -57,3 +57,7 @@ When thinking about utilizing the 3D Printer it is important to consider two thi
 - For this process make sure that you have a PrusaSlicer file with exact measurements while also keeping in mind factors like size  and material/time used.
 
 (FURTHER NOTES ON THIS MATTER WILL BE ADDED AFTER CONFERRING WITH THOMAS AND DIRECT USE OF THE 3D PRINTER).
+
+Next Steps
+------------------
+- :ref:`Design Basics`

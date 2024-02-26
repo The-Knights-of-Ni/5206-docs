@@ -9,7 +9,7 @@ The control subsystem controls.
 Drive
 ------------
 The drive subsystem controls the drive train of the robot.
-See :ref:`pid_section` and :ref:`move_vector` for more info.
+See :ref:`pid_section` and :ref:`Drive Systems` for more info.
 
 Vision
 ------------
