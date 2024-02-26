@@ -27,8 +27,8 @@ Below is the typical workflow for creating a design.
     5. Joints and assemblies
 
 | In Fusion, we utilize things called "parameters" to be able to change different lengths / distances quickly. This is good for making edits later on in the project. Basically, when you are creating a feature, there is a dialogue box, in which you can enter things in the format of *'variable'=int*, with the variable being any string, and integer being any integer corresponding to the type of parameter (i.e. mm/in/m, etc. for LWH, and deg/rad for angles.). EX: "length=50", "angle=30deg"
-
-*When designing, it is important to keep in mind the material you are working with. For 3D printed parts, please think about what orientation you plan on printing it in, remembering to minize overhangs (3d printers cant print on air!). Small holes are fine. Again, this is a complicated point, so feel free to contact Han if you are unsure.*
+|
+| *When designing, it is important to keep in mind the material you are working with. For 3D printed parts, please think about what orientation you plan on printing it in, remembering to minize overhangs (3d printers cant print on air!). Small holes are fine. Again, this is a complicated point, so feel free to contact Han if you are unsure.*
 
 Importing COTS
 _________________
@@ -36,7 +36,7 @@ _________________
 Our COTS are from `Gobilda <https://www.gobilda.com>`_. Click on the STEP link, and you should download a file called "RANDOMNUMBER.step". Please rename that RANDOMNUMBER to something intellegible. Or else (I will find you). 
 
 | *If you are interested, I have created a program that does this automatically (Contact Han)*
-
+| 
 | These COTS are what we primarily use on our robot, so it is good to get used to using them. 
 
 Start Designing: Sketch 
@@ -60,7 +60,9 @@ When using Create, you can choose from the following:
     11. Project
 
 For 1-6, they basically just create different shapes, each taking different parameters and integers. For patterns, it takes a sketch and creates a pattern either in a circular form or a rectangular one (dual axis). For mirrors, it reflects a sketch object (created in 1-7) across an axis or another line. For dimensions, this is useful for changing the distance between sketch lines or sketch objects. For 3D sketches, please do not use these. They are very imprecise and are typically only used for single lines to connect objects. 
+|
 | The next step for sketches is constraints. I will not list the constraints (see documentation `here <https://help.autodesk.com/view/fusion360/ENU/?guid=SKT-CONSTRAINTS>`_.) They are mainly used for making sketches behave as you would like when changing parameters. When a sketch line turns black, it means it is fully constrained. Additionally, sometimes constraints are automatically generated (such as parallel constraints when creating a rectangle), which could be useful. 
+|
 | My favorite feature is project. As the name implies, it projects a sketch from another surface onto the current sketch plane. This is useful for referencing things such as holes on COTS or need to align something to another feature. 
 
 Finally, the modify feature is similar to modifying a body, except it does it to the sketch. 
