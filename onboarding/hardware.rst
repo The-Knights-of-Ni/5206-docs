@@ -30,6 +30,8 @@ https://ryannealyworms.wixsite.com/5206cad
 By following the tutorials, you will gain some valuable experience with the various tools that Fusion has to offer.
 This provides an important foundation when working on the robot’s mechanisms.
 
+Feel free to reference :ref:`Design Basics<design_basics.rst>`
+
 Hardware Skills
 ________________
 
