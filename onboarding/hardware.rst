@@ -54,8 +54,6 @@ When thinking about utilizing the 3D Printer it is important to consider two thi
 
 1. Can another normal part accomplish the intended goal?
 
-2. If so, communicate your ideas to Han, Antonio or Tanisha and the part can be 3D Printed.
+2. If so, communicate your ideas to Han or Antonio and the part can be 3D Printed.
 
-- For this process make sure that you have a PrusaSlicer file with exact measurements while also keeping in mind factors like size  and material/time used.
-
-(FURTHER NOTES ON THIS MATTER WILL BE ADDED AFTER CONFERRING WITH THOMAS AND DIRECT USE OF THE 3D PRINTER).
+When designing for 3D Printing, it is important to consider how 3D printers work and design accordingly (i.e. minimizing overhangs and eliminating printing on air). We only use supports when strictly necessary. 
