@@ -88,7 +88,7 @@ _________________
 There are dozens of different things you can do to your new body. Here are some I like to use: 
     1. Chamfer: good for making your model look a little bit better, with increased printability. 
     2. Fillet: makes your model look good as well, but sacrifices good quality when printing (think about steps) 
-    3. Combine body: after making all the bodies you want, press this to combine all your bodies and create a new component! 
+    3. Combine body: after making all the bodies you want, press this to combine all your bodies and create a new component 
     4. Split body: the opposite of combine body, splits a body according to a construction plane. 
     6. Shell: empties out the middle of your solid, generating new faces (esp useful for steel bars) 
     7. Move: it moves things
