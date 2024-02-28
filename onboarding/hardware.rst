@@ -57,3 +57,7 @@ When thinking about utilizing the 3D Printer it is important to consider two thi
 2. If so, communicate your ideas to Han or Antonio and the part can be 3D Printed.
 
 When designing for 3D Printing, it is important to consider how 3D printers work and design accordingly (i.e. minimizing overhangs and eliminating printing on air). We only use supports when strictly necessary. 
+
+Next Steps
+------------------
+- :ref:`Design Basics`

@@ -45,18 +45,16 @@ SDK
 
 We use the FTC SDK, which is used for controlling the robot and talking to the driver station.
 
-`FTC SDK Documentation <https://javadoc.io/doc/org.firstinspires.ftc>`_
-
-`FTC SDK Examples <ttps://github.com/FIRST-Tech-Challenge/FtcRobotController/tree/master/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples>`_
+| `FTC SDK Documentation <https://javadoc.io/doc/org.firstinspires.ftc>`_
+| `FTC SDK Examples <ttps://github.com/FIRST-Tech-Challenge/FtcRobotController/tree/master/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples>`_
 
 FTCLib
 ^^^^^^^^^
 
 Some FTC SDK APIs, such as the Servo API, are underdeveloped, therefore we use the FTCLib API as a replacement.
 
-`FTCLib Documentation <https://docs.ftclib.org/ftclib/v/v2.0.0/>`_
-
-`FTCLib Examples <https://github.com/FTCLib/FTCLib/tree/master/examples>`_
+| `FTCLib Documentation <https://docs.ftclib.org/ftclib/v/v2.0.0/>`_
+| `FTCLib Examples <https://github.com/FTCLib/FTCLib/tree/master/examples>`_
 
 .. note::
 
@@ -68,11 +66,15 @@ OpenCV
 
 We use OpenCV for the vision challenge via EasyOpenCV.
 
-`OpenCV Documentation <https://docs.opencv.org/>`_
-`EasyOpenCV GitHub <https://github.com/OpenFTC/EasyOpenCV>`_
-`EasyOpenCV Javadoc <https://javadoc.io/doc/org.openftc/easyopencv/1.5.1/index.html>`_
+| `OpenCV Documentation <https://docs.opencv.org/>`_
+| `EasyOpenCV GitHub <https://github.com/OpenFTC/EasyOpenCV>`_
+| `EasyOpenCV Javadoc <https://javadoc.io/doc/org.openftc/easyopencv/1.5.1/index.html>`_
+
+.. note:: EasyOpenCV is in the process of being phased out for a Rust/OpenCV system instead. This will soon become deprecated.
 
 Apache Commons Math & Geometry
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mainly used for vector math.
+
+| `Info on Apache Commons Math <https://commons.apache.org/proper/commons-math/>`_
