@@ -36,7 +36,7 @@ extensions = [
 ]
 
 javadoc_url_map = {
-    # 'org.firstinspires.ftc.Vision': ('https://javadoc.io/doc/org.firstinspires.ftc/Vision/', 'javadoc'),
+    'org.firstinspires.ftc.Vision': ('https://javadoc.io/doc/org.firstinspires.ftc/Vision/', 'javadoc'),
 }
 
 # Add any paths that contain templates here, relative to this directory.

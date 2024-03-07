@@ -21,7 +21,7 @@ The claw is a self-designed mechanism that allows the bot to manipulate the game
 These mechanisms are powered by servos bought from Gobilda (https://www.gobilda.com/standard-size-servos/)
 
 Secondary Scoring Mechanisms
-________________
+__________________________________________
 
 The secondary scoring mechanism encompasses anything that is not the primary scoring mechanism. Some examples include: 
     - Parking: Parking at different locations to score points. 

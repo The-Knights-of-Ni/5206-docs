@@ -4,13 +4,21 @@ Build Systems
 Gradle
 ------------
 
-We don't run `javac` or `jar` directly. Instead, we use a build system called `gradle`. Gradle is a build system that is used to compile, test, and package the app. It is also used to manage dependencies and run tasks, allowing us to bring in external code.
-The control hub runs Android, which is oddly common in the robotics world, but we don't write an entire android app as FIRST has helpfully provided boilerplate code for us.
-The real app (i.e. the android activity) is stored in `FtcRobotController`. This project essential wraps around our code and ensures that basic robot functions like telemetry work.
+We don't run `javac` or `jar` directly, as these are made for desktop applications.
+Instead, we use a build system called `gradle`. Gradle is a build system that is used to compile, test, and package the app.
+It is also used to manage dependencies and run tasks, allowing us to bring in external code and automate routine operations.
+The control hub runs Android, which is oddly common in the robotics world,
+but we don't write an entire android app as FIRST has helpfully provided boilerplate code for us.
+The real app (i.e. the android activity and other app related code) is stored in `FtcRobotController`.
+This project essential wraps around our code and ensures that basic robot functions like telemetry work.
+The control hub doesn't have a GUI, but many android concepts remain the same.
+For starters, apps are packaged as `apk` files, which are then installed on the robot, we do so over `adb`.
+`adb` is a command line tool that allows us to interact with the robot over USB or WIFI.
 
 .. danger::
 
     Do not modify the `FtcRobotController` project. This is permitted by FIRST, but the benefits of doing this are practically nonexistent.
+    Modifying the official FIRST dependencies is ILLEGAL, and will result in disqualification.
 
 Concepts
 ^^^^^^^^^^^^^
@@ -75,6 +83,6 @@ We use OpenCV for the vision challenge via EasyOpenCV.
 Apache Commons Math & Geometry
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mainly used for vector math.
+We use this library mainly used for vector math. However it's geometry utilities could be useful for pathfinding.
 
 | `Info on Apache Commons Math <https://commons.apache.org/proper/commons-math/>`_

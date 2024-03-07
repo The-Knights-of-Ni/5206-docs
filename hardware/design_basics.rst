@@ -80,12 +80,14 @@ To create a body, you can choose from the following:
     5. Rib (connects two faces that are 90 degrees in relation to one another under a sketch, with a specified thickness)
     6. Mirror (creates a body by reflecting an existing body across an axis)
     7. Pattern (creates a pattern like in the sketch pattern but this time with body)
+
 **The default setting is always join, but when please change that to "New Body" for easier usability. After completing your model, please combine all your bodies and create a component.**
 
 Modifying a Body 
 _________________
 
-There are dozens of different things you can do to your new body. Here are some I like to use: 
+There are dozens of different things you can do to your new body. Here are some I like to use:
+
     1. Chamfer: good for making your model look a little bit better, with increased printability. 
     2. Fillet: makes your model look good as well, but sacrifices good quality when printing (think about steps) 
     3. Combine body: after making all the bodies you want, press this to combine all your bodies and create a new component! 
