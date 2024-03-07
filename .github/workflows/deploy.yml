@@ -29,7 +29,7 @@ jobs:
         name: Generate Docs
         with:
           working-directory: '.'
-          doxyfile-path: 'Doxyfile'
+          doxyfile-path: './Doxyfile'
       - uses: actions/upload-artifact@v3
         name: Upload html as artifact
         with:
