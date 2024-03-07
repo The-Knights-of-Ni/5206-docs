@@ -1,8 +1,7 @@
-Build Systems
-==================
+Build Systems {#build_systems}
+==================================
 
-Gradle
-------------
+## Gradle
 
 We don't run `javac` or `jar` directly, as these are made for desktop applications.
 Instead, we use a build system called `gradle`. Gradle is a build system that is used to compile, test, and package the app.
@@ -15,13 +14,11 @@ The control hub doesn't have a GUI, but many android concepts remain the same.
 For starters, apps are packaged as `apk` files, which are then installed on the robot, we do so over `adb`.
 `adb` is a command line tool that allows us to interact with the robot over USB or WIFI.
 
-.. danger::
+> [!caution]
+> Do not modify the `FtcRobotController` project. This is permitted by FIRST, but the benefits of doing this are practically nonexistent.
+> Modifying the official FIRST dependencies is ILLEGAL, and will result in disqualification.
 
-    Do not modify the `FtcRobotController` project. This is permitted by FIRST, but the benefits of doing this are practically nonexistent.
-    Modifying the official FIRST dependencies is ILLEGAL, and will result in disqualification.
-
-Concepts
-^^^^^^^^^^^^^
+### Concepts
 
 - Min SDK Version: The minimum version of Android that the app will run on. This is set to 25 because the control hub runs that version.
 - Compile SDK Version: The version of Android that the app is compiled against. This can be as high as you'd like it to be.
@@ -36,8 +33,7 @@ The web logs should output the SDK version of the control hub on initialization.
 
     The SDK installation location is stored in `local.properties`.
 
-Files
-^^^^^^^^^^^^^^^
+### Files
 
 - `build.gradle`: The main build file for the project. This file is used to configure the project and its subprojects. You can upgrade the Android Gradle Plugin version here.
 - `build.dependencies.gradle`: A file that contains all of the dependencies for the project. This file is used to keep the `build.gradle` file clean and storTes all the default FIRST dependencies.
@@ -45,32 +41,28 @@ Files
 - `settings.gradle`: A file that is used to include or exclude subprojects from the build. This file is used to include the `TeamCode` and `FtcRobotController` projects in the build. If you want to add more subprojects, you must add a include directive here.
 - `TeamCode/build.gradle`: The build file for the `TeamCode` project. This file is used to configure the `TeamCode` project. Any project specific modifications should be put here.
 
-Dependencies
-------------------
+## Dependencies
 
-SDK
-^^^^^^^
+### SDK
 
 We use the FTC SDK, which is used for controlling the robot and talking to the driver station.
 
-| `FTC SDK Documentation <https://javadoc.io/doc/org.firstinspires.ftc>`_
-| `FTC SDK Examples <ttps://github.com/FIRST-Tech-Challenge/FtcRobotController/tree/master/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples>`_
+- `FTC SDK Documentation <https://javadoc.io/doc/org.firstinspires.ftc>`_
+- `FTC SDK Examples <ttps://github.com/FIRST-Tech-Challenge/FtcRobotController/tree/master/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples>`_
 
-FTCLib
-^^^^^^^^^
+### FTCLib
 
 Some FTC SDK APIs, such as the Servo API, are underdeveloped, therefore we use the FTCLib API as a replacement.
 
-| `FTCLib Documentation <https://docs.ftclib.org/ftclib/v/v2.0.0/>`_
-| `FTCLib Examples <https://github.com/FTCLib/FTCLib/tree/master/examples>`_
+- `FTCLib Documentation <https://docs.ftclib.org/ftclib/v/v2.0.0/>`_
+- `FTCLib Examples <https://github.com/FTCLib/FTCLib/tree/master/examples>`_
 
 .. note::
 
         We used ftclib mainly for the servo API, so we copied the class out and it is now located in the util folder as ``ServoEx``. Thus, we do not add it as a Gradle dependency anymore.
 
 
-OpenCV
-^^^^^^^^^
+### OpenCV
 
 We use OpenCV for the vision challenge via EasyOpenCV.
 
@@ -80,8 +72,7 @@ We use OpenCV for the vision challenge via EasyOpenCV.
 
 .. note:: EasyOpenCV is in the process of being phased out for a Rust/OpenCV system instead. This will soon become deprecated.
 
-Apache Commons Math & Geometry
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Apache Commons Math & Geometry
 
 We use this library mainly used for vector math. However it's geometry utilities could be useful for pathfinding.
 

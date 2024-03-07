@@ -1,4 +1,4 @@
-Op Modes
+Op Modes {#op_modes}
 =====================
 
 The op modes (short for Operational Modes) are the different portions of the game:

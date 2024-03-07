@@ -1,5 +1,6 @@
-Software Onboarding
+Software Onboarding {#software_onboarding}
 =========================
+
 Welcome to the software team! We’re glad to have you here.
 
 This tutorial will help you download, install, and set up the software tools needed to the help contribute to the 5206 codebase.
@@ -27,48 +28,38 @@ We highly recommend that you carefully read each article, as the concepts explai
 
 If you have any questions at all during the onboarding process, don’t hesitate to contact Ashwin, Alessandro, or Ethan on Slack.
 
-.. admonition:: TL;DR
+\note TL;DR
+Install Android Studio and Git. Create a GitHub account (or use your existing one) and send your username to either the Captain or the Software Lead.
 
-    Install Android Studio and Git.
-    Create a GitHub account (or use your existing one) and send your username to either the Captain or the Software Lead.
-
-
-
-GitHub
-___________
+## GitHub
 
 Sign-up link:
 
 https://github.com/signup
 
 
-.. important::
-
-    Be sure to send either Alessandro or Ethan your GitHub username on slack so that they can add you to the organization.
+\important Be sure to send Ashwin your GitHub username on slack so that he can add you to the organization.
 
 
 GitHub is an internet hosting service that allows programmers to store, manage, track and control their code using Git.
 Effectively, it lets you store code online in an easier way that allows many people to collaborate.
 We host all our code in an "organization" called "The-Knights-of-Ni" (https://github.com/The-Knights-of-Ni/).
 
-Optionally, you can install GitHub Desktop to simplify using git `from the website <https://desktop.github.com/>`_.
+Optionally, you can install GitHub Desktop to simplify using git [from the website](https://desktop.github.com/).
 Terminal users can use ``brew install --cask github`` on macs, or ``winget install -e --id GitHub.GitHubDesktop`` on windows.
 
-Installation Instructions (No Terminal)
-_________________________________________
+## Installation Instructions (No Terminal)
 
-Git
-^^^^
+### Git
 
 To install git visit https://git-scm.com/downloads.
 
 Git is a Version Control System (VCS) that is used keep everyone’s version of the code up to date.
-`Here <https://rogerdudler.github.io/git-guide/>`_ is a basic Git tutorial that should help get you started.
+[Here](https://rogerdudler.github.io/git-guide/) is a basic Git tutorial that should help get you started.
 https://www.vogella.com/tutorials/Git/article.html is a more in-depth tutorial.
-For those more technically inclined, Git has `official documentation <https://git-scm.com/doc>`_.
+For those more technically inclined, Git has [official documentation](https://git-scm.com/doc).
 
-IDE
-^^^^^
+### IDE
 
 Android Studio, our main IDE: https://developer.android.com/studio/
 
@@ -99,31 +90,25 @@ We use Android Studio because it is a base Java IDE that comes with all of the n
 IntellJ Ultimate is a turbo charged version of Android studio with more features,
 but it requires you to complete the application process, which may have to be manually validated by JetBrains.
 
-.. note::
-
-    It may be useful to have Android Studio installed, even if you prefer to use IntelliJ IDEA.
-    Sometimes building and sdk management breaks on IntelliJ, so it is useful to have a backup IDE.
+\note It may be useful to have Android Studio installed, even if you prefer to use IntelliJ IDEA.
+Sometimes building and sdk management breaks on IntelliJ, so it is useful to have a backup IDE.
 
 
-Installation Instructions (Terminal)
-_______________________________________
+## Installation Instructions (Terminal)
 
 Please follow the following instructions to install Android Studio and Git using the command line.
 We’ve provided separate instructions for Windows and Mac users, so make sure to follow the instructions for your specific operating system.
 Before we begin, make sure to read this warning.
 
-.. admonition:: Careful!
-    :class: danger
-
-    NEVER copy and paste scripts from the internet into your terminal. Doing so runs the risk of compromising your computer
-    because it is possible for websites to inject malicious code that runs as soon as you paste it in.
-    If you are going to copy and paste a command into your terminal, make sure you understand EXACTLY what the code is doing,
-    and make sure that you have complete trust in the source.
+\important Careful!
+\important **NEVER** copy and paste scripts from the internet into your terminal. Doing so runs the risk of compromising your computer
+because it is possible for websites to inject malicious code that runs as soon as you paste it in.
+If you are going to copy and paste a command into your terminal, make sure you understand _EXACTLY_ what the code is doing,
+and make sure that you have complete trust in the source.
 
 With that warning out of the way, let’s get started installing the software needed for our system.
 
-Windows
-^^^^^^^^^
+### Windows
 
 To install the necessary software on Windows, we will first install a package manager called ``winget``.
 A package manager is a tool that automates the download and installation of other pieces of software,
@@ -131,15 +116,13 @@ and is generally safer and easier to use than ``.exe`` files because each progra
 Most modern Windows 10/11 systems should come with ``winget`` already installed. To check whether this is the case,
 open the Command Prompt by hitting ``Win+R`` and typing ``cmd`` at the prompt. Once you’re there, type the following command and hit ``Enter``:
 
-.. code:: none
-
+```
     winget
-
+```
 
 The entire thing should look like this:
 
-.. code:: none
-
+```
     Microsoft Windows [Version 10.0.22631.2265]
     (c) Microsoft Corporation. All rights reserved.
 
@@ -181,7 +164,7 @@ The entire thing should look like this:
     More help can be found at: https://aka.ms/winget-command-help
 
     C:\Users\[your username here]>
-
+```
 If you see an output that is similar to this, ``winget`` is ready to go. If you see something that looks like this:
 
 .. code:: none
@@ -194,7 +177,7 @@ If you see an output that is similar to this, ``winget`` is ready to go. If you 
 
 
 Then install ``winget`` by installing the
-`App Installer <https://apps.microsoft.com/store/detail/app-installer/9NBLGGH4NNS1?hl=en-us&gl=us>`_ program, then close and reopen Command Prompt and try the above command again.
+[App Installer](https://apps.microsoft.com/store/detail/app-installer/9NBLGGH4NNS1?hl=en-us&gl=us>) program, then close and reopen Command Prompt and try the above command again.
 
 Next, issue the following commands using ``winget`` in the command prompt (hit ``Enter`` after each line):
 
@@ -211,55 +194,47 @@ Alternative command for IntelliJ IDEA
     winget install -e --id JetBrains.IntelliJIDEA.Ultimate
 
 If you would like to install IntelliJ IDEA, Visual Studio Code, or another IDE instead of Android Studio,
-use `this website <https://winget.run/>`_ to search for the relevant command, or download them from the official website directly.
+use [this website](https://winget.run/) to search for the relevant command, or download them from the official website directly.
 
 Once you are done, setup Android Studio.
 
-Mac
-^^^^^^^^^
+### Mac
 
 Open the app called “Terminal”
 
 Next type (or paste) the following into the terminal:
 
-.. code:: shell
-
+```shell
     which brew
+```
 
 If it says brew is not installed, you need to install brew. To install brew type:
-
-.. code:: shell
-
+```
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 Next paste this text:
 
-.. code:: shell
-
+```
     brew install git
     brew install --cask android-studio
+```
 
 Now setup Android Studio.
 
-Setting up Android Studio
-___________________________
+## Setting up Android Studio
 
 - Open Android Studio
 - Click “Do not import settings”
 - Use standard setup (click next and accept licenses as needed)
 - Wait for the downloads to finish
 
-.. note::
+\note For the purposes of developing for this club an android emulator is not needed.
 
-    For the purposes of developing for this club an android emulator is not needed.
-
-.. seealso::
-
-    Check out https://developer.android.com/studio/install for more detailed instructions.
+\remark Check out https://developer.android.com/studio/install for more detailed instructions.
 
 
-Project Setup
-___________________
+## Project Setup
 
 1. Open Android Studio
 2. Click “Get from VCS”
@@ -270,7 +245,7 @@ ___________________
 
     The above url changes from year to year, so make sure to use the correct one.
 
-.. image:: ../images/AndroidStudioStartPage.png
+![AndroidStudioStartPage](../../images/AndroidStudioStartPage.png)
 
 4. Click “Clone”
 5. The repo will open and load the Read Me.
@@ -278,66 +253,56 @@ ___________________
 
 Windows:
 
-.. code:: none
-
+```
     Name: HUB connect over Wifi Direct
     Group: External tools
     Description: N/A
     Program: $ModuleSdkPath$/platform-tools/.\adb
     Arguments: connect 192.168.43.1:5555
     Working Directory: $ProjectFileDir$
+```
 
+Other (Mac, Linux, *nix):
 
-Other (Mac, Linux):
-
-.. code:: none
-
+```
     Name: HUB connect over Wifi Direct
     Group: External tools
     Description: N/A
     Program: $ModuleSdkPath$/platform-tools/adb
     Arguments: connect 192.168.43.1:5555
     Working Directory: $ProjectFileDir$
-
+```
 
 Then click done.
 
-.. note::
-
-.. image:: ../images/AndroidStudioADBExternalTool.png
+![AndroidStudioADBExternalTool](../../images/AndroidStudioADBExternalTool.png)
 
 7. New UI setup: Again, go to your Android Studio or IntelliJ IDEA settings (File>Settings), go to Appearance and Behavior>New UI, then check the box next to ``New UI``. Restart the IDE when prompted.
 
-.. note::
-
-        This part is an optional quality-of-life improvement.
+\note This part is an optional quality-of-life improvement.
 
 .. image:: ../images/EnablingNewUI.png
 
 
-Working with the Code
-___________________________
+## Working with the Code
 
-No Terminal (Recommended for Beginners)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### No Terminal (Recommended for Beginners)
 
 Make the appropriate changes to the code and then click the green check mark on the top right hand side of your screen to commit the changes.
 
-.. image:: ../images/AndroidStudioCommit.png
+![AndroidStudioCommit](../../images/AndroidStudioCommit.png)
 
 Next write a message accurately summarizing the changes you have made to the code so that others can check at a glance what you did.
 
 Finally click “Commit and Push” and use the default options.
 
-.. note::
+\note This last step might require you to login with your GitHub credentials.
 
-        This last step might require you to login with your GitHub credentials.
+### Terminal
 
-Terminal
-^^^^^^^^^
 Make the appropriate changes to the code and then open your terminal in Android Studio/IntelliJ IDEA.
 
-.. image:: ../images/OpenTerminalIntelliJ.png
+![OpenTerminalIntelliJ](../../images/OpenTerminalIntelliJ.png)
 
 Next, with ``YOUR_COMMIT_MESSAGE`` being an accurate description of the changes you made to the code, type the commands
 
@@ -346,13 +311,9 @@ Next, with ``YOUR_COMMIT_MESSAGE`` being an accurate description of the changes 
     git commit -a -m "YOUR_COMMIT_MESSAGE"
     git push
 
-.. note::
-
-        This last step might require you to login with your GitHub credentials. If so, please
-        contact either Alessandro or Ashwin for help. GitHub does **not** allow you to login via the terminal git interface.
+\note This last step might require you to login with your GitHub credentials. If so, please
+contact Ashwin for help. GitHub does **not** allow you to login via the terminal git interface.
 
 
-.. note::
-
-        I (Ashwin) would recommend looking at a git tutorial and using the terminal.
-        However, I find that using the GUI is easier when writing commit messages
+\note I (Ashwin) would recommend looking at a git tutorial and using the terminal.
+However, I find that using the GUI is easier when writing commit messages
