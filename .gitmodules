@@ -1,6 +1,7 @@
 [submodule "doxygen-awesome-css"]
 	path = doxygen-awesome-css
 	url = https://github.com/jothepro/doxygen-awesome-css.git
+
 [submodule "CenterStage"]
 	path = CenterStage
 	url = https://github.com/The-Knights-of-Ni/CenterStage
