@@ -1,4 +1,4 @@
-Drive Systems {#drive}
+Drive {#drive}
 ====================
 
 ## Structure
@@ -10,8 +10,8 @@ The pose estimator is responsible for updating the robot's position and heading 
 
 The targeter is responsible for generating a target pose for the :ref:`controller <controller>` to go to.
 
-.. _controller:
 
+@anchor controller
 ### Controller
 A controller gets a target and an actual pose and returns a velocity vector and a heading vector.
 
@@ -20,15 +20,13 @@ The localizer gets a velocity and heading vector and updates the motor powers.
 
 ## Terminology
 
-.. note::
+\note We currently rely on a PID system.
 
-    We currently rely on a PID system.
-
-.. _pid_section:
-
+@anchor pid_controller
 ### PID Controller
-`PID <https://medium.com/autonomous-robotics/pid-control-85596db59f35>`_ stands for
-`Proportional Integral Derivative <https://en.wikipedia.org/wiki/PID_controller>`_
+
+[PID](https://medium.com/autonomous-robotics/pid-control-85596db59f35) stands for
+[Proportional Integral Derivative](https://en.wikipedia.org/wiki/PID_controller)
 and is used by our drive subsystem to maintain consistent speed
 and ensure that slippage does not affect the movement of the robot.
 
@@ -47,9 +45,10 @@ These can be measured in any unit, but millimeters, tick counts, or degrees are 
 
 See Also: https://gm0.org/en/latest/docs/software/concepts/control-loops.html?highlight=PID#pid
 
+@anchor feed_forward_controller
 ### Feed Forward Controller
 
-:math:`p(x, y)=K_a a(x, y) + K_v v(x, y)`
+\latexonly p(x, y)=K_a a(x, y) + K_v v(x, y) \endlatexonly
 
 Where
 

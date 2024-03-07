@@ -30,7 +30,7 @@ https://ryannealyworms.wixsite.com/5206cad
 By following the tutorials, you will gain some valuable experience with the various tools that Fusion has to offer.
 This provides an important foundation when working on the robot’s mechanisms.
 
-Feel free to reference :ref:`Design Basics<design_basics.rst>`
+Feel free to reference [design basics](#design_basics).
 
 ## Hardware Skills
 
@@ -58,4 +58,4 @@ When designing for 3D Printing, it is important to consider how 3D printers work
 
 ## Next Steps
 
-- :ref:`Design Basics`
+- [Design Basics](#design_basics)

@@ -33,6 +33,7 @@ jobs:
         with:
           working-directory: '.'
           doxyfile-path: './Doxyfile'
+          enable-latex: true
       - uses: actions/upload-artifact@v3
         name: Upload html as artifact
         with:

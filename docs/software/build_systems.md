@@ -14,9 +14,8 @@ The control hub doesn't have a GUI, but many android concepts remain the same.
 For starters, apps are packaged as `apk` files, which are then installed on the robot, we do so over `adb`.
 `adb` is a command line tool that allows us to interact with the robot over USB or WIFI.
 
-> [!caution]
-> Do not modify the `FtcRobotController` project. This is permitted by FIRST, but the benefits of doing this are practically nonexistent.
-> Modifying the official FIRST dependencies is ILLEGAL, and will result in disqualification.
+\attention Do not modify the `FtcRobotController` project. This is permitted by FIRST, but the benefits of doing this are practically nonexistent. 
+\attention Modifying the official FIRST dependencies is ILLEGAL, and will result in disqualification.
 
 ### Concepts
 
@@ -29,9 +28,7 @@ For starters, apps are packaged as `apk` files, which are then installed on the 
 
 The web logs should output the SDK version of the control hub on initialization.
 
-.. note::
-
-    The SDK installation location is stored in `local.properties`.
+\note The SDK installation location is stored in `local.properties`.
 
 ### Files
 
@@ -47,33 +44,33 @@ The web logs should output the SDK version of the control hub on initialization.
 
 We use the FTC SDK, which is used for controlling the robot and talking to the driver station.
 
-- `FTC SDK Documentation <https://javadoc.io/doc/org.firstinspires.ftc>`_
-- `FTC SDK Examples <ttps://github.com/FIRST-Tech-Challenge/FtcRobotController/tree/master/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples>`_
+- [FTC SDK Documentation](https://javadoc.io/doc/org.firstinspires.ftc)
+- [FTC SDK Examples](https://github.com/FIRST-Tech-Challenge/FtcRobotController/tree/master/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples)
 
 ### FTCLib
 
 Some FTC SDK APIs, such as the Servo API, are underdeveloped, therefore we use the FTCLib API as a replacement.
 
-- `FTCLib Documentation <https://docs.ftclib.org/ftclib/v/v2.0.0/>`_
-- `FTCLib Examples <https://github.com/FTCLib/FTCLib/tree/master/examples>`_
+- [FTCLib Documentation](https://docs.ftclib.org/ftclib/v/v2.0.0/)
+- [FTCLib Examples](https://github.com/FTCLib/FTCLib/tree/master/examples)
 
-.. note::
-
-        We used ftclib mainly for the servo API, so we copied the class out and it is now located in the util folder as ``ServoEx``. Thus, we do not add it as a Gradle dependency anymore.
+\note We used ftclib mainly for the servo API, so we copied the class out and it is now located in the util folder as ``ServoEx``. Thus, we do not add it as a Gradle dependency anymore.
 
 
 ### OpenCV
 
 We use OpenCV for the vision challenge via EasyOpenCV.
 
-| `OpenCV Documentation <https://docs.opencv.org/>`_
-| `EasyOpenCV GitHub <https://github.com/OpenFTC/EasyOpenCV>`_
-| `EasyOpenCV Javadoc <https://javadoc.io/doc/org.openftc/easyopencv/1.5.1/index.html>`_
+- [OpenCV Documentation](https://docs.opencv.org/)
+- [EasyOpenCV GitHub](https://github.com/OpenFTC/EasyOpenCV)
+- [EasyOpenCV Javadoc](https://javadoc.io/doc/org.openftc/easyopencv/1.5.1/index.html)
 
-.. note:: EasyOpenCV is in the process of being phased out for a Rust/OpenCV system instead. This will soon become deprecated.
+\note EasyOpenCV is in the process of being phased out for a Rust/OpenCV system instead. This will soon become redundant.
+\note Additionally since 9.0 or so, EasyOpenCV is now packaged in `org.firstinspires.Vision`.
+This makes it so that it might not appear in the gradle files, but it might still be being used.
 
 ### Apache Commons Math & Geometry
 
 We use this library mainly used for vector math. However it's geometry utilities could be useful for pathfinding.
 
-| `Info on Apache Commons Math <https://commons.apache.org/proper/commons-math/>`_
+- [Info on Apache Commons Math](https://commons.apache.org/proper/commons-math/)

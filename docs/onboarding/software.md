@@ -70,17 +70,13 @@ If you prefer a different IDE, IntelliJ IDEA is a good alternative: https://www.
 
 Extra Setup Instructions: https://www.jetbrains.com/help/idea/installation-guide.html
 
-.. important::
+\attention To use IntellJ IDEA for android development, you will need an educational license,
+you can get one here: https://www.jetbrains.com/community/education/
+You should use your school email to apply for the license.
 
-    To use IntellJ IDEA for android development, you will need an educational license,
-    you can get one here: https://www.jetbrains.com/community/education/
-    You should use your school email to apply for the license.
-
-.. warning::
-
-    If you are using IntelliJ IDEA, be sure to use the "Ultimate" version, not the "Community" version,
-    as only the "Ultimate" version has support for Android development. The only way to obtain said "Ultimate"
-    edition is to apply for the aformentioned license.
+\warning If you are using IntelliJ IDEA, be sure to use the "Ultimate" version, not the "Community" version,
+as only the "Ultimate" version has support for Android development. The only way to obtain said "Ultimate"
+edition is to apply for the aformentioned license.
 
 
 An IDE, or Integrated Development Environment, is an app that lets programmers code on a single interface.
@@ -100,8 +96,8 @@ Please follow the following instructions to install Android Studio and Git using
 We’ve provided separate instructions for Windows and Mac users, so make sure to follow the instructions for your specific operating system.
 Before we begin, make sure to read this warning.
 
-\important Careful!
-\important **NEVER** copy and paste scripts from the internet into your terminal. Doing so runs the risk of compromising your computer
+\attention <h3>Careful!</h3>
+\attention **NEVER** copy and paste scripts from the internet into your terminal. Doing so runs the risk of compromising your computer
 because it is possible for websites to inject malicious code that runs as soon as you paste it in.
 If you are going to copy and paste a command into your terminal, make sure you understand _EXACTLY_ what the code is doing,
 and make sure that you have complete trust in the source.
@@ -167,7 +163,6 @@ The entire thing should look like this:
 ```
 If you see an output that is similar to this, ``winget`` is ready to go. If you see something that looks like this:
 
-.. code:: none
 
     C:\Users\[your username here]>winget
     'winget' is not recognized as an internal or external command,
@@ -240,48 +235,46 @@ Now setup Android Studio.
 2. Click “Get from VCS”
 3. Use https://github.com/The-Knights-of-Ni/CenterStage.git for the url.
 
-.. admonition:: Git URL
-    :class: important
+   \attention <h3>Git URL</h3>
+   \attention The above url changes from year to year, so make sure to use the correct one.
 
-    The above url changes from year to year, so make sure to use the correct one.
-
-![AndroidStudioStartPage](../../images/AndroidStudioStartPage.png)
+   ![AndroidStudioStartPage](../../images/AndroidStudioStartPage.png)
 
 4. Click “Clone”
 5. The repo will open and load the Read Me.
 6. Go to your Android Studio settings (File>Settings), go to Tools>External Tools click the plus button, then fill it out with this:
 
-Windows:
+    Windows:
+    
+    ```
+        Name: HUB connect over Wifi Direct
+        Group: External tools
+        Description: N/A
+        Program: $ModuleSdkPath$/platform-tools/.\adb
+        Arguments: connect 192.168.43.1:5555
+        Working Directory: $ProjectFileDir$
+    ```
+    
+    Other (Mac, Linux, *nix):
+    
+    ```
+        Name: HUB connect over Wifi Direct
+        Group: External tools
+        Description: N/A
+        Program: $ModuleSdkPath$/platform-tools/adb
+        Arguments: connect 192.168.43.1:5555
+        Working Directory: $ProjectFileDir$
+    ```
 
-```
-    Name: HUB connect over Wifi Direct
-    Group: External tools
-    Description: N/A
-    Program: $ModuleSdkPath$/platform-tools/.\adb
-    Arguments: connect 192.168.43.1:5555
-    Working Directory: $ProjectFileDir$
-```
+   Then click done.
 
-Other (Mac, Linux, *nix):
-
-```
-    Name: HUB connect over Wifi Direct
-    Group: External tools
-    Description: N/A
-    Program: $ModuleSdkPath$/platform-tools/adb
-    Arguments: connect 192.168.43.1:5555
-    Working Directory: $ProjectFileDir$
-```
-
-Then click done.
-
-![AndroidStudioADBExternalTool](../../images/AndroidStudioADBExternalTool.png)
+   ![AndroidStudioADBExternalTool](../../images/AndroidStudioADBExternalTool.png)
 
 7. New UI setup: Again, go to your Android Studio or IntelliJ IDEA settings (File>Settings), go to Appearance and Behavior>New UI, then check the box next to ``New UI``. Restart the IDE when prompted.
 
 \note This part is an optional quality-of-life improvement.
 
-.. image:: ../images/EnablingNewUI.png
+![EnablingNewUI](../../images/EnablingNewUI.png)
 
 
 ## Working with the Code
@@ -306,7 +299,6 @@ Make the appropriate changes to the code and then open your terminal in Android 
 
 Next, with ``YOUR_COMMIT_MESSAGE`` being an accurate description of the changes you made to the code, type the commands
 
-.. code:: none
 
     git commit -a -m "YOUR_COMMIT_MESSAGE"
     git push
