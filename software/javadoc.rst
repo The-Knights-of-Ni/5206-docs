@@ -68,11 +68,11 @@ org.firstinspires.ftc.teamcode.GamepadWrapper
     
     
     
-    .. java:field:: static private final double joystickDeadZone  
+    .. java:field:: final static private double joystickDeadZone  
           
           
       
-    .. java:field:: private final Gamepad gamepad  
+    .. java:field:: final private Gamepad gamepad  
           
           
       
@@ -162,17 +162,22 @@ org.firstinspires.ftc.teamcode.Robot
 
 .. java:type:: public class Robot
     
+    Glue class for all subsystems
+    All competition OpModes instantiate this class, as well as some Test OpModes.
+    
+    This will initialize all subsystems, but certain can be disabled with flags ("vision", and "web")
     
     
-    .. java:field:: static public final double length  
+    
+    .. java:field:: final static public double length  
           
           
       
-    .. java:field:: static public final double width  
+    .. java:field:: final static public double width  
           
           
       
-    .. java:field:: private final MasterLogger logger  
+    .. java:field:: final private MasterLogger logger  
           
           
       
@@ -184,63 +189,35 @@ org.firstinspires.ftc.teamcode.Robot
           
           
       
-    .. java:field:: public final String initLogTag  
+    .. java:field:: final public String initLogTag  
           
           
       
-    .. java:field:: public final ElapsedTime timer  
+    .. java:field:: final public ElapsedTime timer  
           
           
       
-    .. java:field:: public final boolean visionEnabled  
+    .. java:field:: final public boolean visionEnabled  
           
           
       
-    .. java:field:: private final AllianceColor allianceColor  
+    .. java:field:: final private AllianceColor allianceColor  
           
           
       
-    .. java:field:: private final boolean webEnabled  
+    .. java:field:: final private boolean webEnabled  
           
           
       
-    .. java:field:: private final boolean odometryEnabled  
+    .. java:field:: final private boolean odometryEnabled  
           
           
       
-    .. java:field:: private final HardwareMap hardwareMap  
+    .. java:field:: final public HardwareMap hardwareMap  
           
           
       
-    .. java:field:: private final Telemetry telemetry  
-          
-          
-      
-    .. java:field:: public DcMotorEx frontLeftDriveMotor  
-          
-          
-      
-    .. java:field:: public DcMotorEx frontRightDriveMotor  
-          
-          
-      
-    .. java:field:: public DcMotorEx rearRightDriveMotor  
-          
-          
-      
-    .. java:field:: public DcMotorEx rearLeftDriveMotor  
-          
-          
-      
-    .. java:field:: public DcMotorEx leftEncoder  
-          
-          
-      
-    .. java:field:: public DcMotorEx backEncoder  
-          
-          
-      
-    .. java:field:: public DcMotorEx rightEncoder  
+    .. java:field:: final private Telemetry telemetry  
           
           
       
@@ -268,8 +245,20 @@ org.firstinspires.ftc.teamcode.Robot
     
     .. java:constructor:: public Robot(HardwareMap hardwareMap, Telemetry telemetry, ElapsedTime timer, AllianceColor allianceColor, Gamepad gamepad1, Gamepad gamepad2, HashMap flags)  
           
+          :param hardwareMap:   The hardware map for the robot
+          :param telemetry:     The telemetry object
           :param timer:         The elapsed time
-          :param allianceColor: the alliance color
+          :param allianceColor: the alliance color of the robot, usually set on a per-opmode basis
+          :param gamepad1:      The first gamepad (the robot movement controller)
+          :param gamepad2:      The second gamepad (control for the arms and claws)
+          :param flags:          A hashmap of flags, used to disable certain subsystems
+          <b>Flags:</b>
+          
+          <ul>
+          <li><i>vision</i> - toggles vision subsystem, enabled by default</li>
+          <li><i>web</i> - toggles web subsystem, disabled by default</li>
+          <li><i>odometry</i> - toggles odometry subsystem, disabled by default</li>
+          </ul>
       
     .. java:method:: static public void updateGamepads()  
           
@@ -279,27 +268,15 @@ org.firstinspires.ftc.teamcode.Robot
           
           
       
-    .. java:method:: public void init()  
+    .. java:method:: protected void init()  
           
           Runs all init operations
       
-    .. java:method:: private void odometryInit()  
+    .. java:method:: protected void imuInit()  
           
           
       
-    .. java:method:: private void imuInit()  
-          
-          
-      
-    .. java:method:: private void motorInit()  
-          
-          Gets Motors from hardware ap and sets zero power behavior and direction
-      
-    .. java:method:: private void servoInit()  
-          
-          
-      
-    .. java:method:: public void subsystemInit()  
+    .. java:method:: protected void subsystemInit()  
           
           
       
@@ -315,11 +292,11 @@ org.firstinspires.ftc.teamcode.Auto.ArmMovementThread
     
     
     
-    .. java:field:: public volatile boolean reachedPosition  
+    .. java:field:: volatile public boolean reachedPosition  
           
           
       
-    .. java:field:: public volatile ReentrantLock extended  
+    .. java:field:: volatile public ReentrantLock extended  
           
           
       
@@ -341,14 +318,14 @@ org.firstinspires.ftc.teamcode.Auto.ArmMovementThread
 org.firstinspires.ftc.teamcode.Auto.Auto
 ---------------------------------------------
 
-.. java:type:: public abstract class Auto
+.. java:type:: abstract public class Auto
     
     Auto creates a robot and runs it in auto mode.
     
     **See Also:** :java:ref:`LinearOpMode` 
     
     
-    .. java:field:: static public final float mmPerInch  
+    .. java:field:: final static public float mmPerInch  
           
           Number of millimeters per an inch
       
@@ -371,7 +348,7 @@ org.firstinspires.ftc.teamcode.Auto.Auto
           Initializes the robot class and sets the robot as the newly initialized robot.
           :param allianceColor: The alliance color
       
-    .. java:method:: public void adjustPosition(MarkerLocation location)  
+    .. java:method:: public void adjustPosition(MarkerDetectionPipeline location)  
           
           
       
@@ -394,6 +371,20 @@ org.firstinspires.ftc.teamcode.Auto.AutoBlueRight
 ------------------------------------------------------
 
 .. java:type:: public class AutoBlueRight
+    
+    
+    
+    
+    
+    .. java:method:: public void runOpMode() throws InterruptedException  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Auto.AutoLeftPark
+-----------------------------------------------------
+
+.. java:type:: public class AutoLeftPark
     
     
     
@@ -432,6 +423,20 @@ org.firstinspires.ftc.teamcode.Auto.AutoRedRight
           
       
 
+org.firstinspires.ftc.teamcode.Auto.AutoRightPark
+------------------------------------------------------
+
+.. java:type:: public class AutoRightPark
+    
+    
+    
+    
+    
+    .. java:method:: public void runOpMode() throws InterruptedException  
+          
+          
+      
+
 org.firstinspires.ftc.teamcode.Geometry.Circle
 ---------------------------------------------------
 
@@ -453,7 +458,7 @@ org.firstinspires.ftc.teamcode.Geometry.Circle
           
           
       
-    .. java:method:: public List segmentIntersections(Line seg)  
+    .. java:method:: public Vector segmentIntersections(Line seg)  
           
           
       
@@ -517,7 +522,7 @@ org.firstinspires.ftc.teamcode.Geometry.Path
 org.firstinspires.ftc.teamcode.Subsystems.Subsystem
 --------------------------------------------------------
 
-.. java:type:: public abstract class Subsystem
+.. java:type:: abstract public class Subsystem
     
     Superclass to all subsystems, it does some bootstrapping for them (Vision, Control, and Drive)
     
@@ -532,6 +537,829 @@ org.firstinspires.ftc.teamcode.Subsystems.Subsystem
           
           inits with telemetry, since every subsystem uses it.
           :param telemetry: The telemetry for logging
+      
+
+org.firstinspires.ftc.teamcode.Teleop.Teleop
+-------------------------------------------------
+
+.. java:type:: public class Teleop
+    
+    
+    
+    .. java:field::  double deltaT  
+          
+          
+      
+    .. java:field::  double timeCurrent  
+          
+          
+      
+    .. java:field::  double timePre  
+          
+          
+      
+    .. java:field::  ElapsedTime timer  
+          
+          
+      
+    .. java:field:: private Robot robot  
+          
+          
+      
+    
+    
+    .. java:method:: private void initOpMode()  
+          
+          
+      
+    .. java:method:: public void runOpMode() throws InterruptedException  
+          
+          Override of runOpMode()
+          Please do not swallow the InterruptedException, as it is used in cases where the op mode
+          needs to be terminated early.
+          
+          **See Also:** :java:ref:`LinearOpMode` 
+      
+
+org.firstinspires.ftc.teamcode.Testop.CameraPOV
+----------------------------------------------------
+
+.. java:type:: public class CameraPOV
+    
+    This shows what the camera is seeing
+    
+    
+    .. java:field:: final static public int CAMERA_WIDTH  
+          
+          
+      
+    .. java:field:: final static public int CAMERA_HEIGHT  
+          
+          
+      
+    .. java:field:: final static public String WEBCAM_NAME  
+          
+          
+      
+    .. java:field:: private OpenCvCamera camera  
+          
+          
+      
+    
+    
+    .. java:method:: private void initCamera()  
+          
+          
+      
+    .. java:method:: public void runOpMode() throws InterruptedException  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Testop.CaptureImages
+--------------------------------------------------------
+
+.. java:type:: public class CaptureImages
+    
+    This OpMode illustrates how to open a webcam and retrieve images from it. It requires a configuration
+    containing a webcam with the default name ("Webcam 1"). When the opmode runs, pressing the 'A' button
+    will cause a frame from the camera to be written to a file on the device, which can then be retrieved
+    by various means (e.g.: Device File Explorer in Android Studio; plugging the device into a PC and
+    using Media Transfer; ADB; etc.)
+    
+    
+    .. java:field:: final static private String TAG  
+          
+          
+      
+    .. java:field:: final static private int secondsPermissionTimeout  
+          
+          How long we are to wait to be granted permission to use the camera before giving up. Here,
+          we wait indefinitely
+      
+    .. java:field:: private CameraManager cameraManager  
+          
+          State regarding our interaction with the camera
+      
+    .. java:field:: private WebcamName cameraName  
+          
+          
+      
+    .. java:field:: private Camera camera  
+          
+          
+      
+    .. java:field:: private CameraCaptureSession cameraCaptureSession  
+          
+          
+      
+    .. java:field:: private EvictingBlockingQueue frameQueue  
+          
+          The queue into which all frames from the camera are placed as they become available.
+          Frames which are not processed by the OpMode are automatically discarded.
+      
+    .. java:field:: private int captureCounter  
+          
+          State regarding where and how to save frames when the 'A' button is pressed.
+      
+    .. java:field:: final private File captureDirectory  
+          
+          
+      
+    .. java:field:: private Handler callbackHandler  
+          
+          A utility object that indicates where the asynchronous callbacks from the camera
+          infrastructure are to run. In this OpMode, that's all hidden from you (but see :java:ref:`{@link .startCamera`
+          if you're curious): no knowledge of multi-threading is needed here.
+      
+    
+    
+    .. java:method:: public void runOpMode()  
+          
+          
+      
+    .. java:method:: private void onNewFrame(Bitmap frame)  
+          
+          Do something with the frame
+      
+    .. java:method:: private void initializeFrameQueue(int capacity)  
+          
+          
+      
+    .. java:method:: private void openCamera()  
+          
+          
+      
+    .. java:method:: private void startCamera()  
+          
+          
+      
+    .. java:method:: private void stopCamera()  
+          
+          
+      
+    .. java:method:: private void closeCamera()  
+          
+          
+      
+    .. java:method:: private void error(String msg)  
+          
+          
+      
+    .. java:method:: private void error(String format, Object args)  
+          
+          
+      
+    .. java:method:: private boolean contains(int array, int value)  
+          
+          
+      
+    .. java:method:: private void saveBitmap(Bitmap bitmap)  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Testop.CraneCalibration
+-----------------------------------------------------------
+
+.. java:type:: public class CraneCalibration
+    
+    
+    
+    
+    
+    .. java:method:: public void runOpMode() throws InterruptedException  
+          
+          Override of runOpMode()
+          Please do not swallow the InterruptedException, as it is used in cases where the op mode
+          needs to be terminated early.
+          
+          
+          **See Also:** :java:ref:`com.qualcomm.robotcore.eventloop.opmode.LinearOpMode` 
+      
+
+org.firstinspires.ftc.teamcode.Testop.ExtendShoulderTest
+-------------------------------------------------------------
+
+.. java:type:: public class ExtendShoulderTest
+    
+    
+    
+    
+    
+    .. java:method:: public void runOpMode() throws InterruptedException  
+          
+          Override of runOpMode()
+          Please do not swallow the InterruptedException, as it is used in cases where the op mode
+          needs to be terminated early.
+          
+          
+          **See Also:** :java:ref:`com.qualcomm.robotcore.eventloop.opmode.LinearOpMode` 
+      
+
+org.firstinspires.ftc.teamcode.Testop.IMUDirectionalTest
+-------------------------------------------------------------
+
+.. java:type:: public class IMUDirectionalTest
+    
+    
+    
+    
+    
+    .. java:method:: public void runOpMode() throws InterruptedException  
+          
+          Override of runOpMode()
+          Please do not swallow the InterruptedException, as it is used in cases where the op mode
+          needs to be terminated early.
+          
+          
+          **See Also:** :java:ref:`com.qualcomm.robotcore.eventloop.opmode.LinearOpMode` 
+      
+
+org.firstinspires.ftc.teamcode.Testop.NewCameraPOV
+-------------------------------------------------------
+
+.. java:type:: public class NewCameraPOV
+    
+    
+    
+    .. java:field::  OpenCvWebcam webcam  
+          
+          
+      
+    .. java:field:: final static public int CAMERA_WIDTH  
+          
+          
+      
+    .. java:field:: final static public int CAMERA_HEIGHT  
+          
+          
+      
+    .. java:field::  MarkerDetectionPipeline pipeline  
+          
+          
+      
+    
+    
+    .. java:method:: public void runOpMode()  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Testop.VisionTestBlue
+---------------------------------------------------------
+
+.. java:type:: public class VisionTestBlue
+    
+    
+    
+    
+    
+    .. java:method:: public void runOpMode() throws InterruptedException  
+          
+          Override of runOpMode()
+          Please do not swallow the InterruptedException, as it is used in cases where the op mode
+          needs to be terminated early.
+          
+          
+          **See Also:** :java:ref:`com.qualcomm.robotcore.eventloop.opmode.LinearOpMode` 
+      
+
+org.firstinspires.ftc.teamcode.Testop.VisionTestRed
+--------------------------------------------------------
+
+.. java:type:: public class VisionTestRed
+    
+    
+    
+    
+    
+    .. java:method:: public void runOpMode() throws InterruptedException  
+          
+          Override of runOpMode()
+          Please do not swallow the InterruptedException, as it is used in cases where the op mode
+          needs to be terminated early.
+          
+          
+          **See Also:** :java:ref:`com.qualcomm.robotcore.eventloop.opmode.LinearOpMode` 
+      
+
+org.firstinspires.ftc.teamcode.Util.AllianceColor
+------------------------------------------------------
+
+.. java:type:: public enum AllianceColor
+    
+    The robot's current alliance, either red or blue with an enum
+    Obtained through driver station
+    .. java:field:: RED  
+          
+          
+      
+    .. java:field:: BLUE  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Util.BasicAccelerationIntegrator
+--------------------------------------------------------------------
+
+.. java:type:: public class BasicAccelerationIntegrator
+    
+    :java:ref:`{@link org.firstinspires.ftc.teamcode.Util.BasicAccelerationIntegrator` provides a very naive implementation of
+    an acceleration integration algorithm. It just does the basic physics.
+    TODO: Better integration algorithm. This is very susceptible to noise.
+    
+    
+    .. java:field::  BNO055IMU parameters  
+          
+          
+      
+    .. java:field::  Position position  
+          
+          
+      
+    .. java:field::  Velocity velocity  
+          
+          
+      
+    .. java:field::  Acceleration acceleration  
+          
+          
+      
+    .. java:field::  MasterLogger logger  
+          
+          
+      
+    
+    
+    .. java:constructor:: public BasicAccelerationIntegrator()  
+          
+          
+      
+    .. java:method:: public Position getPosition()  
+          
+          
+      
+    .. java:method:: public Velocity getVelocity()  
+          
+          
+      
+    .. java:method:: public Acceleration getAcceleration()  
+          
+          
+      
+    .. java:method:: public void initialize(BNO055IMU parameters, Position initialPosition, Velocity initialVelocity)  
+          
+          
+      
+    .. java:method:: public void update(Acceleration linearAcceleration)  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Util.IntegralScan
+-----------------------------------------------------
+
+.. java:type:: public class IntegralScan
+    
+    
+    
+    .. java:field::  List values  
+          
+          
+      
+    .. java:field::  List sums  
+          
+          
+      
+    .. java:field::  double a  
+          
+          
+      
+    .. java:field::  double b  
+          
+          
+      
+    .. java:field::  double eps  
+          
+          
+      
+    .. java:field::  double i  
+          
+          
+      
+    .. java:field::  double m  
+          
+          
+      
+    .. java:field::  double fa  
+          
+          
+      
+    .. java:field::  double fm  
+          
+          
+      
+    .. java:field::  double fb  
+          
+          
+      
+    .. java:field::  ToDoubleFunction f  
+          
+          
+      
+    
+    
+    .. java:constructor:: public IntegralScan(double a, double b, double eps, ToDoubleFunction f)  
+          
+          
+      
+    .. java:method::  void helper(double a, double m, double b, double fa, double fm, double fb)  
+          
+          
+      
+    .. java:method:: public IntegralScanResult scan()  
+          
+          Returns samples of \(g(t) = \int_a^t f(x) \, dx\) for various values \(a \leq t \leq b\). The sampling points are
+          chosen adaptively using the algorithm `adaptsim` from [Gander and Gautschi](https://doi.org/10.1023/A:1022318402393)
+          ([more accessible link](https://users.wpi.edu/~walker/MA510/HANDOUTS/w.gander,w.gautschi,Adaptive_Quadrature,BIT_40,2000,84-101.pdf)).
+          None
+          None
+          None
+          None
+      
+
+org.firstinspires.ftc.teamcode.Util.MasterLogger
+-----------------------------------------------------
+
+.. java:type:: public class MasterLogger
+    
+    
+    
+    .. java:field:: public Telemetry telemetry  
+          
+          
+      
+    .. java:field::  String tag  
+          
+          
+      
+    
+    
+    .. java:constructor:: public MasterLogger(Telemetry telemetry, String tag)  
+          
+          
+      
+    .. java:method:: public void error(String message)  
+          
+          
+      
+    .. java:method:: public void error(String message, Object o)  
+          
+          
+      
+    .. java:method:: public void error(java l, String format, Object args)  
+          
+          
+      
+    .. java:method:: public void warning(String message)  
+          
+          
+      
+    .. java:method:: public void warning(String message, Object o)  
+          
+          
+      
+    .. java:method:: public void warning(java l, String format, Object args)  
+          
+          
+      
+    .. java:method:: public void info(String message)  
+          
+          
+      
+    .. java:method:: public void info(String message, Object o)  
+          
+          
+      
+    .. java:method:: public void info(java l, String format, Object args)  
+          
+          
+      
+    .. java:method:: public void debug(String message)  
+          
+          
+      
+    .. java:method:: public void debug(String message, Object o)  
+          
+          
+      
+    .. java:method:: public void debug(java l, String format, Object args)  
+          
+          
+      
+    .. java:method:: public void verbose(String message)  
+          
+          
+      
+    .. java:method:: public void verbose(String message, Object o)  
+          
+          
+      
+    .. java:method:: public void verbose(java l, String format, Object args)  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Util.MathUtil
+-------------------------------------------------
+
+.. java:type:: public class MathUtil
+    
+    
+    
+    
+    
+    .. java:method:: static public double lerp(double x, double fromLo, double fromHi, double toLo, double toHi)  
+          
+          
+      
+    .. java:method:: static public int binarySearch(List li, double query)  
+          
+          Precondition: The list is sorted
+          Searches the list for the element using a binary search algorithm. If the element is not found, the inverted insertion point is returned.
+          :param li: The sorted list to search
+          None
+      
+    .. java:method:: static public double lerpLookup(List source, List target, double query)  
+          
+          precondition: source and target are sorted and share the same length
+      
+    .. java:method:: static public List lerpLookupMap(List source, List target, List queries)  
+          
+          
+      
+    .. java:method:: static public double normalizeAngle(double angle)  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Util.Pose
+---------------------------------------------
+
+.. java:type:: public class Pose
+    
+    
+    
+    .. java:field:: public double x  
+          
+          
+      
+    .. java:field:: public double y  
+          
+          
+      
+    .. java:field:: public double heading  
+          
+          
+      
+    .. java:field:: public Vector velocity  
+          
+          
+      
+    
+    
+    .. java:constructor:: public Pose(double x, double y, double heading)  
+          
+          
+      
+    .. java:constructor:: public Pose(Vector v, double heading)  
+          
+          
+      
+    .. java:method:: public Vector getCoordinate()  
+          
+          
+      
+    .. java:method:: public boolean fuzzyCompare(Pose other, int distanceThreshold, int angleThreshold)  
+          
+          
+      
+    .. java:method:: public boolean fuzzyCompare(Pose other)  
+          
+          
+      
+    .. java:method:: public String toString()  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Util.ServoEx
+------------------------------------------------
+
+.. java:type:: public class ServoEx
+    
+    
+    
+    .. java:field:: final private double maxPosition  
+          
+          
+      
+    .. java:field:: final private double minPosition  
+          
+          
+      
+    .. java:field:: final private Servo servo  
+          
+          
+      
+    .. java:field:: private double maxAngle  
+          
+          
+      
+    
+    
+    .. java:constructor:: public ServoEx(HardwareMap hw, String servoName, double minAngle, double maxAngle, AngleUnit angleUnit)  
+          
+          
+      
+    .. java:constructor:: public ServoEx(HardwareMap hw, String servoName, double minDegree, double maxDegree)  
+          
+          
+      
+    .. java:method:: public void rotateByAngle(double angle, AngleUnit angleUnit)  
+          
+          
+      
+    .. java:method:: public void rotateByAngle(double degrees)  
+          
+          
+      
+    .. java:method:: public void turnToAngle(double angle, AngleUnit angleUnit)  
+          
+          
+      
+    .. java:method:: public void turnToAngle(double degrees)  
+          
+          
+      
+    .. java:method:: public void rotateBy(double position)  
+          
+          
+      
+    .. java:method:: public void setRange(double min, double max, AngleUnit angleUnit)  
+          
+          
+      
+    .. java:method:: public void setRange(double min, double max)  
+          
+          
+      
+    .. java:method:: public boolean getInverted()  
+          
+          
+      
+    .. java:method:: public void setInverted(boolean isInverted)  
+          
+          
+      
+    .. java:method:: public double getPosition()  
+          
+          
+      
+    .. java:method:: public void setPosition(double position)  
+          
+          
+      
+    .. java:method:: public double getAngle(AngleUnit angleUnit)  
+          
+          
+      
+    .. java:method:: public double getAngle()  
+          
+          
+      
+    .. java:method:: public double getAngleRange(AngleUnit angleUnit)  
+          
+          
+      
+    .. java:method:: public double getAngleRange()  
+          
+          
+      
+    .. java:method:: public void disable()  
+          
+          
+      
+    .. java:method:: public String getDeviceType()  
+          
+          
+      
+    .. java:method:: private double toRadians(double angle, AngleUnit angleUnit)  
+          
+          
+      
+    .. java:method:: private double fromRadians(double angle, AngleUnit angleUnit)  
+          
+          
+      
+    .. java:method:: public Manufacturer getManufacturer()  
+          
+          
+      
+    .. java:method:: public String getDeviceName()  
+          
+          
+      
+    .. java:method:: public String getConnectionInfo()  
+          
+          
+      
+    .. java:method:: public int getVersion()  
+          
+          
+      
+    .. java:method:: public void resetDeviceConfigurationForOpMode()  
+          
+          
+      
+    .. java:method:: public void close()  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Util.Vector
+-----------------------------------------------
+
+.. java:type:: public class Vector
+    
+    
+    
+    
+    
+    .. java:constructor:: public Vector(double x, double y)  
+          
+          Simple constructor.
+          Build a vector from its coordinates
+          :param x: abscissa
+          :param y: ordinate
+          
+          **See Also:** :java:ref:`getX()` 
+          
+          **See Also:** :java:ref:`getY()` 
+      
+    .. java:constructor:: public Vector(double v) throws DimensionMismatchException  
+          
+          Simple constructor.
+          Build a vector from its coordinates
+          :param v: coordinates array
+          :throws: DimensionMismatchException
+          
+          **See Also:** :java:ref:`toArray()` 
+      
+    .. java:constructor:: public Vector(double a, Vector2D u)  
+          
+          Multiplicative constructor
+          Build a vector from another one and a scale factor.
+          The vector built will be a * u
+          :param a: scale factor
+          :param u: base (unscaled) vector
+      
+    .. java:constructor:: public Vector(double a1, Vector2D u1, double a2, Vector2D u2)  
+          
+          Linear constructor
+          Build a vector from two other ones and corresponding scale factors.
+          The vector built will be a1 * u1 + a2 * u2
+          :param a1: first scale factor
+          :param u1: first base (unscaled) vector
+          :param a2: second scale factor
+          :param u2: second base (unscaled) vector
+      
+    .. java:constructor:: public Vector(double a1, Vector2D u1, double a2, Vector2D u2, double a3, Vector2D u3)  
+          
+          Linear constructor
+          Build a vector from three other ones and corresponding scale factors.
+          The vector built will be a1 * u1 + a2 * u2 + a3 * u3
+          :param a1: first scale factor
+          :param u1: first base (unscaled) vector
+          :param a2: second scale factor
+          :param u2: second base (unscaled) vector
+          :param a3: third scale factor
+          :param u3: third base (unscaled) vector
+      
+    .. java:constructor:: public Vector(double a1, Vector2D u1, double a2, Vector2D u2, double a3, Vector2D u3, double a4, Vector2D u4)  
+          
+          Linear constructor
+          Build a vector from four other ones and corresponding scale factors.
+          The vector built will be a1 * u1 + a2 * u2 + a3 * u3 + a4 * u4
+          :param a1: first scale factor
+          :param u1: first base (unscaled) vector
+          :param a2: second scale factor
+          :param u2: second base (unscaled) vector
+          :param a3: third scale factor
+          :param u3: third base (unscaled) vector
+          :param a4: fourth scale factor
+          :param u4: fourth base (unscaled) vector
       
 
 org.firstinspires.ftc.teamcode.Subsystems.Control.Control
@@ -550,9 +1378,37 @@ org.firstinspires.ftc.teamcode.Subsystems.Control.Control
           
           
       
+    .. java:field:: final public DcMotorEx slideMotor  
+          
+          
+      
+    .. java:field:: final public DcMotorEx intakeMotor  
+          
+          
+      
+    .. java:field:: final public DcMotorEx craneMotor  
+          
+          
+      
+    .. java:field:: final public Servo airplaneLauncher  
+          
+          
+      
+    .. java:field:: final public Servo airplaneLaunchAngle  
+          
+          
+      
+    .. java:field:: final public Servo clawOpenClose  
+          
+          
+      
+    .. java:field:: final public Servo clawShoulder  
+          
+          
+      
     
     
-    .. java:constructor:: public Control(Telemetry telemetry)  
+    .. java:constructor:: public Control(Telemetry telemetry, Servo airplaneLauncher, Servo airplaneLaunchAngle, Servo clawOpenClose, Servo clawShoulder, DcMotorEx slideMotor, DcMotorEx intakeMotor, DcMotorEx craneMotor)  
           
           
       
@@ -564,7 +1420,15 @@ org.firstinspires.ftc.teamcode.Subsystems.Control.Control
           
           
       
-    .. java:method:: public void airplaneLaunch(PlaneLaunchRange range)  
+    .. java:method:: public void airplaneLaunch()  
+          
+          
+      
+    .. java:method:: public void setAirplaneAngle()  
+          
+          
+      
+    .. java:method:: public void resetAirplaneAngle()  
           
           
       
@@ -576,15 +1440,21 @@ org.firstinspires.ftc.teamcode.Subsystems.Control.Control
           
           
       
-    .. java:method:: public void setLinearSlideMotorPower(double power)  
+    .. java:method:: public void setCraneLinearSlideMotorPower(double power)  
+          
+          Moves the crane in a safe way by also moving the slide.
+          The crane and slide are connected, so they must be moved together.
+      
+    .. java:method:: public void setCraneMotorPower(double power)  
+          
+          None
+            :param power: No Description
+      
+    .. java:method:: public void runIntake()  
           
           
       
-    .. java:method:: public void setClaw(ClawState clawState)  
-          
-          
-      
-    .. java:method:: public void setClawSync(ClawState clawState)  
+    .. java:method:: public void stopIntake()  
           
           
       
@@ -596,6 +1466,18 @@ org.firstinspires.ftc.teamcode.Subsystems.Control.Control
           
           
       
+    .. java:method:: public void extendShoulder()  
+          
+          
+      
+    .. java:method:: public void pickupPosShoulder()  
+          
+          
+      
+    .. java:method:: public void retractShoulder()  
+          
+          
+      
     .. java:method:: public void openClawSync()  
           
           
@@ -604,29 +1486,68 @@ org.firstinspires.ftc.teamcode.Subsystems.Control.Control
           
           
       
-    .. java:method:: public void moveCrane(CraneState craneState)  
+
+org.firstinspires.ftc.teamcode.Subsystems.Control.TargetedMotor
+--------------------------------------------------------------------
+
+.. java:type:: public class TargetedMotor
+    
+    A linear slide with a custom PID controller
+    :param <I>: The constants for the linear slide :java:ref:`{@link TargetedMotorConstants`
+    
+    
+    .. java:field::  DcMotorEx innerMotor  
+          
+          
+      
+    .. java:field::  TargetedMotorConstants constants  
+          
+          
+      
+    .. java:field::  PID pid  
+          
+          
+      
+    .. java:field::  MasterLogger logger  
+          
+          
+      
+    .. java:field::  ElapsedTime timer  
+          
+          
+      
+    .. java:field::  boolean debug  
+          
+          
+      
+    
+    
+    .. java:constructor:: public TargetedMotor(DcMotorEx innerMotor, I constants, PID pid, Telemetry telemetry)  
+          
+          Create a new linear slide
+          :param innerMotor: The motor that controls the linear slide
+          :param constants: The constants for the linear slide
+      
+    .. java:method:: public void move(int pos)  
+          
+          
+      
+    .. java:method:: public void move(String name)  
           
           
       
 
-org.firstinspires.ftc.teamcode.Subsystems.Control.ScorePixelThread
------------------------------------------------------------------------
+org.firstinspires.ftc.teamcode.Subsystems.Control.TargetedMotorConstants
+-----------------------------------------------------------------------------
 
-.. java:type:: public class ScorePixelThread
+.. java:type:: abstract public class TargetedMotorConstants
+    
+    Basically a glorified map/enum
     
     
     
-    .. java:field:: private final Control control  
-          
-          
-      
     
-    
-    .. java:constructor:: public ScorePixelThread(Control control)  
-          
-          
-      
-    .. java:method:: public void run()  
+    .. java:method:: abstract int get(String name)  
           
           
       
@@ -707,120 +1628,84 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.Drive
           
           
       
-    .. java:field:: public final MotorGeneric motors  
+    .. java:field:: final private MecanumLocalizer localizer  
           
           
       
-    .. java:field:: private final DcMotorEx odL  
+    .. java:field:: public PoseEstimationMethod poseEstimator  
           
           
       
-    .. java:field:: private final DcMotorEx odB  
-          
-          
-      
-    .. java:field:: private final DcMotorEx odR  
-          
-          
-      
-    .. java:field:: public double ODOMETRY_TRACKWIDTH  
-          
-          
-      
-    .. java:field:: public double ODOMETRY_FOWARD_DISPLACEMENT  
-          
-          
-      
-    .. java:field:: public double ODOMETRY_COUNTS_PER_MM  
-          
-          
-      
-    .. java:field:: public boolean debug  
-          
-          
-      
-    .. java:field:: public BNO055IMU imu  
-          
-          
-      
-    .. java:field:: static public Pose currentPosition  
-          
-          
-      
-    .. java:field:: public int previousLeftOdometryTicks  
-          
-          
-      
-    .. java:field:: public int previousBackOdometryTicks  
-          
-          
-      
-    .. java:field:: public int previousRightOdometryTicks  
-          
-          
-      
-    .. java:field:: private final Localizer localizer  
-          
-          
-      
-    .. java:field:: public PoseEstimationMethod poseEstimationMethod  
+    .. java:field:: static public Pose currentPose  
           
           
       
     
     
-    .. java:constructor:: public Drive(MotorGeneric motors, DcMotorEx odometry, PoseEstimationMethod poseEstimationMethod, BNO055IMU imu, Telemetry telemetry)  
+    .. java:constructor:: public Drive(MotorGeneric motors, DcMotorEx odometry, PoseEstimationMethodChoice poseEstimationMethodChoice, BNO055IMU imu, Telemetry telemetry)  
           
-          Initializes the drive subsystem
-          :param motors:      The motors ...
-          :param telemetry:   The telemetry
+          Initializes the drive subsystem, and all related instance variables.
+          :param motors: This is a data structure that stores the 4 drive motors for the wheels, similar
+          to an array but with more functionalities.
+          :param odometry: A representation of the odometry wheels, which are extra wheels not used to
+          drive the robot but only to estimate the robot's position
+          :param poseEstimationMethodChoice: The choice of how to estimate a pose, which represents the
+          robot's position
+          :param imu: An imu is a gyro with an accelerometer that it built into the hub. However, our
+          team does not typically use it, due to its inaccuracy.
+          :param telemetry: Telemetry is one way to log what's going on as the code is executing, so
+          that the driver can see these notifications.
       
     .. java:method:: public void setZeroPowerBehavior(DcMotor mode)  
           
-          Uniformly sets zero power behavior of all drive motors
-          :param mode: Zero Power Mode
+          Sets the zero power behavior (what motors will do when their power is 0) of all drive motors
+          :param mode: The zero power mode, choosing from the enums UNKNOWN, BREAK, AND FLOAT
           
           **See Also:** :java:ref:`DcMotorEx.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior)` 
+          
+          **See Also:** :java:ref:`DcMotor.ZeroPowerBehavior` 
       
     .. java:method:: public void setRunMode(DcMotor mode)  
           
-          Uniformly sets run mode of all drive motors
-          :param mode: Run mode
+          Sets the run mode (the way in which the motors will run, including RUN_USING_ENCODER AND
+          RUN_TO_POSITION) of all drive motors
+          :param mode: The enum run mode
           
-          **See Also:** :java:ref:`DcMotorEx.setMode(DcMotor.RunMode)` 
+          **See Also:** :java:ref:`DcMotorEx.setMode(DcMotor.RunMode)\` 
+          
+          **See Also:** :java:ref:`DcMotor.RunMode` 
       
     .. java:method:: public void setDrivePowers(MotorGeneric powers)  
           
-          Sets the drive power of each motor individually.
-          :param powers: the powers to set each of the motors to
+          Overloaded method - this version sets the power of each driving motor individually to a
+          (potentially) different power.
+          :param powers: The powers to set each of the motors to, stored in a data structure called a
+          MotorGeneric, which functions similarly to an array but with more features
           
           **See Also:** :java:ref:`DcMotorEx.setPower(double)` 
+          
+          **See Also:** :java:ref:`MotorGeneric` 
       
     .. java:method:: public void setDrivePowers(double power)  
           
-          
+          Overloaded method - this method sets the power of all drive motors to be the same.
+          :param power: The power all motors should be set to
       
     .. java:method:: private void stop()  
           
-          Sets all drive motor powers to zero
+          Stops the robot by setting all drive motor powers to zero
       
     .. java:method:: public MotorGeneric calcMotorPowers(double leftStickX, double leftStickY, double rightStickX)  
           
-          Calculates the motor powers when given the position o the left and right sticks
-          :param leftStickX:  left joystick x position
-          :param leftStickY:  left joystick y position
-          :param rightStickX: right joystick x position for turning
+          Calculates the motor powers based on the given positions of the left and right sticks of
+          gamepad 1.
+          :param leftStickX:  The x-position of the left
+          :param leftStickY:  The y-position of the left joystick
+          :param rightStickX: The x-position of the right joystick (used for turning)
           None
-      
-    .. java:method:: static public double normalizeAngle(double angle)  
-          
-          
+          left, front right, rear left, rear right.
       
     .. java:method:: public void motorController(Targeter targeter, PositionController positionController)  
-          
-          
-      
-    .. java:method:: private void updateCurrentPose(Pose startingPosition)  
           
           
       
@@ -830,27 +1715,29 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.Drive
       
     .. java:method:: public void move(Pose p)  
           
+          Moves the robot to a given position, it uses a :java:ref:`{@link StaticTargeter` internally.
+          :param p: The position to move to, the positive y-axis points forward,
+          the x-axis points right,
+          and heading is in degrees clockwise.
           
+          **See Also:** :java:ref:`Pose` 
       
-    .. java:method:: public void moveVector(Vector vector)  
+    .. java:method:: public void move(Vector vector)  
           
+          :param vector: Moves the robot to a given position, without turning, this called :java:ref:`{@link .move(Pose)` internally.
           
+          **See Also:** :java:ref:`move(Pose)` 
       
-    .. java:method:: public void moveVector(Vector vector, double angle)  
+    .. java:method:: public void move(double angle)  
           
-            :param vector: No Description
-            :param angle: No Description
-          None
-      
-    .. java:method:: public void moveAngle(int angle)  
-          
-          
+          Turns the robot clockwise by a given angle, using :java:ref:`{@link .move(Pose)` internally.
+          :param angle: the angle to turn by, in degrees
       
     .. java:method:: public void purePursuit(Path path)  
           
           
       
-    .. java:method:: public void followProfile(MotionProfile profile, VAController vaController, PositionController positionController)  
+    .. java:method:: public void followProfile(MotionProfile profile, PositionController positionController)  
           
           
       
@@ -881,11 +1768,114 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.FeedForward
           
       
 
+org.firstinspires.ftc.teamcode.Subsystems.Drive.MotorControlData
+---------------------------------------------------------------------
+
+.. java:type:: public class MotorControlData
+    
+    
+    
+    .. java:field::  DcMotorEx motor  
+          
+          
+      
+    .. java:field:: public PID moveSystem  
+          
+          
+      
+    .. java:field:: public boolean isNotMoving  
+          
+          
+      
+    .. java:field:: public boolean isDone  
+          
+          
+      
+    .. java:field:: public int currentCount  
+          
+          
+      
+    .. java:field::  int prevCount  
+          
+          
+      
+    .. java:field:: public int targetCount  
+          
+          
+      
+    .. java:field:: public double power  
+          
+          
+      
+    .. java:field::  int timeOutThreshold  
+          
+          
+      
+    .. java:field::  MasterLogger motorLogger  
+          
+          
+      
+    .. java:field:: private int noMovementTicks  
+          
+          
+      
+    .. java:field:: final static int noMovementThreshold  
+          
+          
+      
+    .. java:field:: private boolean warned  
+          
+          
+      
+    
+    
+    .. java:constructor:: public MotorControlData(DcMotorEx motorEx, PID mS, int targetTickCount, int timeOutThreshold, Telemetry telemetry, String name)  
+          
+          
+      
+    .. java:method:: public void updateCurrentCount()  
+          
+          
+      
+    .. java:method:: public void setPower(double motorPower)  
+          
+          Sets the power of the motor
+          Do not use any other method to set the motor power, including :java:ref:`{@link DcMotorEx.setPower(double)`,
+          this will mess up the stall detection, as well as other things.
+          :param motorPower: The power to set the motor to
+      
+    .. java:method:: public void setPower()  
+          
+          
+      
+    .. java:method:: public void halt()  
+          
+          
+      
+    .. java:method:: public void updateIsNotMoving()  
+          
+          
+      
+    .. java:method:: public void updatePrevCount()  
+          
+          
+      
+    .. java:method:: public void cycle()  
+          
+          
+      
+    .. java:method:: public void checkMotorDone()  
+          
+          
+      
+
 org.firstinspires.ftc.teamcode.Subsystems.Drive.MotorGeneric
 -----------------------------------------------------------------
 
 .. java:type:: public class MotorGeneric
     
+    A generic class for storing values that correspond to motors, a replacement for a four-element array.
+    :param <T>: The type of the motor value.
     
     
     .. java:field:: public T frontLeft  
@@ -910,18 +1900,6 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.MotorGeneric
           
           
       
-    .. java:constructor:: public MotorGeneric(T motors)  
-          
-          
-      
-    .. java:constructor:: public MotorGeneric(ArrayList motors)  
-          
-          
-      
-    .. java:method:: public ArrayList toList()  
-          
-          
-      
     .. java:method:: public String toString()  
           
           
@@ -933,117 +1911,118 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.OldDrive
 .. java:type:: public class OldDrive
     
     Mecanum drivetrain subsystem
+    None
     
     
-    .. java:field:: static public final double mmPerInch  
+    .. java:field:: final static public double mmPerInch  
           
           
       
-    .. java:field:: static private final double DRIVE_GEAR_REDUCTION  
+    .. java:field:: final static private double DRIVE_GEAR_REDUCTION  
           
           
       
-    .. java:field:: static private final double TICKS_PER_MOTOR_REV_20  
+    .. java:field:: final static private double TICKS_PER_MOTOR_REV_20  
           
           
       
-    .. java:field:: static private final double RPM_MAX_NEVERREST_20  
+    .. java:field:: final static private double RPM_MAX_NEVERREST_20  
           
           
       
-    .. java:field:: static private final double ANGULAR_V_MAX_NEVERREST_20  
+    .. java:field:: final static private double ANGULAR_V_MAX_NEVERREST_20  
           
           
       
-    .. java:field:: static private final double MOTOR_TICK_PER_REV_YELLOW_JACKET_312  
+    .. java:field:: final static private double MOTOR_TICK_PER_REV_YELLOW_JACKET_312  
           
           
       
-    .. java:field:: static private final double GOBUILDA_MECANUM_DIAMETER_MM  
+    .. java:field:: final static private double GOBUILDA_MECANUM_DIAMETER_MM  
           
           
       
-    .. java:field:: static private final double COUNTS_PER_MM  
+    .. java:field:: final static private double COUNTS_PER_MM  
           
           
       
-    .. java:field:: static private final double WHEEL_DIAMETER_MM  
+    .. java:field:: final static private double WHEEL_DIAMETER_MM  
           
           
       
-    .. java:field:: static private final double WHEEL_DIAMETER_INCHES  
+    .. java:field:: final static private double WHEEL_DIAMETER_INCHES  
           
           
       
-    .. java:field:: static private final double COUNTS_PER_INCH  
+    .. java:field:: final static private double COUNTS_PER_INCH  
           
           
       
-    .. java:field:: static private final double COUNTS_CORRECTION_X  
+    .. java:field:: final static private double COUNTS_CORRECTION_X  
           
           
       
-    .. java:field:: static private final double COUNTS_CORRECTION_Y  
+    .. java:field:: final static private double COUNTS_CORRECTION_Y  
           
           
       
-    .. java:field:: static private final double COUNTS_PER_DEGREE  
+    .. java:field:: final static private double COUNTS_PER_DEGREE  
           
           
       
-    .. java:field:: static private final double DRIVE_SPEED  
+    .. java:field:: final static public double DRIVE_SPEED  
           
           
       
-    .. java:field:: static private final double motorKp  
+    .. java:field:: final static private double motorKp  
           
           
       
-    .. java:field:: static private final double motorKi  
+    .. java:field:: final static private double motorKi  
           
           
       
-    .. java:field:: static private final double motorKd  
+    .. java:field:: final static private double motorKd  
           
           
       
-    .. java:field:: public final DcMotorEx frontLeft  
+    .. java:field:: final public DcMotorEx frontLeft  
           
           
       
-    .. java:field:: public final DcMotorEx frontRight  
+    .. java:field:: final public DcMotorEx frontRight  
           
           
       
-    .. java:field:: public final DcMotorEx rearLeft  
+    .. java:field:: final public DcMotorEx rearLeft  
           
           
       
-    .. java:field:: public final DcMotorEx rearRight  
+    .. java:field:: final public DcMotorEx rearRight  
           
           
       
-    .. java:field:: public final DcMotorEx odometry  
+    .. java:field:: final public DcMotorEx odometry  
           
           
       
-    .. java:field:: private final boolean debug  
+    .. java:field:: final private boolean debug  
           
           
       
-    .. java:field:: private final ElapsedTime timer  
+    .. java:field:: final private ElapsedTime timer  
           
           
       
-    .. java:field:: private final double robotX  
+    .. java:field:: final private double robotX  
           
           
       
-    .. java:field:: private final double robotY  
+    .. java:field:: final private double robotY  
           
           
       
-    .. java:field:: private final double robotTheta  
+    .. java:field:: final private double robotTheta  
           
           
       
@@ -1055,7 +2034,7 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.OldDrive
           :param telemetry:   The telemetry
           :param elapsedTime: The timer for the elapsed time
       
-    .. java:method:: static private boolean isMotorDone(int currentCount, int targetCount)  
+    .. java:method:: static public boolean isMotorDone(int currentCount, int targetCount)  
           
           
       
@@ -1127,6 +2106,15 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.PID
 
 .. java:type:: public class PID
     
+    A Generic PID controller
+    
+    <b>Features:</b>
+    
+    <ul>
+    <li>Toggleable Low Pass Filter</li>
+    <li>Integral Windup Prevention</li>
+    <li>Integral Power Cap</li>
+    </ul>
     
     
     .. java:field:: protected boolean hasRun  
@@ -1153,24 +2141,32 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.PID
           
           
       
-    .. java:field:: private double derivativeInverseFilterStrength  
+    .. java:field:: final static public double derivativeInverseFilterStrength  
           
           
       
-    .. java:field:: private final double Kp  
+    .. java:field:: final private double Kp  
           
           
       
-    .. java:field:: private final double Ki  
+    .. java:field:: final private double Ki  
           
           
       
-    .. java:field:: private final double Kd  
+    .. java:field:: final private double Kd  
+          
+          
+      
+    .. java:field:: final private boolean lowPass  
           
           
       
     
     
+    .. java:constructor:: public PID(double Kp, double Ki, double Kd, boolean lowPass)  
+          
+          
+      
     .. java:constructor:: public PID(double Kp, double Ki, double Kd)  
           
           
@@ -1242,10 +2238,10 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.PIDCoefficients
           
       
 
-org.firstinspires.ftc.teamcode.Subsystems.Drive.PoseEstimationMethod
--------------------------------------------------------------------------
+org.firstinspires.ftc.teamcode.Subsystems.Drive.PoseEstimationMethodChoice
+-------------------------------------------------------------------------------
 
-.. java:type:: public enum PoseEstimationMethod
+.. java:type:: public enum PoseEstimationMethodChoice
     
     .. java:field:: ODOMETRY  
           
@@ -1263,27 +2259,511 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.PoseEstimationMethod
           
           
       
+    .. java:field:: NONE  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Subsystems.Drive.SwerveGeneric
+------------------------------------------------------------------
+
+.. java:type:: public class SwerveGeneric
+    
+    
+    
+    .. java:field:: public M motor  
+          
+          
+      
+    .. java:field:: public S servoOne  
+          
+          
+      
+    .. java:field:: public S servoTwo  
+          
+          
+      
+    
+    
+    .. java:constructor:: public SwerveGeneric(M motor, S servoOne, S servoTwo)  
+          
+          
+      
+    .. java:method:: public String toString()  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Subsystems.Vision.AprilTagDetectionThread
+-----------------------------------------------------------------------------
+
+.. java:type:: public class AprilTagDetectionThread
+    
+    
+    
+    .. java:field:: public boolean terminate  
+          
+          
+      
+    .. java:field:: public List currentDetections  
+          
+          
+      
+    .. java:field:: private AprilTagProcessor aprilTag  
+          
+          The variable to store our instance of the AprilTag processor.
+      
+    .. java:field:: final private CameraName cameraName  
+          
+          
+      
+    .. java:field:: private VisionPortal visionPortal  
+          
+          The variable to store our instance of the vision portal.
+      
+    
+    
+    .. java:constructor:: public AprilTagDetectionThread(CameraName cameraName)  
+          
+          
+      
+    .. java:method:: public void run()  
+          
+          
+      
+    .. java:method:: private void initAprilTag()  
+          
+          Initialize the AprilTag processor.
+      
+    .. java:method:: private void updateAprilTagList()  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Subsystems.Vision.MarkerDetectionPipeline
+-----------------------------------------------------------------------------
+
+.. java:type:: public class MarkerDetectionPipeline
+    
+    This pipeline detects where the custom marker is.
+    
+    **See Also:** :java:ref:`OpenCvPipeline` 
+    
+    **See Also:** :java:ref:`Vision` 
+    
+    
+    .. java:field:: final private AllianceColor allianceColor  
+          
+          
+      
+    .. java:field:: private MarkerLocation markerLocation  
+          
+          
+      
+    .. java:field:: private int markerLeftDetected  
+          
+          
+      
+    .. java:field:: private int markerMiddleDetected  
+          
+          
+      
+    .. java:field:: private int markerRightDetected  
+          
+          
+      
+    
+    
+    .. java:constructor:: public MarkerDetectionPipeline(AllianceColor allianceColor)  
+          
+          Class instantiation
+          
+          **See Also:** :java:ref:`Telemetry` 
+          
+          **See Also:** :java:ref:`AllianceColor` 
+      
+    .. java:method:: public Mat processFrame(Mat input)  
+          
+          This method detects where the marker is.
+          It does this by splitting the camera input into left, right, and middle rectangles, these
+          rectangles need to be calibrated. Combined, they do not have to encompass the whole camera
+          input, they probably will only check a small part of it. We then assume the alliance color is
+          either (255, 0, 0) or (0, 0, 255), we get the info when the object is instantiated ({@link
+          #allianceColor}), and that the marker color is (0, 255, 0), which is a bright green ({@link
+          Scalar}'s are used for colors). We compare the marker color with the alliance color on each of
+          the rectangles, if the marker color is on none or multiple of them, it is marked as {@link
+          MarkerLocation#NOT_FOUND}, if otherwise, the respective Location it is in is returned via a
+          :java:ref:`{@link MarkerLocation` variable called :java:ref:`{@link .markerLocation`
+          :param input: A Mask (the class is called :java:ref:`{@link Mat`)
+          None
+          
+          **See Also:** :java:ref:`allianceColor` 
+          
+          **See Also:** :java:ref:`Mat` 
+          
+          **See Also:** :java:ref:`Scalar` 
+          
+          **See Also:** :java:ref:`MarkerLocation` 
+      
+    .. java:method:: public MarkerLocation getMarkerLocation()  
+          
+          Gets the Marker Location, might be not found because of the Search Status.
+          None
+          
+          **See Also:** :java:ref:`MarkerLocation` 
+      
+
+org.firstinspires.ftc.teamcode.Subsystems.Vision.Vision
+------------------------------------------------------------
+
+.. java:type:: public class Vision
+    
+    The Vision Subsystem
+    
+    **See Also:** :java:ref:`<a` href="https://github.com/OpenFTC/EasyOpenCV">EasyOpenCV</a>
+    
+    
+    .. java:field:: final static public int CAMERA_WIDTH  
+          
+          
+      
+    .. java:field:: final static public int CAMERA_HEIGHT  
+          
+          
+      
+    .. java:field:: final static public String WEBCAM_NAME  
+          
+          
+      
+    .. java:field:: final static private double mmPerInch  
+          
+          
+      
+    .. java:field:: final static double CAMERA_FORWARD_DISPLACEMENT  
+          
+          
+      
+    .. java:field:: final static double CAMERA_VERTICAL_DISPLACEMENT  
+          
+          
+      
+    .. java:field:: final static double CAMERA_RIGHT_DISPLACEMENT  
+          
+          
+      
+    .. java:field:: final private HardwareMap hardwareMap  
+          
+          
+      
+    .. java:field:: final private AllianceColor allianceColor  
+          
+          
+      
+    .. java:field:: public AprilTagDetectionThread aprilTagDetectionThread  
+          
+          
+      
+    .. java:field:: private OpenCvCamera camera  
+          
+          
+      
+    .. java:field:: private MarkerDetectionPipeline pipeline  
+          
+          
+      
+    
+    
+    .. java:constructor:: public Vision(Telemetry telemetry, HardwareMap hardwareMap, AllianceColor allianceColor)  
+          
+          Class instantiation
+          :param telemetry:     Telemetry
+          :param hardwareMap:   the hardware map
+          :param allianceColor: the alliance color
+      
+    .. java:method:: public void stopAprilTagDetection() throws InterruptedException  
+          
+          
+      
+    .. java:method:: public Vector getRobotPosition()  
+          
+          
+      
+    .. java:method:: private void initDetectionPipeline()  
+          
+          
+      
+    .. java:method:: public void stop()  
+          
+          
+      
+    .. java:method:: public MarkerDetectionPipeline detectMarkerRun()  
+          
+          This method waits until the search for the marker is done, and then it return the marker
+          location. It waits until the marker is found, then it returns the marker location.
+          None
+      
+
+org.firstinspires.ftc.teamcode.Subsystems.Web.View
+-------------------------------------------------------
+
+.. java:type:: public class View
+    
+    
+    
+    
+    
+
+org.firstinspires.ftc.teamcode.Subsystems.Web.Web
+------------------------------------------------------
+
+.. java:type:: public class Web
+    
+    
+    
+    
+    
+    .. java:constructor:: public Web(Telemetry telemetry)  
+          
+          inits with telemetry, since every subsystem uses it.
+          :param telemetry: The telemetry for logging
+      
+
+org.firstinspires.ftc.teamcode.Subsystems.Web.WebAction
+------------------------------------------------------------
+
+.. java:type:: public class WebAction
+    
+    
+    
+    .. java:field:: public String statusString  
+          
+          
+      
+    .. java:field:: public int progress  
+          
+          
+      
+    .. java:field:: public String name  
+          
+          
+      
+    .. java:field:: public Status status  
+          
+          
+      
+    .. java:field:: public String startTimestamp  
+          
+          
+      
+    
+    
+    .. java:constructor:: public WebAction(String name, String status)  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Subsystems.Web.WebLog
+---------------------------------------------------------
+
+.. java:type:: public class WebLog
+    
+    
+    
+    .. java:field:: public String tag  
+          
+          
+      
+    .. java:field:: public String message  
+          
+          
+      
+    .. java:field:: public LogSeverity severity  
+          
+          
+      
+    .. java:field:: public String timestamp  
+          
+          
+      
+    .. java:field:: public Object data  
+          
+          
+      
+    
+    
+    .. java:constructor:: public WebLog(String tag, String message, LogSeverity severity, Object data)  
+          
+          
+      
+    .. java:constructor:: public WebLog(String tag, String message, LogSeverity severity)  
+          
+          
+      
+    .. java:method:: static public void verbose(String tag, String message)  
+          
+          
+      
+    .. java:method:: static public void verbose(String tag, String message, Object object)  
+          
+          
+      
+    .. java:method:: static public void debug(String tag, String message)  
+          
+          
+      
+    .. java:method:: static public void debug(String tag, String message, Object object)  
+          
+          
+      
+    .. java:method:: static public void info(String tag, String message)  
+          
+          
+      
+    .. java:method:: static public void info(String tag, String message, Object object)  
+          
+          
+      
+    .. java:method:: static public void warning(String tag, String message)  
+          
+          
+      
+    .. java:method:: static public void warning(String tag, String message, Object object)  
+          
+          
+      
+    .. java:method:: static public void error(String tag, String message)  
+          
+          
+      
+    .. java:method:: static public void error(String tag, String message, Object object)  
+          
+          
+      
+    .. java:method:: public String toString()  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Subsystems.Web.WebThread
+------------------------------------------------------------
+
+.. java:type:: public class WebThread
+    
+    
+    
+    .. java:field:: final static private ArrayList logs  
+          
+          
+      
+    .. java:field:: final static private ArrayList actions  
+          
+          
+      
+    .. java:field:: final static private HashMap defaultHeaders  
+          
+          
+      
+    .. java:field::  int port  
+          
+          
+      
+    .. java:field::  ServerSocket serverSocket  
+          
+          
+      
+    .. java:field::  WebCanvas webCanvas  
+          
+          
+      
+    .. java:field:: final private Gson gson  
+          
+          
+      
+    .. java:field:: volatile static public boolean terminate  
+          
+          
+      
+    
+    
+    .. java:constructor:: public WebThread() throws IOException  
+          
+          
+      
+    .. java:constructor:: public WebThread(int port) throws IOException  
+          
+          
+      
+    .. java:method:: static public void addLog(WebLog log)  
+          
+          
+      
+    .. java:method:: static public void setPercentage(String task, int percentage)  
+          
+          
+      
+    .. java:method:: static public void setPercentage(String task, int progress, int total)  
+          
+          
+      
+    .. java:method:: static public void addAction(WebAction action)  
+          
+          
+      
+    .. java:method:: static public void removeAction(String task)  
+          
+          
+      
+    .. java:method:: static private String readHeaders(InputStreamReader reader) throws IOException  
+          
+          
+      
+    .. java:method:: private Response returnError(WebError error)  
+          
+          
+      
+    .. java:method:: private void invalidMethod(String method) throws WebError  
+          
+          
+      
+    .. java:method:: private Response returnObject(Object obj)  
+          
+          
+      
+    .. java:method:: private Response handleRequest(Request req) throws WebError  
+          
+          
+      
+    .. java:method:: public void run()  
+          
+          Workflow:
+          - Read socket to end
+          - Parse request (:java:ref:`{@link Request.Request(String)`)
+          - Generate response (:java:ref:`{@link WebThread.handleRequest(Request)`)
+          - Return response
+      
 
 org.firstinspires.ftc.teamcode.Subsystems.Drive.Controller.ControllerOutput
 --------------------------------------------------------------------------------
 
 .. java:type:: public class ControllerOutput
     
+    Merely a data class to hold the output of a :java:ref:`{@link PositionController` or a :java:ref:`{@link VAController`,
+    this gets passed to a :java:ref:`{@link org.firstinspires.ftc.teamcode.Subsystems.Drive.Localizer.Localizer`.
     
     
-    .. java:field:: public final double x  
+    .. java:field:: final public double x  
           
           
       
-    .. java:field:: public final double y  
+    .. java:field:: final public double y  
           
           
       
-    .. java:field:: public final double heading  
+    .. java:field:: final public double heading  
           
           
       
-    .. java:field:: public final double actualHeading  
+    .. java:field:: final public double actualHeading  
           
           
       
@@ -1461,6 +2941,10 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.Curve.QuinticSpline2D
           
           
       
+    .. java:method:: public double length()  
+          
+          
+      
     .. java:method:: public String toString()  
           
           
@@ -1469,7 +2953,7 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.Curve.QuinticSpline2D
 org.firstinspires.ftc.teamcode.Subsystems.Drive.Localizer.Localizer
 ------------------------------------------------------------------------
 
-.. java:type:: public abstract class Localizer
+.. java:type:: abstract public class Localizer
     
     
     
@@ -1483,15 +2967,7 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.Localizer.Localizer
           
           
       
-    .. java:method:: public abstract MotorGeneric localize(ControllerOutput output)  
-          
-          
-      
-    .. java:method:: public MotorGeneric mix(ControllerOutput first, ControllerOutput second, int firstMultiplier, int secondMultiplier)  
-          
-          
-      
-    .. java:method:: public MotorGeneric mix(ControllerOutput first, ControllerOutput second)  
+    .. java:method:: abstract public void setPowers(ControllerOutput output)  
           
           
       
@@ -1503,13 +2979,71 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.Localizer.MecanumLocalizer
     
     
     
+    .. java:field:: public DcMotorEx frontLeft  
+          
+          
+      
+    .. java:field:: public DcMotorEx frontRight  
+          
+          
+      
+    .. java:field:: public DcMotorEx rearLeft  
+          
+          
+      
+    .. java:field:: public DcMotorEx rearRight  
+          
+          
+      
     
     
-    .. java:constructor:: public MecanumLocalizer()  
+    .. java:constructor:: public MecanumLocalizer(DcMotorEx frontLeft, DcMotorEx frontRight, DcMotorEx rearLeft, DcMotorEx rearRight)  
           
           
       
     .. java:method:: public MotorGeneric localize(ControllerOutput output)  
+          
+          
+      
+    .. java:method:: public void setPowers(ControllerOutput output)  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Subsystems.Drive.Localizer.SwerveLocalizer
+------------------------------------------------------------------------------
+
+.. java:type:: public class SwerveLocalizer
+    
+    
+    
+    .. java:field:: public MotorGeneric modules  
+          
+          
+      
+    .. java:field:: public MotorGeneric angles  
+          
+          
+      
+    
+    
+    .. java:constructor:: public SwerveLocalizer(MotorGeneric modules)  
+          
+          
+      
+    .. java:method:: public MotorGeneric getAngles(ControllerOutput output)  
+          
+          
+      
+    .. java:method:: public MotorGeneric getPowers(ControllerOutput output)  
+          
+          
+      
+    .. java:method:: public MotorGeneric localize(ControllerOutput output)  
+          
+          
+      
+    .. java:method:: public void setPowers(ControllerOutput output)  
           
           
       
@@ -1557,15 +3091,15 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.MotionProfile.MotionProfileOutpu
     
     
     
-    .. java:field:: public final MotionProfileOutput1D x  
+    .. java:field:: final public MotionProfileOutput1D x  
           
           
       
-    .. java:field:: public final MotionProfileOutput1D y  
+    .. java:field:: final public MotionProfileOutput1D y  
           
           
       
-    .. java:field:: public final MotionProfileOutput1D heading  
+    .. java:field:: final public MotionProfileOutput1D heading  
           
           
       
@@ -1583,15 +3117,15 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.MotionProfile.MotionProfileOutpu
     
     
     
-    .. java:field:: public final double position  
+    .. java:field:: final public double position  
           
           
       
-    .. java:field:: public final double velocity  
+    .. java:field:: final public double velocity  
           
           
       
-    .. java:field:: public final double acceleration  
+    .. java:field:: final public double acceleration  
           
           
       
@@ -1685,11 +3219,205 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.MotionProfile.TrapezoidalMotionP
           
       
 
+org.firstinspires.ftc.teamcode.Subsystems.Drive.PoseEstimation.IMU
+-----------------------------------------------------------------------
+
+.. java:type:: public class IMU
+    
+    
+    
+    .. java:field::  Pose startingPose  
+          
+          
+      
+    .. java:field:: public BNO055IMU imu  
+          
+          
+      
+    
+    
+    .. java:constructor:: public IMU(BNO055IMU imu)  
+          
+          
+      
+    .. java:method:: public void start()  
+          
+          
+      
+    .. java:method:: public void update()  
+          
+          
+      
+    .. java:method:: public void stop()  
+          
+          
+      
+    .. java:method:: public Pose getPose()  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Subsystems.Drive.PoseEstimation.MotorEncoders
+---------------------------------------------------------------------------------
+
+.. java:type:: public class MotorEncoders
+    
+    
+    
+    
+    
+    .. java:method:: public void start()  
+          
+          
+      
+    .. java:method:: public void update()  
+          
+          
+      
+    .. java:method:: public void stop()  
+          
+          
+      
+    .. java:method:: public Pose getPose()  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Subsystems.Drive.PoseEstimation.Odometry
+----------------------------------------------------------------------------
+
+.. java:type:: public class Odometry
+    
+    
+    
+    .. java:field:: final private DcMotorEx odL  
+          
+          
+      
+    .. java:field:: final private DcMotorEx odB  
+          
+          
+      
+    .. java:field:: final private DcMotorEx odR  
+          
+          
+      
+    .. java:field::  Pose currentPosition  
+          
+          
+      
+    .. java:field::  int previousLeftOdometryTicks  
+          
+          
+      
+    .. java:field::  int previousBackOdometryTicks  
+          
+          
+      
+    .. java:field::  int previousRightOdometryTicks  
+          
+          
+      
+    .. java:field:: final static public double ODOMETRY_TRACKWIDTH  
+          
+          
+      
+    .. java:field:: final static public double ODOMETRY_FOWARD_DISPLACEMENT  
+          
+          
+      
+    .. java:field:: final static public double ODOMETRY_COUNTS_PER_MM  
+          
+          
+      
+    
+    
+    .. java:constructor:: public Odometry(DcMotorEx odL, DcMotorEx odB, DcMotorEx odR)  
+          
+          
+      
+    .. java:method:: public void start()  
+          
+          
+      
+    .. java:method:: public void update()  
+          
+          
+      
+    .. java:method:: public void stop()  
+          
+          
+      
+    .. java:method:: public Pose getPose()  
+          
+          
+      
+
+org.firstinspires.ftc.teamcode.Subsystems.Drive.PoseEstimation.PoseEstimationMethod
+----------------------------------------------------------------------------------------
+
+.. java:type:: public class PoseEstimationMethod
+    
+    A PoseEstimationMethod is a class that can be used to estimate the robot's current position.
+    
+    
+    
+    
+    .. java:method::  void start()  
+          
+          
+      
+    .. java:method::  void update()  
+          
+          
+      
+    .. java:method::  void stop()  
+          
+          
+      
+    .. java:method::  Pose getPose()  
+          
+          Zero cost getter for the current pose
+          None
+      
+
+org.firstinspires.ftc.teamcode.Subsystems.Drive.PoseEstimation.Visual
+--------------------------------------------------------------------------
+
+.. java:type:: public class Visual
+    
+    
+    
+    
+    
+    .. java:method:: public void start()  
+          
+          
+      
+    .. java:method:: public void update()  
+          
+          
+      
+    .. java:method:: public void stop()  
+          
+          
+      
+    .. java:method:: public Pose getPose()  
+          
+          
+      
+
 org.firstinspires.ftc.teamcode.Subsystems.Drive.Targeter.PurePursuit
 -------------------------------------------------------------------------
 
 .. java:type:: public class PurePursuit
     
+    A pure pursuit targeter. This targeter uses a lookahead distance to find the target point on a path.
+    
+    The targeter draws a circle around the robot with the lookahead distance as the radius.
+    It then finds the furthest intersection of the circle with the path, and sends the robot in that direction.
+    This way the robot can follow a straight path while moving in a curve,
+    this is very useful for non-holonomic drives like swerve.
     
     
     .. java:field::  Path path  
@@ -1720,6 +3448,9 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.Targeter.StaticTargeter
 
 .. java:type:: public class StaticTargeter
     
+    A targeter that always returns the same target.
+    
+    **See Also:** :java:ref:`Targeter` 
     
     
     .. java:field::  Pose target  
@@ -1750,6 +3481,9 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.Targeter.Targeter
 
 .. java:type:: public class Targeter
     
+    A targeter tells the robot where to go.
+    The robot will move in the direction of the target until it reaches it,
+    but you may change the location of the target at any time.
     
     
     
@@ -1761,389 +3495,6 @@ org.firstinspires.ftc.teamcode.Subsystems.Drive.Targeter.Targeter
     .. java:method::  boolean reachedTarget(Pose currentPosition)  
           
           
-      
-
-org.firstinspires.ftc.teamcode.Subsystems.Vision.AprilTagDetectionThread
------------------------------------------------------------------------------
-
-.. java:type:: public class AprilTagDetectionThread
-    
-    
-    
-    .. java:field:: public boolean terminate  
-          
-          
-      
-    .. java:field:: public List currentDetections  
-          
-          
-      
-    .. java:field:: private AprilTagProcessor aprilTag  
-          
-          The variable to store our instance of the AprilTag processor.
-      
-    .. java:field:: private final CameraName cameraName  
-          
-          
-      
-    .. java:field:: private VisionPortal visionPortal  
-          
-          The variable to store our instance of the vision portal.
-      
-    
-    
-    .. java:constructor:: public AprilTagDetectionThread(CameraName cameraName)  
-          
-          
-      
-    .. java:method:: public void run()  
-          
-          
-      
-    .. java:method:: private void initAprilTag()  
-          
-          Initialize the AprilTag processor.
-      
-    .. java:method:: private void updateAprilTagList()  
-          
-          
-      
-
-org.firstinspires.ftc.teamcode.Subsystems.Vision.MarkerLocation
---------------------------------------------------------------------
-
-.. java:type:: public enum MarkerLocation
-    
-    .. java:field:: LEFT  
-          
-          
-      
-    .. java:field:: MIDDLE  
-          
-          
-      
-    .. java:field:: RIGHT  
-          
-          
-      
-    .. java:field:: UNKNOWN  
-          
-          
-      
-
-org.firstinspires.ftc.teamcode.Subsystems.Vision.Vision
-------------------------------------------------------------
-
-.. java:type:: public class Vision
-    
-    The Vision Subsystem
-    
-    
-    .. java:field:: static public final int CAMERA_WIDTH  
-          
-          
-      
-    .. java:field:: static public final int CAMERA_HEIGHT  
-          
-          
-      
-    .. java:field:: static public final String WEBCAM_NAME  
-          
-          
-      
-    .. java:field:: static private final double mmPerInch  
-          
-          
-      
-    .. java:field:: static final double CAMERA_FORWARD_DISPLACEMENT  
-          
-          
-      
-    .. java:field:: static final double CAMERA_VERTICAL_DISPLACEMENT  
-          
-          
-      
-    .. java:field:: static final double CAMERA_RIGHT_DISPLACEMENT  
-          
-          
-      
-    .. java:field:: private final HardwareMap hardwareMap  
-          
-          
-      
-    .. java:field:: private final AllianceColor allianceColor  
-          
-          
-      
-    .. java:field:: public AprilTagDetectionThread aprilTagDetectionThread  
-          
-          
-      
-    
-    
-    .. java:constructor:: public Vision(Telemetry telemetry, HardwareMap hardwareMap, AllianceColor allianceColor)  
-          
-          Class instantiation
-          :param telemetry:     Telemetry
-          :param hardwareMap:   the hardware map
-          :param allianceColor: the alliance color
-      
-    .. java:method:: public void stopAprilTagDetection() throws InterruptedException  
-          
-          
-      
-    .. java:method:: public Vector getRobotPosition()  
-          
-          
-      
-    .. java:method:: public void stop()  
-          
-          
-      
-    .. java:method:: public MarkerLocation detectMarkerRun()  
-          
-          This method waits until the search for the marker is done, and then it return the marker
-          location. It waits until the marker is found, then it returns the marker location.
-          None
-      
-
-org.firstinspires.ftc.teamcode.Subsystems.Web.View
--------------------------------------------------------
-
-.. java:type:: public class View
-    
-    
-    
-    
-    
-
-org.firstinspires.ftc.teamcode.Subsystems.Web.Web
-------------------------------------------------------
-
-.. java:type:: public class Web
-    
-    
-    
-    
-    
-    .. java:constructor:: public Web(Telemetry telemetry)  
-          
-          inits with telemetry, since every subsystem uses it.
-          :param telemetry: The telemetry for logging
-      
-
-org.firstinspires.ftc.teamcode.Subsystems.Web.WebAction
-------------------------------------------------------------
-
-.. java:type:: public class WebAction
-    
-    
-    
-    .. java:field:: public String statusString  
-          
-          
-      
-    .. java:field:: public int progress  
-          
-          
-      
-    .. java:field:: public String name  
-          
-          
-      
-    .. java:field:: public Status status  
-          
-          
-      
-    .. java:field:: public String startTimestamp  
-          
-          
-      
-    
-    
-    .. java:constructor:: public WebAction(String name, String status)  
-          
-          
-      
-
-org.firstinspires.ftc.teamcode.Subsystems.Web.WebLog
----------------------------------------------------------
-
-.. java:type:: public class WebLog
-    
-    
-    
-    .. java:field:: public String tag  
-          
-          
-      
-    .. java:field:: public String message  
-          
-          
-      
-    .. java:field:: public LogSeverity severity  
-          
-          
-      
-    .. java:field:: public String timestamp  
-          
-          
-      
-    .. java:field:: public Object data  
-          
-          
-      
-    
-    
-    .. java:constructor:: public WebLog(String tag, String message, LogSeverity severity, Object data)  
-          
-          
-      
-    .. java:constructor:: public WebLog(String tag, String message, LogSeverity severity)  
-          
-          
-      
-    .. java:method:: static public void verbose(String tag, String message)  
-          
-          
-      
-    .. java:method:: static public void verbose(String tag, String message, Object object)  
-          
-          
-      
-    .. java:method:: static public void debug(String tag, String message)  
-          
-          
-      
-    .. java:method:: static public void debug(String tag, String message, Object object)  
-          
-          
-      
-    .. java:method:: static public void info(String tag, String message)  
-          
-          
-      
-    .. java:method:: static public void info(String tag, String message, Object object)  
-          
-          
-      
-    .. java:method:: static public void warning(String tag, String message)  
-          
-          
-      
-    .. java:method:: static public void warning(String tag, String message, Object object)  
-          
-          
-      
-    .. java:method:: static public void error(String tag, String message)  
-          
-          
-      
-    .. java:method:: static public void error(String tag, String message, Object object)  
-          
-          
-      
-    .. java:method:: public String toString()  
-          
-          
-      
-
-org.firstinspires.ftc.teamcode.Subsystems.Web.WebThread
-------------------------------------------------------------
-
-.. java:type:: public class WebThread
-    
-    
-    
-    .. java:field:: static private final ArrayList logs  
-          
-          
-      
-    .. java:field:: static private final ArrayList actions  
-          
-          
-      
-    .. java:field:: static private final HashMap defaultHeaders  
-          
-          
-      
-    .. java:field::  int port  
-          
-          
-      
-    .. java:field::  ServerSocket serverSocket  
-          
-          
-      
-    .. java:field::  WebCanvas webCanvas  
-          
-          
-      
-    .. java:field:: private final Gson gson  
-          
-          
-      
-    .. java:field:: static public volatile boolean terminate  
-          
-          
-      
-    
-    
-    .. java:constructor:: public WebThread() throws IOException  
-          
-          
-      
-    .. java:constructor:: public WebThread(int port) throws IOException  
-          
-          
-      
-    .. java:method:: static public void addLog(WebLog log)  
-          
-          
-      
-    .. java:method:: static public void setPercentage(String task, int percentage)  
-          
-          
-      
-    .. java:method:: static public void setPercentage(String task, int progress, int total)  
-          
-          
-      
-    .. java:method:: static public void addAction(WebAction action)  
-          
-          
-      
-    .. java:method:: static public void removeAction(String task)  
-          
-          
-      
-    .. java:method:: static private String readHeaders(InputStreamReader reader) throws IOException  
-          
-          
-      
-    .. java:method:: private Response returnError(WebError error)  
-          
-          
-      
-    .. java:method:: private void invalidMethod(String method) throws WebError  
-          
-          
-      
-    .. java:method:: private Response returnObject(Object obj)  
-          
-          
-      
-    .. java:method:: private Response handleRequest(Request req) throws WebError  
-          
-          
-      
-    .. java:method:: public void run()  
-          
-          Workflow:
-          - Read socket to end
-          - Parse request (:java:ref:`{@link Request.Request(String)`)
-          - Generate response (:java:ref:`{@link WebThread.handleRequest(Request)`)
-          - Return response
       
 
 org.firstinspires.ftc.teamcode.Subsystems.Web.Canvas.CanvasLayer
@@ -2385,11 +3736,11 @@ org.firstinspires.ftc.teamcode.Subsystems.Web.Canvas.WebCanvas
     
     
     
-    .. java:field:: public final int height  
+    .. java:field:: final public int height  
           
           
       
-    .. java:field:: public final int width  
+    .. java:field:: final public int width  
           
           
       
@@ -2419,7 +3770,11 @@ org.firstinspires.ftc.teamcode.Subsystems.Web.Server.Request
     
     
     
-    .. java:field:: static private final Pattern HEADER_PATTERN  
+    .. java:field:: final static private Pattern HEADER_PATTERN  
+          
+          
+      
+    .. java:field:: final static private Pattern LINE_SPLIT  
           
           
       
@@ -2526,170 +3881,6 @@ org.firstinspires.ftc.teamcode.Subsystems.Web.Server.WebError
           
       
 
-org.firstinspires.ftc.teamcode.Teleop.Teleop
--------------------------------------------------
-
-.. java:type:: public class Teleop
-    
-    
-    
-    .. java:field::  double deltaT  
-          
-          
-      
-    .. java:field::  double timeCurrent  
-          
-          
-      
-    .. java:field::  double timePre  
-          
-          
-      
-    .. java:field::  ElapsedTime timer  
-          
-          
-      
-    .. java:field:: private Robot robot  
-          
-          
-      
-    
-    
-    .. java:method:: private void initOpMode()  
-          
-          
-      
-    .. java:method:: public void runOpMode() throws InterruptedException  
-          
-          Override of runOpMode()
-          Please do not swallow the InterruptedException, as it is used in cases where the op mode
-          needs to be terminated early.
-          
-          **See Also:** :java:ref:`LinearOpMode` 
-      
-
-org.firstinspires.ftc.teamcode.Testop.CaptureImages
---------------------------------------------------------
-
-.. java:type:: public class CaptureImages
-    
-    This OpMode illustrates how to open a webcam and retrieve images from it. It requires a configuration
-    containing a webcam with the default name ("Webcam 1"). When the opmode runs, pressing the 'A' button
-    will cause a frame from the camera to be written to a file on the device, which can then be retrieved
-    by various means (e.g.: Device File Explorer in Android Studio; plugging the device into a PC and
-    using Media Transfer; ADB; etc.)
-    
-    
-    .. java:field:: static private final String TAG  
-          
-          
-      
-    .. java:field:: static private final int secondsPermissionTimeout  
-          
-          How long we are to wait to be granted permission to use the camera before giving up. Here,
-          we wait indefinitely
-      
-    .. java:field:: private CameraManager cameraManager  
-          
-          State regarding our interaction with the camera
-      
-    .. java:field:: private WebcamName cameraName  
-          
-          
-      
-    .. java:field:: private Camera camera  
-          
-          
-      
-    .. java:field:: private CameraCaptureSession cameraCaptureSession  
-          
-          
-      
-    .. java:field:: private EvictingBlockingQueue frameQueue  
-          
-          The queue into which all frames from the camera are placed as they become available.
-          Frames which are not processed by the OpMode are automatically discarded.
-      
-    .. java:field:: private int captureCounter  
-          
-          State regarding where and how to save frames when the 'A' button is pressed.
-      
-    .. java:field:: private final File captureDirectory  
-          
-          
-      
-    .. java:field:: private Handler callbackHandler  
-          
-          A utility object that indicates where the asynchronous callbacks from the camera
-          infrastructure are to run. In this OpMode, that's all hidden from you (but see :java:ref:`{@link .startCamera`
-          if you're curious): no knowledge of multi-threading is needed here.
-      
-    
-    
-    .. java:method:: public void runOpMode()  
-          
-          
-      
-    .. java:method:: private void onNewFrame(Bitmap frame)  
-          
-          Do something with the frame
-      
-    .. java:method:: private void initializeFrameQueue(int capacity)  
-          
-          
-      
-    .. java:method:: private void openCamera()  
-          
-          
-      
-    .. java:method:: private void startCamera()  
-          
-          
-      
-    .. java:method:: private void stopCamera()  
-          
-          
-      
-    .. java:method:: private void closeCamera()  
-          
-          
-      
-    .. java:method:: private void error(String msg)  
-          
-          
-      
-    .. java:method:: private void error(String format, Object args)  
-          
-          
-      
-    .. java:method:: private boolean contains(int array, int value)  
-          
-          
-      
-    .. java:method:: private void saveBitmap(Bitmap bitmap)  
-          
-          
-      
-
-org.firstinspires.ftc.teamcode.Testop.IMUDirectionalTest
--------------------------------------------------------------
-
-.. java:type:: public class IMUDirectionalTest
-    
-    
-    
-    
-    
-    .. java:method:: public void runOpMode() throws InterruptedException  
-          
-          Override of runOpMode()
-          Please do not swallow the InterruptedException, as it is used in cases where the op mode
-          needs to be terminated early.
-          
-          
-          **See Also:** :java:ref:`com.qualcomm.robotcore.eventloop.opmode.LinearOpMode` 
-      
-
 org.firstinspires.ftc.teamcode.Testop.Drive.BackwardDriveTest
 ------------------------------------------------------------------
 
@@ -2713,6 +3904,25 @@ org.firstinspires.ftc.teamcode.Testop.Drive.CurvedStrafeDriveTest
 ----------------------------------------------------------------------
 
 .. java:type:: public class CurvedStrafeDriveTest
+    
+    
+    
+    
+    
+    .. java:method:: public void runOpMode() throws InterruptedException  
+          
+          Override of runOpMode()
+          Please do not swallow the InterruptedException, as it is used in cases where the op mode
+          needs to be terminated early.
+          
+          
+          **See Also:** :java:ref:`com.qualcomm.robotcore.eventloop.opmode.LinearOpMode` 
+      
+
+org.firstinspires.ftc.teamcode.Testop.Drive.EncoderTest
+------------------------------------------------------------
+
+.. java:type:: public class EncoderTest
     
     
     
@@ -2804,6 +4014,25 @@ org.firstinspires.ftc.teamcode.Testop.Drive.TurnDriveTest
           **See Also:** :java:ref:`com.qualcomm.robotcore.eventloop.opmode.LinearOpMode` 
       
 
+org.firstinspires.ftc.teamcode.Testop.Drive.TwoCommandDriveTest
+--------------------------------------------------------------------
+
+.. java:type:: public class TwoCommandDriveTest
+    
+    
+    
+    
+    
+    .. java:method:: public void runOpMode() throws InterruptedException  
+          
+          Override of runOpMode()
+          Please do not swallow the InterruptedException, as it is used in cases where the op mode
+          needs to be terminated early.
+          
+          
+          **See Also:** :java:ref:`com.qualcomm.robotcore.eventloop.opmode.LinearOpMode` 
+      
+
 org.firstinspires.ftc.teamcode.Testop.Drive.VectorDriveTest
 ----------------------------------------------------------------
 
@@ -2842,368 +4071,48 @@ org.firstinspires.ftc.teamcode.Testop.Drive.VectorDriveTest2
           **See Also:** :java:ref:`com.qualcomm.robotcore.eventloop.opmode.LinearOpMode` 
       
 
-org.firstinspires.ftc.teamcode.Util.AllianceColor
-------------------------------------------------------
-
-.. java:type:: public enum AllianceColor
-    
-    The robot's current alliance, either red or blue
-    .. java:field:: RED  
-          
-          
-      
-    .. java:field:: BLUE  
-          
-          
-      
-
-org.firstinspires.ftc.teamcode.Util.BasicAccelerationIntegrator
---------------------------------------------------------------------
-
-.. java:type:: public class BasicAccelerationIntegrator
-    
-    :java:ref:`{@link org.firstinspires.ftc.teamcode.Util.BasicAccelerationIntegrator` provides a very naive implementation of
-    an acceleration integration algorithm. It just does the basic physics.
-    TODO: Better integration algorithm
-    
-    
-    .. java:field::  BNO055IMU parameters  
-          
-          
-      
-    .. java:field::  Position position  
-          
-          
-      
-    .. java:field::  Velocity velocity  
-          
-          
-      
-    .. java:field::  Acceleration acceleration  
-          
-          
-      
-    .. java:field::  MasterLogger logger  
-          
-          
-      
-    
-    
-    .. java:constructor:: public BasicAccelerationIntegrator()  
-          
-          
-      
-    .. java:method:: public Position getPosition()  
-          
-          
-      
-    .. java:method:: public Velocity getVelocity()  
-          
-          
-      
-    .. java:method:: public Acceleration getAcceleration()  
-          
-          
-      
-    .. java:method:: public void initialize(BNO055IMU parameters, Position initialPosition, Velocity initialVelocity)  
-          
-          
-      
-    .. java:method:: public void update(Acceleration linearAcceleration)  
-          
-          
-      
-
-org.firstinspires.ftc.teamcode.Util.MasterLogger
+org.firstinspires.ftc.teamcode.Util.Dual.DualNum
 -----------------------------------------------------
 
-.. java:type:: public class MasterLogger
+.. java:type:: public class DualNum
+    
+    :param <Param>: Variable of differentiation
     
     
-    
-    .. java:field:: public Telemetry telemetry  
-          
-          
-      
-    .. java:field::  String tag  
+    .. java:field::  double values  
           
           
       
     
     
-    .. java:constructor:: public MasterLogger(Telemetry telemetry, String tag)  
+    .. java:constructor:: private DualNum(double values)  
           
           
       
-    .. java:method:: public void error(String message)  
+    .. java:constructor:: public DualNum(List values)  
           
           
       
-    .. java:method:: public void error(String message, Object o)  
+    .. java:method:: public DualNum constant(double c, int n)  
           
           
       
-    .. java:method:: public void warning(String message)  
+    .. java:method:: public DualNum variable(double x0, int n)  
           
           
       
-    .. java:method:: public void warning(String message, Object o)  
-          
-          
-      
-    .. java:method:: public void info(String message)  
-          
-          
-      
-    .. java:method:: public void info(String message, Object o)  
-          
-          
-      
-    .. java:method:: public void debug(String message)  
-          
-          
-      
-    .. java:method:: public void debug(String message, Object o)  
-          
-          
-      
-    .. java:method:: public void verbose(String message)  
-          
-          
-      
-    .. java:method:: public void verbose(String message, Object o)  
+    .. java:method:: public int size()  
           
           
       
 
-org.firstinspires.ftc.teamcode.Util.Pose
----------------------------------------------
+org.firstinspires.ftc.teamcode.Util.Dual.DualVector
+--------------------------------------------------------
 
-.. java:type:: public class Pose
-    
-    
-    
-    .. java:field:: public double x  
-          
-          
-      
-    .. java:field:: public double y  
-          
-          
-      
-    .. java:field:: public double heading  
-          
-          
-      
-    .. java:field:: public Vector velocity  
-          
-          
-      
-    
-    
-    .. java:constructor:: public Pose(double x, double y, double heading)  
-          
-          
-      
-    .. java:constructor:: public Pose(Vector v, double heading)  
-          
-          
-      
-    .. java:method:: public Vector getCoordinate()  
-          
-          
-      
-    .. java:method:: public boolean fuzzyCompare(Pose other)  
-          
-          
-      
-    .. java:method:: public String toString()  
-          
-          
-      
-
-org.firstinspires.ftc.teamcode.Util.ServoEx
-------------------------------------------------
-
-.. java:type:: public class ServoEx
-    
-    ServoEx class from ftcLib
-    
-    
-    .. java:field:: private final double maxPosition  
-          
-          
-      
-    .. java:field:: private final double minPosition  
-          
-          
-      
-    .. java:field:: private final Servo servo  
-          
-          
-      
-    .. java:field:: private double maxAngle  
-          
-          
-      
-    
-    
-    .. java:constructor:: public ServoEx(HardwareMap hw, String servoName, double minAngle, double maxAngle, AngleUnit angleUnit)  
-          
-          
-      
-    .. java:constructor:: public ServoEx(HardwareMap hw, String servoName, double minDegree, double maxDegree)  
-          
-          
-      
-    .. java:method:: public void rotateByAngle(double angle, AngleUnit angleUnit)  
-          
-          
-      
-    .. java:method:: public void rotateByAngle(double degrees)  
-          
-          
-      
-    .. java:method:: public void turnToAngle(double angle, AngleUnit angleUnit)  
-          
-          
-      
-    .. java:method:: public void turnToAngle(double degrees)  
-          
-          
-      
-    .. java:method:: public void rotateBy(double position)  
-          
-          
-      
-    .. java:method:: public void setRange(double min, double max, AngleUnit angleUnit)  
-          
-          
-      
-    .. java:method:: public void setRange(double min, double max)  
-          
-          
-      
-    .. java:method:: public boolean getInverted()  
-          
-          
-      
-    .. java:method:: public void setInverted(boolean isInverted)  
-          
-          
-      
-    .. java:method:: public double getPosition()  
-          
-          
-      
-    .. java:method:: public void setPosition(double position)  
-          
-          
-      
-    .. java:method:: public double getAngle(AngleUnit angleUnit)  
-          
-          
-      
-    .. java:method:: public double getAngle()  
-          
-          
-      
-    .. java:method:: public double getAngleRange(AngleUnit angleUnit)  
-          
-          
-      
-    .. java:method:: public double getAngleRange()  
-          
-          
-      
-    .. java:method:: public void disable()  
-          
-          
-      
-    .. java:method:: public String getDeviceType()  
-          
-          
-      
-    .. java:method:: private double toRadians(double angle, AngleUnit angleUnit)  
-          
-          
-      
-    .. java:method:: private double fromRadians(double angle, AngleUnit angleUnit)  
-          
-          
-      
-
-org.firstinspires.ftc.teamcode.Util.Vector
------------------------------------------------
-
-.. java:type:: public class Vector
+.. java:type:: public class DualVector
     
     
     
     
     
-    .. java:constructor:: public Vector(double x, double y)  
-          
-          Simple constructor.
-          Build a vector from its coordinates
-          :param x: abscissa
-          :param y: ordinate
-          
-          **See Also:** :java:ref:`getX()` 
-          
-          **See Also:** :java:ref:`getY()` 
-      
-    .. java:constructor:: public Vector(double v) throws DimensionMismatchException  
-          
-          Simple constructor.
-          Build a vector from its coordinates
-          :param v: coordinates array
-          :throws: DimensionMismatchException
-          
-          **See Also:** :java:ref:`toArray()` 
-      
-    .. java:constructor:: public Vector(double a, Vector2D u)  
-          
-          Multiplicative constructor
-          Build a vector from another one and a scale factor.
-          The vector built will be a * u
-          :param a: scale factor
-          :param u: base (unscaled) vector
-      
-    .. java:constructor:: public Vector(double a1, Vector2D u1, double a2, Vector2D u2)  
-          
-          Linear constructor
-          Build a vector from two other ones and corresponding scale factors.
-          The vector built will be a1 * u1 + a2 * u2
-          :param a1: first scale factor
-          :param u1: first base (unscaled) vector
-          :param a2: second scale factor
-          :param u2: second base (unscaled) vector
-      
-    .. java:constructor:: public Vector(double a1, Vector2D u1, double a2, Vector2D u2, double a3, Vector2D u3)  
-          
-          Linear constructor
-          Build a vector from three other ones and corresponding scale factors.
-          The vector built will be a1 * u1 + a2 * u2 + a3 * u3
-          :param a1: first scale factor
-          :param u1: first base (unscaled) vector
-          :param a2: second scale factor
-          :param u2: second base (unscaled) vector
-          :param a3: third scale factor
-          :param u3: third base (unscaled) vector
-      
-    .. java:constructor:: public Vector(double a1, Vector2D u1, double a2, Vector2D u2, double a3, Vector2D u3, double a4, Vector2D u4)  
-          
-          Linear constructor
-          Build a vector from four other ones and corresponding scale factors.
-          The vector built will be a1 * u1 + a2 * u2 + a3 * u3 + a4 * u4
-          :param a1: first scale factor
-          :param u1: first base (unscaled) vector
-          :param a2: second scale factor
-          :param u2: second base (unscaled) vector
-          :param a3: third scale factor
-          :param u3: third base (unscaled) vector
-          :param a4: fourth scale factor
-          :param u4: fourth base (unscaled) vector
-      
 
