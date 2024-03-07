@@ -26,6 +26,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: 'true'
       - uses: mattnotmitt/doxygen-action@v1.9.5
         name: Generate Docs
         with:
