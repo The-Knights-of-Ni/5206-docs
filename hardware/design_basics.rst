@@ -92,9 +92,9 @@ There are dozens of different things you can do to your new body. Here are some 
     2. Fillet: makes your model look good as well, but sacrifices good quality when printing (think about steps) 
     3. Combine body: after making all the bodies you want, press this to combine all your bodies and create a new component! 
     4. Split body: the opposite of combine body, splits a body according to a construction plane. 
-    6. Shell: empties out the middle of your solid, generating new faces (esp useful for steel bars) 
-    7. Move: it moves things
-    8. Press-pull: extrudes but doesnt require a flat plane, but instead requires the face to be part of a body. 
+    5. Shell: empties out the middle of your solid, generating new faces (esp useful for steel bars) 
+    6. Move: it moves things
+    7. Press-pull: extrudes but doesnt require a flat plane, but instead requires the face to be part of a body. 
 
 **The parameters mentioned above are able to be changed at the bottom of the modify drop-down. **
 
