@@ -30,7 +30,7 @@ The localizer gets a velocity and heading vector and updates the motor powers.
 and is used by our drive subsystem to maintain consistent speed
 and ensure that slippage does not affect the movement of the robot.
 
-:math:`p(t)=K_p e(t) + K_i \int_{0}^{t} e(t) \,dt + K_d \frac{de(t)}{dt}`
+\f$p(t)=K_p e(t) + K_i \int_{0}^{t} e(t) \,dt + K_d \frac{de(t)}{dt}\f$
 
 Where:
 
@@ -48,13 +48,13 @@ See Also: https://gm0.org/en/latest/docs/software/concepts/control-loops.html?hi
 @anchor feed_forward_controller
 ### Feed Forward Controller
 
-\latexonly p(x, y)=K_a a(x, y) + K_v v(x, y) \endlatexonly
+\f$p(x, y)=K_a a(x, y) + K_v v(x, y)\f$
 
 Where
 
-:math:`p(x, y)` is the attribute value at location (x, y)
+\f$p(x, y)\f$ is the attribute value at location (x, y)
 
-:math:`K_a` is a calibrated constant.
+\f$K_a\f$ is a calibrated constant.
 
 :math:`K_v` is a calibrated constant.
 
