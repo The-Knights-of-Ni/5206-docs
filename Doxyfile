@@ -2,7 +2,7 @@ PROJECT_NAME = "The Knights of Ni"
 PROJECT_NUMBER = "2024"
 PROJECT_BRIEF = "FTC Team 5206's documentation"
 PROJECT_LOGO = "images/Logo.png"
-PROJECT_ICONS = "images/Logo.png"
+PROJECT_ICON = "images/Logo.png"
 
 WARN_IF_UNDOCUMENTED = NO
 EXTRACT_PRIVATE = YES
