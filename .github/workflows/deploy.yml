@@ -35,7 +35,9 @@ jobs:
           doxyfile-path: './Doxyfile'
           enable-latex: true
       - name: Copy images
-        run: cp -r images _doxybuild/html
+        run: |
+          mkdir _doxybuild/html/images
+          cp -r images _doxybuild/html
       - uses: actions/upload-artifact@v3
         name: Upload html as artifact
         with:
