@@ -12,11 +12,11 @@ Logcat is a logging tool provided to us by ADB that allows us to catch log state
 It grabs logs from the whole system and allows us to stream logs directly from the robot to our computer with color and other formatting.
 To open Logcat, go to the bottom left of your Android Studio and select the cat icon as shown.
 
-![Logcat](../../images/Logcat.png)
+![Logcat](Logcat.png)
 
 \note If you are on IntelliJ IDEA and you cannot open Logcat, you can configure it as an external tool.
 
-![LogcatAsExternalTool](../../images/AddingLogcatAsExternalTool.png)
+![LogcatAsExternalTool](AddingLogcatAsExternalTool.png)
 
 ## Telemetry
 

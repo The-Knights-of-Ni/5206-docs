@@ -238,7 +238,7 @@ Now setup Android Studio.
    \attention <h3>Git URL</h3>
    \attention The above url changes from year to year, so make sure to use the correct one.
 
-   ![AndroidStudioStartPage](../../images/AndroidStudioStartPage.png)
+   ![AndroidStudioStartPage](AndroidStudioStartPage.png)
 
 4. Click “Clone”
 5. The repo will open and load the Read Me.
@@ -268,13 +268,13 @@ Now setup Android Studio.
 
    Then click done.
 
-   ![AndroidStudioADBExternalTool](../../images/AndroidStudioADBExternalTool.png)
+   ![AndroidStudioADBExternalTool](AndroidStudioADBExternalTool.png)
 
 7. New UI setup: Again, go to your Android Studio or IntelliJ IDEA settings (File>Settings), go to Appearance and Behavior>New UI, then check the box next to ``New UI``. Restart the IDE when prompted.
 
 \note This part is an optional quality-of-life improvement.
 
-![EnablingNewUI](../../images/EnablingNewUI.png)
+![EnablingNewUI](EnablingNewUI.png)
 
 
 ## Working with the Code
@@ -283,7 +283,7 @@ Now setup Android Studio.
 
 Make the appropriate changes to the code and then click the green check mark on the top right hand side of your screen to commit the changes.
 
-![AndroidStudioCommit](../../images/AndroidStudioCommit.png)
+![AndroidStudioCommit](AndroidStudioCommit.png)
 
 Next write a message accurately summarizing the changes you have made to the code so that others can check at a glance what you did.
 
@@ -295,7 +295,7 @@ Finally click “Commit and Push” and use the default options.
 
 Make the appropriate changes to the code and then open your terminal in Android Studio/IntelliJ IDEA.
 
-![OpenTerminalIntelliJ](../../images/OpenTerminalIntelliJ.png)
+![OpenTerminalIntelliJ](OpenTerminalIntelliJ.png)
 
 Next, with ``YOUR_COMMIT_MESSAGE`` being an accurate description of the changes you made to the code, type the commands
 
