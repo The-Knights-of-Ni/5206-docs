@@ -176,17 +176,17 @@ Then install ``winget`` by installing the
 
 Next, issue the following commands using ``winget`` in the command prompt (hit ``Enter`` after each line):
 
-.. code:: shell
-
+```shell
     winget install -e --id Google.AndroidStudio
     winget install -e --id Git.Git
-
+```
 
 Alternative command for IntelliJ IDEA
 
-.. code:: shell
+```shell
 
     winget install -e --id JetBrains.IntelliJIDEA.Ultimate
+```
 
 If you would like to install IntelliJ IDEA, Visual Studio Code, or another IDE instead of Android Studio,
 use [this website](https://winget.run/) to search for the relevant command, or download them from the official website directly.
@@ -210,7 +210,7 @@ If it says brew is not installed, you need to install brew. To install brew type
 
 Next paste this text:
 
-```
+```shell
     brew install git
     brew install --cask android-studio
 ```
