@@ -40,6 +40,11 @@ https://github.com/signup
 
 \attention Be sure to send Ashwin your GitHub username on slack so that he can add you to the organization.
 
+\note ## A note to linux users.
+\note If you are using a linux distribution, you can install git and android studio from your package manager.
+\note While not documented here, the process is similar to the mac installation process,
+but with the appropriate package manager instead of brew. Java might need to be installed separately.
+
 
 GitHub is an internet hosting service that allows programmers to store, manage, track and control their code using Git.
 Effectively, it lets you store code online in an easier way that allows many people to collaborate.
