@@ -1,0 +1,18 @@
+name: sync.yml
+on:
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.client_payload.ref }}
+          repository: ${{ github.event.client_payload.repository.full_name }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: 'true'
+      - name: Sync
+        run: |
+          git submodule update --init --recursive
+          git push origin ${{ github.event.client_payload.ref }}
