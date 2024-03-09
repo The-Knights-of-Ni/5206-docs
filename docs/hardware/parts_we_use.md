@@ -3,7 +3,7 @@ Parts We Use {#parts_we_use}
 
 ## Strafer Chassis
 
-![Drivetrain](../../images/Drivetrain.png)
+![Drivetrain](Drivetrain.png)
 
 Chassis may change depending on the need presented in the competition,
 however, this Chassis is the most common and most basic form to house wheels and motors.
@@ -12,7 +12,7 @@ Again, this is quite flexible depending on different needs presented by the comp
 
 ## Motors
 
-![Motor](../../images/Motor.png)
+![Motor](Motor.png)
 
 Motors are vital for larger rotational functions in the robot.
 These motors are primarily used to rotate the wheels;
@@ -22,7 +22,7 @@ we used motors to lift a heavy bin due to the need for stronger lifting power on
 
 ## Servos
 
-![Servo](../../images/Servo.png)
+![Servo](Servo.png)
 
 Servos are smaller motors that allow us to carry out simple rotational functions.
 This can mean serving as the joint for arms, spinning for duck wheels, and much more.
@@ -30,7 +30,7 @@ In accordance with FTC guidelines, teams are allowed to use more servos than mot
 
 ## Mecanum
 
-![Wheels](../../images/Wheels.png)
+![Wheels](Wheels.png)
 
 We use mecanum wheels as they allow for the robot to move sideways and diagonally without having to turn.
 This will help in run time as we can save time by moving diagonally rather than going straight then turning.
