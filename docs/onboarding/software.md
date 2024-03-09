@@ -38,7 +38,7 @@ Sign-up link:
 https://github.com/signup
 
 
-\important Be sure to send Ashwin your GitHub username on slack so that he can add you to the organization.
+\attention Be sure to send Ashwin your GitHub username on slack so that he can add you to the organization.
 
 
 GitHub is an internet hosting service that allows programmers to store, manage, track and control their code using Git.
