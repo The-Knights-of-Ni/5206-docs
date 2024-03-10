@@ -50,13 +50,13 @@ A sketch is the foundation of our design and the basis on which bodies are creat
 When using Create, you can choose from the following:
 
 1. Line
-2. Rectangle 
-3. Circle 
-4. Splines/Arcs 
+2. Rectangle
+3. Circle
+4. Splines/Arcs
 5. Polygon
-6. Slots 
-7. Patterns 
-8. Mirrors 
+6. Slots
+7. Patterns
+8. Mirrors
 9. Dimensions
 10. 3D Sketch
 11. Project
@@ -83,7 +83,8 @@ To create a body, you can choose from the following:
 6. Mirror (creates a body by reflecting an existing body across an axis)
 7. Pattern (creates a pattern like in the sketch pattern but this time with body)
 
-\note The default setting is always join, but when please change that to "New Body" for easier usability. After completing your model, please combine all your bodies and create a component.
+\note The default setting is always join, but when please change that to "New Body" for easier usability.
+After completing your model, please combine all your bodies and create a component.
 
 ## Modifying a Body
 
@@ -103,12 +104,21 @@ Finally, appearance changes how the material looks like. Good for renders.
 
 ## Joints and Assemblies
 
-There are two types of joints: joints and as-built joints. Joints are good for connecting things, such as a shaft to a bearing, and there are many options to do so, but all of them involve a snap point, which is the center of where the joint will be counted. There are different types of joints, such as revolutes, rigids, and sliders, each with different types of interactions. An as-built joint is basically this but without the snap point, keeping everything at the same place. 
+There are two types of joints: joints and as-built joints.
+Joints are good for connecting things, such as a shaft to a bearing.
+There are many options to do so, but all of them involve a snap point, which is the center of where the joint will be counted.
+There are different types of joints, such as revolutes, rigids, and sliders, each with different types of interactions.
+An as-built joint is basically this but without the snap point, keeping everything at the same place. 
 
-\note Everything mentioned above (except joints) are usually applied in "parts", and we use joints to connect them in "assemblies". Although in fusion there are no hard rules for these, it is a good practice to keep.
+\note Everything mentioned above (except joints) are usually applied in "parts",
+and we use joints to connect them in "assemblies".
+Although in fusion there are no hard rules for these, it is a good practice to keep.
 
 ## Closing Thoughts
 
-I hope this short tutorial was helpful. Feel free to contact me on slack if you run into any problems. Fusion 360 is a professional-grade software, so there are bound to be difficulties. Happy designing and thank you for your contribution to the team. 
+I hope this short tutorial was helpful.
+Feel free to contact me on slack if you run into any problems.
+Fusion 360 is professional-grade software, so there are bound to be difficulties.
+Happy designing and thank you for your contribution to the team.
 
 -Han 
