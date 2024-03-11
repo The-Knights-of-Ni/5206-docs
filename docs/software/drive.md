@@ -9,7 +9,7 @@ The pose estimator is responsible for updating the robot's position and heading 
 
 ### Targeter
 
-The targeter is responsible for generating a target pose for the :ref:`controller <controller>` to go to.
+The targeter is responsible for generating a target pose for the [Controller](controller) to go to.
 
 @anchor controller
 
@@ -95,6 +95,8 @@ See also: https://www.ctrlaltftc.com/advanced/motion-profiling
 
 Road Runner uses quintic splines to generate motion profiles. The quintic splines represent the location of the robot.
 Road Runner takes the first and second derivatives of the quintic splines to generate the motion profile.
+
+### Odometry
 
 ## Kinematics
 
