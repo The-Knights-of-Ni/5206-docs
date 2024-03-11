@@ -22,7 +22,7 @@ To open Logcat, go to the bottom left of your Android Studio and select the cat 
 
 Telemetry is an FTC internal function that allows us to take logs and output them on the Driver Station. This is useful for more basic, brief logs,
 basically where Logcat is overkill. Telemetry is, due to it being on the Driver Station, most useful for giving information to the driver.
-The purpose of telemetry should be to update the **driver** rather than spew out debug information.
+The purpose of telemetry should be to update the *driver* rather than spew out debug information.
 
 ## Web Logs
 
