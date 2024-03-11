@@ -56,3 +56,4 @@ HTML_EXTRA_FILES = doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
                    doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
                    doxygen-awesome-css/doxygen-awesome-interactive-toc.js
 HTML_HEADER = header.html
+HTML_FOOTER = footer.html
