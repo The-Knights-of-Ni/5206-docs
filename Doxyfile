@@ -4,11 +4,6 @@ PROJECT_BRIEF = "FTC Team 5206's documentation"
 PROJECT_LOGO = "images/Logo.png"
 PROJECT_ICON = "images/Logo.png"
 
-WARN_IF_UNDOCUMENTED = NO
-EXTRACT_PRIVATE = YES
-JAVADOC_BANNER = YES
-JAVADOC_AUTOBRIEF = YES
-
 INPUT = "./CenterStage/TeamCode/src/main/java"
 INPUT += "./CenterStage/TeamCode/src/test/java"
 INPUT += "./docs/index.md"
@@ -24,10 +19,18 @@ IMAGE_PATH = "images"
 
 OPTIMIZE_OUTPUT_JAVA = YES
 
+WARN_IF_UNDOCUMENTED = NO
+EXTRACT_PRIVATE = YES
+JAVADOC_BANNER = YES
+JAVADOC_AUTOBRIEF = YES
+
+
+USE_MATHJAX = YES
+
+
 OUTPUT_LANGUAGE = English
 OUTPUT_DIRECTORY = "_doxybuild"
 
-GENERATE_LATEX = NO
 GENERATE_TREEVIEW = YES # optional. Also works without treeview
 
 DISABLE_INDEX = NO
