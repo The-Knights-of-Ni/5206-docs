@@ -7,6 +7,7 @@ Annotate the class with `@TeleOp` or `@Autonomous` and ensure the class extends 
 
 Use a Motor {#use_a_motor}
 -----------------------------
+
 ```java
 DcMotor motor = hardwareMap.get(DcMotor.class, "motor");
 motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
@@ -25,3 +26,8 @@ Use a Servo {#use_a_servo}
 Coming Soon!
 
 
+
+Use a Servo (FTCLib) {#use_a_servo_ftclib}
+-----------------------------
+
+Coming Soon!
