@@ -4,11 +4,11 @@ Build Systems {#build_systems}
 ## Gradle
 
 We don't run `javac` or `jar` directly, as these are made for desktop applications.
-Instead, we use a build system called `gradle`. Gradle is a build system that is used to compile, test, and package the app.
+Instead, we use a build system called `gradle`. Gradle is a build system used to compile, test, and package apps.
 It is also used to manage dependencies and run tasks, allowing us to bring in external code and automate routine operations.
 The control hub runs Android, which is oddly common in the robotics world,
 but we don't write an entire android app as FIRST has helpfully provided boilerplate code for us.
-The real app (i.e. the android activity and other app related code) is stored in `FtcRobotController`.
+The real app (i.e. the android activity and other app-related code) is stored in `FtcRobotController`.
 This project essential wraps around our code and ensures that basic robot functions like telemetry work.
 The control hub doesn't have a GUI, but many android concepts remain the same.
 For starters, apps are packaged as `apk` files, which are then installed on the robot, we do so over `adb`.
@@ -71,6 +71,7 @@ This makes it so that it might not appear in the gradle files, but it might stil
 
 ### Apache Commons Math & Geometry
 
-We use this library mainly used for vector math. However it's geometry utilities could be useful for pathfinding.
+We use this library mainly used for vector math and linear algebra.
+However, its geometry utilities could be useful for pathfinding.
 
 - [Info on Apache Commons Math](https://commons.apache.org/proper/commons-math/)

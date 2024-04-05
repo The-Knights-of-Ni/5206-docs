@@ -16,3 +16,4 @@ and it is divided into multiple files for readability and usability.
 ## Useful Tools
 
 - [scrcpy](https://github.com/Genymobile/scrcpy)
+- [HsvRangeTool](https://github.com/The-Knights-of-Ni/HsvRangeTool)

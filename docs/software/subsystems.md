@@ -12,7 +12,9 @@ See [Drive](#drive) and [PID](#pid_controller) for more info.
 
 ## Vision
 
-The vision subsystem controls all things vision. This includes the vision challenge for the season.
+The vision subsystem controls vision operations.
+We can't do this in multiple places, because only one function can access the camera at a time.
+This includes the vision challenge for the season.
 OpenCV is used, as there is no viable alternative (Vuforia is no longer supported and see below for tensorflow-lite).
 
 ### Vision Strategies
@@ -41,4 +43,5 @@ and use them for auto adjustment.
 
 Use a threshold to isolate the objects.
 Then use the list of contour areas to get the locations of the objects; use April Tags to find absolute position if necessary.
-This is probably the most complex vision strategy. Machine learning could be viably applied here.
+This is probably the most complex vision strategy.
+Machine learning could be viably applied here without wasting CPU power.
