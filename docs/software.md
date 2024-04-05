@@ -9,6 +9,7 @@ and it is divided into multiple files for readability and usability.
 
 - \subpage build_systems "Build Systems"
 - \subpage debugging "Debugging"
+- \subpage ftc_api_cheatsheet "FTC API Cheatsheet"
 - \subpage op_modes "Op Modes"
 - \subpage subsystems "Subsystems"
 - \subpage drive "Drive Systems"
