@@ -1,7 +1,7 @@
 # Project Metadata
 PROJECT_NAME = "The Knights of Ni"
 PROJECT_NUMBER = "2024"
-PROJECT_BRIEF = "RTFM. CenterStage Off-season Documentation"
+PROJECT_BRIEF = "CenterStage Off-season Documentation"
 PROJECT_LOGO = "images/Logo.png"
 PROJECT_ICON = "images/Logo.png"
 
