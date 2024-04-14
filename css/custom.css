@@ -26,11 +26,12 @@
 .h-link-list {
 }
 
+/* TODO: performs poorly when stacked horizontally due to space constraints (no margin and the words split) */
 .h-link-list > a {
     border-radius: 22px;
     background-color: var(--note-color);
     padding: 8px 12px;
-    margin: 0 10px 0 0;
+    margin: 0 10px 20px 0;
     color: var(--page-foreground-color) !important;
     text-decoration: none !important;
 }
