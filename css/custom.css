@@ -1,0 +1,42 @@
+.no-decor:link {
+    text-decoration: none !important;
+}
+
+.no-decor:visited {
+    text-decoration: none !important;
+}
+
+.no-decor:hover {
+    text-decoration: none !important;
+}
+
+.no-decor:active {
+    text-decoration: none !important;
+}
+
+
+#projectlogoimg {
+    transition: 0.3s;
+}
+
+#projectlogoimg:hover {
+    transform: scale(1.1);
+}
+
+.h-link-list {
+}
+
+.h-link-list > a {
+    border-radius: 22px;
+    background-color: var(--note-color);
+    padding: 8px 12px;
+    margin: 0 10px 0 0;
+    color: var(--page-foreground-color) !important;
+    text-decoration: none !important;
+}
+
+.h-link-list > a:hover {
+    background-color: var(--note-color-dark);
+    color: var(--page-foreground-color) !important;
+    text-decoration: none !important;
+}
