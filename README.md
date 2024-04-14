@@ -1,6 +1,6 @@
 # 5206 Docs
 
-Website: [![Website](https://github.com/The-Knights-of-Ni/5206-docs/actions/workflows/deploy.yml/badge.svg)](https://the-knights-of-ni.github.io/5206-docs/)
+[![Website](https://github.com/The-Knights-of-Ni/5206-docs/actions/workflows/deploy.yml/badge.svg)](https://the-knights-of-ni.github.io/5206-docs/)
 
 Made with Doxygen by Ashwin.
 
