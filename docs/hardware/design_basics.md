@@ -3,9 +3,11 @@ Design Basics {#design_basics}
 
 ## Overview
 
-\note I do not intend to cover all of design, as it is a complicated art. This document is intended to get you started on what things to research.
+\note I do not intend to cover all of design, as it is a complicated art.
+\note This document is intended to get you started on what things to research.
 
 In Fusion 360 Design, there are 4 types of design. (Here listed in terms of usability)
+
 1. Solid / Sheet Metal (covers about 99.999999% of design we need to do)
 2. Form (creates a body using geometries instead of computations)
 3. Mesh (useful for editing STL or other non-computable geometries)
@@ -14,9 +16,9 @@ In Fusion 360 Design, there are 4 types of design. (Here listed in terms of usab
 In robotics, we basically only use solids, and sheet metal sometimes (but we dont have fabrication capability so typical nah). In design, we want to use as many COTS (Commercial Off-The-Shelf) parts as possible. Our vendor is Gobilda. For custom parts, we have capability to print plastic parts (Contact Han for more information). 
 However, these plastic parts are limited by their properties, such as the fact that plastic is less strong than metal. We would like to minimize using these parts and utilize 3D printed parts as mere modifications to already available parts. 
 
-NOTE: If you do own a 3D-printer but don't know how to use it, contact Antonio. 
+\note If you do own a 3D-printer but don't know how to use it, contact Antonio.
 
-> Back to designing!
+_Back to designing!_
 
 Below is the typical workflow for creating a design.
 
@@ -34,8 +36,8 @@ Below is the typical workflow for creating a design.
 
 Our COTS are from [Gobilda](https://www.gobilda.com). Click on the STEP link, and you should download a file called "RANDOMNUMBER.step". Please rename that RANDOMNUMBER to something intellegible. Or else (I will find you). 
 
-> *If you are interested, I have created a program that does this automatically (Contact Han)*
-> TODO for Ashwin, put gist link here
+\note If you are interested, I have created a program that does this automatically (Contact Han for usage details):
+\note https://gist.github.com/arihant2math/27add2d4db741b0528053e892cbb299d
 
 These COTS are what we primarily use on our robot, so it is good to get used to using them.
 
@@ -61,13 +63,24 @@ When using Create, you can choose from the following:
 10. 3D Sketch
 11. Project
 
-For 1-6, they basically just create different shapes, each taking different parameters and integers. For patterns, it takes a sketch and creates a pattern either in a circular form or a rectangular one (dual axis). For mirrors, it reflects a sketch object (created in 1-7) across an axis or another line. For dimensions, this is useful for changing the distance between sketch lines or sketch objects. For 3D sketches, please do not use these. They are very imprecise and are typically only used for single lines to connect objects. 
+For 1–6, they basically just create different shapes, each taking different parameters and integers.
+For patterns, it takes a sketch and creates a pattern either in a circular form or a rectangular one (dual axis).
+For mirrors, it reflects a sketch object (created in 1-7) across an axis or another line.
+For dimensions, this is useful for changing the distance between sketch lines or sketch objects.
+For 3D sketches, please do not use these. 
+They are very imprecise and are typically only used for single lines to connect objects.
 
-The next step for sketches is constraints. I will not list the constraints (see documentation [here](https://help.autodesk.com/view/fusion360/ENU/?guid=SKT-CONSTRAINTS).) They are mainly used for making sketches behave as you would like when changing parameters. When a sketch line turns black, it means it is fully constrained. Additionally, sometimes constraints are automatically generated (such as parallel constraints when creating a rectangle), which could be useful. 
+The next step for sketches is constraints.
+I will not list the constraints (see documentation [here](https://help.autodesk.com/view/fusion360/ENU/?guid=SKT-CONSTRAINTS).)
+They are mainly used for making sketches behave as you would like when changing parameters.
+When a sketch line turns black, it means it is fully constrained.
+Additionally, sometimes constraints are automatically generated (such as parallel constraints when creating a rectangle), which could be useful. 
 
-My favorite feature is project. As the name implies, it projects a sketch from another surface onto the current sketch plane. This is useful for referencing things such as holes on COTS or need to align something to another feature. 
+My favorite feature is project.
+As the name implies, it projects a sketch from another surface onto the current sketch plane.
+This is useful for referencing things such as holes on COTS or need to align something to another feature. 
 
-Finally, the modify feature is similar to modifying a body, except it does it to the sketch. 
+Finally, the "modify" feature is similar to modifying a body, except it does it to the sketch.
 
 \note When you are trying to make a sketch on a presently non-existent plane, it might be useful to use a construction plane (under construction tab).
 
@@ -96,7 +109,7 @@ There are dozens of different things you can do to your new body. Here are some 
 4. Split body: the opposite of combine body, splits a body according to a construction plane.
 5. Shell: empties out the middle of your solid, generating new faces (esp useful for steel bars)
 6. Move: it moves things
-7. Press-pull: extrudes but doesnt require a flat plane, but instead requires the face to be part of a body.
+7. Press-pull: extrudes but doesn't require a flat plane, but instead requires the face to be part of a body.
 
 **The parameters mentioned above are able to be changed at the bottom of the "modify" drop-down.**
 
@@ -108,17 +121,15 @@ There are two types of joints: joints and as-built joints.
 Joints are good for connecting things, such as a shaft to a bearing.
 There are many options to do so, but all of them involve a snap point, which is the center of where the joint will be counted.
 There are different types of joints, such as revolutes, rigids, and sliders, each with different types of interactions.
-An as-built joint is basically this but without the snap point, keeping everything at the same place. 
+An as-built joint is basically this but without the snap point, keeping everything at the same place.
 
-\note Everything mentioned above (except joints) are usually applied in "parts",
-and we use joints to connect them in "assemblies".
-Although in fusion there are no hard rules for these, it is a good practice to keep.
+\note Everything mentioned above (except joints) are usually applied in "parts,"
+and we use joints to connect them in "assemblies."
+Although in Fusion, there are no hard rules for these; it is a good practice to keep.
 
 ## Closing Thoughts
 
 I hope this short tutorial was helpful.
-Feel free to contact me on slack if you run into any problems.
+Feel free to contact me (Han) on slack if you run into any problems.
 Fusion 360 is professional-grade software, so there are bound to be difficulties.
-Happy designing and thank you for your contribution to the team.
-
--Han 
+Happy designing, and thank you for your contribution to the team.

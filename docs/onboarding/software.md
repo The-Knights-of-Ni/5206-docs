@@ -40,7 +40,7 @@ https://github.com/signup
 
 \attention Be sure to send Ashwin your GitHub username on slack so that he can add you to the organization.
 
-\note ## A note to linux users.
+\note **A note to linux users**
 \note If you are using a linux distribution, you can install git and android studio from your package manager.
 \note While not documented here, the process is similar to the mac installation process,
 but with the appropriate package manager instead of brew. Java might need to be installed separately.
@@ -81,7 +81,7 @@ You should use your school email to apply for the license.
 
 \warning If you are using IntelliJ IDEA, be sure to use the "Ultimate" version, not the "Community" version,
 as only the "Ultimate" version has support for Android development. The only way to obtain said "Ultimate"
-edition is to apply for the aformentioned license.
+edition is to apply for the aforementioned license.
 
 
 An IDE, or Integrated Development Environment, is an app that lets programmers code on a single interface.
@@ -229,7 +229,7 @@ Now setup Android Studio.
 - Use standard setup (click next and accept licenses as needed)
 - Wait for the downloads to finish
 
-\note For the purposes of developing for this club an android emulator is not needed.
+\note To develop for this club an android emulator is not needed.
 
 \remark Check out https://developer.android.com/studio/install for more detailed instructions.
 
